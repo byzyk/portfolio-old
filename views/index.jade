@@ -1,5 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .main
+    section.author
+      h1= settings.title
+        small front-end dev
+      .contacts
+        each c in contacts
+          p
+            span=c[0] + ': '
+            =c[1]
+    section.portfolio
+      each work in works
+        .portfolio-item
+          .image(style='background-image:url(/images/preview/' + work.id + '.jpg);')
+          .text
+            h2= work.name
+            p= work.text
