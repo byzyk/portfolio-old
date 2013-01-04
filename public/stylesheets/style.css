@@ -13,9 +13,18 @@ body {
   color: #333;
   font: 14px/1.2 Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
   background: #ffffff url(../images/bg.jpg) 0 0 no-repeat;
+  height: 100%;
+}
+a,
+a:visited {
+  color: #fff;
+}
+a:hover {
+  color: #777;
 }
 .main {
-  width: 870px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   padding-bottom: 100px;
   background: url(../images/planet.png) -50px 486px no-repeat;
@@ -50,8 +59,9 @@ body {
   color: #333;
 }
 .main section.portfolio {
+  padding: 0 10px 10px 50px;
+  margin-top: 60px;
   width: 550px;
-  padding: 60px 10px 10px 50px;
   overflow: hidden;
 }
 .main section.portfolio .portfolio-item {
@@ -60,9 +70,6 @@ body {
   height: 240px;
   margin: 0 25px 25px 0;
   position: relative;
-}
-.main section.portfolio .portfolio-item:hover {
-  cursor: pointer;
 }
 .main section.portfolio .portfolio-item .image {
   width: 240px;
@@ -94,8 +101,42 @@ body {
   color: #ddd;
   font-size: 15px;
 }
+.main section.portfolio .portfolio-item .text p a {
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 17px;
+}
 .main section.portfolio .portfolio-item .image {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 240px 240px;
+}
+.main section.portfolio-view {
+  width: 100%;
+  position: relative;
+  float: none;
+}
+#folio-detail {
+  height: 100px;
+  background: #EDEDED;
+  position: relative;
+  top: -90px;
+  left: 0;
+  z-index: 1;
+}
+#folio-detail .control {
+  position: absolute;
+  bottom: -20px;
+  left: 100px;
+  width: 120px;
+  height: 30px;
+  color: #555;
+  background: #EDEDED;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 2;
+  font-weight: 700;
+}
+#folio-detail .control:hover {
+  cursor: pointer;
 }
