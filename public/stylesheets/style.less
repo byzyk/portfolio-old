@@ -1,4 +1,4 @@
-@import "http://fonts.googleapis.com/css?family=Rambla:400";
+@import "http://fonts.googleapis.com/css?family=Rambla:400,700";
 @import "http://fonts.googleapis.com/css?family=Finger+Paint";
 
 @mainWidth: 100%;
@@ -142,7 +142,7 @@ a:hover {
   .control {
     position:absolute;
     bottom:-20px;
-    left:100px;
+    left:150px;
     width:120px;
     height:30px;
     color:#555;
@@ -155,4 +155,28 @@ a:hover {
       cursor:pointer;
     }
   }
+}
+
+#folio-back, #folio-back:visited{
+  position:absolute;
+  top:30px;
+  left:20px;
+  width:100px;
+  height:40px;
+  z-index:5;
+  cursor:pointer;
+  border-radius:10px;
+  background:#fff;
+  text-align:center;
+  //text-transform:uppercase;
+  font:20px/2 "Rambla", sans-serif;
+  font-weight:700;
+  opacity:0.75;
+  display:block;
+  color:#333;
+  text-decoration:none;
+}
+
+#folio-back:hover {
+  opacity:1;
 }
