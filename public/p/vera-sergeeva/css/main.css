@@ -1,0 +1,421 @@
+*{
+	padding:0;
+	margin:0;
+	border:0;
+	outline:0;
+}
+
+body{
+	background:url(../images/bg.png) left top repeat;
+	width:100%;
+	height:100%;
+}
+
+header{
+	margin:50px 0 100px;
+	position:relative;
+}
+
+header .logo{
+	background:url(../images/logo.png) 50% 50% no-repeat;
+	width:50px;
+	height:50px;
+	margin-left:140px;
+	float:left;
+	border-radius:25px;
+}
+
+header a, header a:visited{
+	position:relative;
+	top:15px;
+	left:20px;
+	color:#fff;
+	text-decoration:none;
+	background:url(../images/logo-name.png) 0px 0px repeat;
+	width:105px;
+	height:23px;
+	display:inline-block;
+}
+
+header a:hover{
+	background-position:0px -23px;
+}
+
+header a:active{
+	background-position:0px -46px;
+}
+
+nav{
+	position:relative;
+	width:200px;
+}
+
+nav ul{
+	list-style-image:none;
+	list-style-type:none;
+	margin:60px 0 20px 180px;
+}
+
+nav ul li{
+	margin:15px 0;
+}
+
+nav ul li a, nav ul li a:visited{
+	color:#fff;
+	font:12px Tahoma, Geneva, sans-serif;
+	text-decoration:underline;
+	padding:4px 50px 5px 30px;
+}
+
+nav ul li a:hover{
+	color:#dadada;
+}
+
+nav ul li a:active{
+	color:#adadad;
+}
+
+.nav-active, .nav-active:visited{
+	background:url(../images/nav-active.png) left top no-repeat;
+	color:#000;
+	font:12px Georgia, "Times New Roman", Times, serif;
+	font-weight:bold;
+	font-style:italic;
+	text-decoration:none;
+}
+
+footer{
+	color:#7c868f;
+	font:10px Tahoma, Geneva, sans-serif;
+	margin:100px 0 0 210px;
+}
+
+footer a, footer a:visited{
+	color:#7c868f;
+	font:10px Tahoma, Geneva, sans-serif;
+	text-decoration:underline;
+}
+
+.dots{
+	color:#afafaf;
+	font:24px Arial, Helvetica, sans-serif;
+	position:absolute;
+	top:10px;
+	left:20px;
+}
+.copy{
+	float:left;
+}
+
+.styled{
+	float:right;
+	margin:0 100px 0 0;
+}
+
+#content{
+	position:relative;
+	width:100% !important;
+	overflow:hidden;
+	padding-bottom:100px;
+}
+
+#content > section{
+	position: relative;
+	width:100%;
+	vertical-align:top;
+	top:0;
+}
+
+.thread{
+	position:absolute;
+	float:left;
+	top:100px;
+	left:0;
+	width:3900px;
+	height:100%;
+	background:url(../images/thread.png) 0px 0px no-repeat;
+	display:block;
+}
+
+.thread2{
+	position:absolute;
+	float:left;
+	top:171px;
+	left:3900px;
+	width:3900px;
+	height:500px !important;
+	background:url(../images/thread.png) 0px 0px no-repeat;
+	overflow:visible !important;
+	display:block;
+}
+
+.clean{
+	clear:both;
+}
+
+/* WORKS */
+#works{
+	margin-left:0%;
+}
+
+#works p, #works h2 {
+	margin:0 0 0 210px;
+}
+
+#works p{
+	width:350px;
+	float:left;
+}
+
+#works h2{	
+	color:#fff;
+	font:12px Tahoma, Geneva, sans-serif;
+	width:100%;
+	float:left;
+}
+
+#works a, #works a:visited{
+	background:none;
+	display:inline-block;
+	margin:16px 14px 0 0;
+	padding:3px;
+	float:left;
+	line-height:0;
+}
+
+#works a:hover{
+	background:rgba(255, 255, 255, 0.22);
+}
+
+#works a:active{
+	background:rgba(255, 255, 255, 0.11);
+}
+
+
+/* ABOUT */
+#about{
+	margin-left:100%;
+	vertical-align: text-top;
+}
+
+#about p, #about h2{
+	margin:0 0 0 210px;
+	color:#fff;
+	font:12px Tahoma, Geneva, sans-serif;
+}
+
+#about h2{
+	margin-bottom:10px;	
+	color:#fff;
+	font:12px Tahoma, Geneva, sans-serif;
+	font-weight:bold;
+	width:100%;
+	float:left;
+}
+
+#about p{
+	width:100%;
+	float:left;
+}
+
+#about p > span{
+	width:500px;
+	display:inline-block;
+}
+
+#about p+h2{
+	margin-top:40px;
+}
+
+/* CONTACT */
+#contact{
+	color:#fff;
+	font:12px Tahoma, Geneva, sans-serif;
+	margin-left:200%;
+}
+
+#contact p{
+	margin:0 0 0 210px;
+	width:500px;
+}
+
+#contact p+p{
+	margin-top:15px;
+}
+
+#contact p span{
+	font-weight:bold;
+}
+
+
+/* --- LIGHTBOX - GALLERY --- */
+/* line 6, ../sass/lightbox.sass */
+#lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+  display: none;
+}
+
+/* line 15, ../sass/lightbox.sass */
+#lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  font-weight: normal;
+}
+/* line 24, ../sass/lightbox.sass */
+#lightbox img {
+  width: auto;
+  height: auto;
+}
+/* line 27, ../sass/lightbox.sass */
+#lightbox a img {
+  border: none;
+}
+
+/* line 30, ../sass/lightbox.sass */
+.lb-outerContainer {
+  position: relative;
+  background-color: #000;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+/* line 38, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 39, ../sass/lightbox.sass */
+.lb-container {
+  padding: 40px 150px;
+  
+}
+
+/* line 42, ../sass/lightbox.sass */
+.lb-loader {
+  position: absolute;
+  top: 40%;
+  left: 0%;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+/* line 51, ../sass/lightbox.sass */
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 59, ../sass/lightbox.sass */
+.lb-container > .nav {
+  left: 0;
+}
+
+/* line 62, ../sass/lightbox.sass */
+.lb-nav a {
+  outline: none;
+}
+
+/* line 65, ../sass/lightbox.sass */
+.lb-prev, .lb-next {
+  width: 49%;
+  height: 100%;
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+  /* Trick IE into showing hover */
+  display: block;
+}
+
+/* line 72, ../sass/lightbox.sass */
+.lb-prev {
+  left: 0;
+  float: left;
+}
+
+/* line 76, ../sass/lightbox.sass */
+.lb-next {
+  right: 0;
+  float: right;
+}
+
+/* line 81, ../sass/lightbox.sass */
+.lb-prev:hover {
+  background: url(../images/prev.png) left 48% no-repeat;
+}
+
+/* line 85, ../sass/lightbox.sass */
+.lb-next:hover {
+  background: url(../images/next.png) right 48% no-repeat;
+}
+
+/* line 88, ../sass/lightbox.sass */
+.lb-dataContainer {
+	background:#000;
+  margin: 0 auto;
+  *zoom: 1;
+  width: 100%;
+}
+/* line 38, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 95, ../sass/lightbox.sass */
+.lb-data {
+	float:right;
+  padding: 0 10px;
+  color: #373737;
+  position:relative;
+  top:-50px;
+  left:-20px;
+}
+/* line 98, ../sass/lightbox.sass */
+.lb-data .lb-details {
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+  padding-bottom:20px
+}
+/* line 103, ../sass/lightbox.sass */
+.lb-data .lb-caption {
+  font-size: 12px;
+  line-height: 1em;
+}
+/* line 107, ../sass/lightbox.sass */
+.lb-data .lb-number {
+  padding: 20px 0;
+  font-size: 12px;
+  color:#1e1e1f !important;
+}
+/* line 112, ../sass/lightbox.sass */
+.lb-data .lb-close {
+  width: 35px;
+  float: right;
+  padding-bottom: 0.7em;
+  outline: none;
+  display:none;
+}
+/* line 117, ../sass/lightbox.sass */
+.lb-data .lb-close:hover {
+  cursor: pointer;
+}

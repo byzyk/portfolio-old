@@ -1,0 +1,177 @@
+*{
+	padding:0;
+	margin:0;
+	outline:0;
+	border:0;
+}
+
+html, body{
+	width:100%;
+	height:100%;
+	color:#414141;
+	font:14px Arial, Helvetica, sans-serif;
+	background:#fff url(../images/bg.png) 0px 0px repeat;
+}
+
+.clear{
+	clear:both;
+}
+
+.wrap{
+	width:960px;
+	margin:0 auto;
+}
+
+/*HEADER*/
+.header-wrap{
+	width:100%;
+	height:75px;
+	background:#fff;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0.5)); /* Firefox 3.6+ */
+    /* Chrome 1-9, Safari 4-5 */
+    background: -webkit-gradient(linear, left top, left bottom, 
+                color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(255,255,255,0.5)));
+    /* Chrome 10+, Safari 5.1+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0.5));
+    background: -o-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0.5)); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0.5)); /* IE10 */
+    background: linear-gradient(top, rgba(255,255,255,0.2), rgba(255,255,255,0.5)); /* CSS3 */
+}
+
+header{
+	height:75px;
+}
+
+header > h1{
+	height:75px;
+	line-height:75px;
+	font-size:24px;
+	color:#565353;
+}
+
+header > h1 span.domain-name{
+	color:#0b0b0b;
+}
+
+header > h1 span.domain-zone{
+	color:#ffcc00;
+}
+
+header .domain-price{
+	position:absolute;
+	top:0;
+	right:0px;
+	background:url(../images/domain-price-bg.png) 0px 0px no-repeat;
+	width:358px;
+	height:75px;
+}
+
+header .domain-price > p{
+	padding:25px 0 0 21px;
+	color:#414141;
+	font-size:21px;
+}
+
+
+/* MAIN */
+.main{
+	overflow:hidden;
+}
+
+.main > h2{
+	color:#f7941d;
+	font-size:33px;
+	font-weight:400;
+	text-align:center;
+	text-transform:uppercase;
+	margin:40px 0;
+}
+
+.main > h2 span{
+	display:block;
+	color:#0b0b0b;
+}
+
+.main > .simple{
+	float:left;
+	width:214px;
+	margin:0px 17px;
+	padding-top:166px;
+	background-position:50% 0%;
+	background-repeat:no-repeat;
+}
+
+.main > .simple.first{
+	margin-left:0;
+}
+
+.main > .simple.last{
+	margin-right:0;
+}
+
+.main > .simple.think{
+	background-image:url(../images/think.png);
+}
+
+.main > .simple.invest{
+	background-image:url(../images/invest.png);
+}
+
+.main > .simple.global{
+	background-image:url(../images/global.png);
+}
+
+.main > .simple.brands{
+	background-image:url(../images/brands.png);
+}
+
+.main > .simple > h3{
+	font-size:30px;
+	text-align:center;
+	text-transform:uppercase;
+	margin:10px 0;
+}
+
+.main > .simple > p{
+	text-align:justify;
+}
+
+.main > .contact-us{
+	font-size:24px;
+	font-weight:700;
+	text-align:center;
+	text-transform:uppercase;
+	color:#121212;
+	margin:60px 0 35px;
+}
+
+
+/* FOOTER */
+footer{
+	border-top:1px #ddd solid;
+	padding-top:35px;
+	font-size:12px;
+	color:#121212;
+	overflow:hidden;
+}
+
+footer > .contacts{
+	float:left;
+	width:170px;
+}
+
+footer > .contacts.phone-mail{
+	margin-left:30px;
+	color:#665bcd;
+}
+
+footer > .contacts > p{
+	margin-bottom:16px;
+}
+
+footer > .copy{
+	color:#665bcd;
+	margin:30px 0 100px; 
+	border-top:1px #ddd solid;
+	padding-top:35px;
+}

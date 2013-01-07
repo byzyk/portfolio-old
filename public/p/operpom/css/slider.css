@@ -1,0 +1,86 @@
+.slider-wrap {
+	width:980px;
+	height:510px;
+	position:relative;
+	left:-10px;
+	background:url(../images/slider/bg.jpg) 50% 0% no-repeat;
+	margin-bottom:10px;
+}
+
+.slider {
+position:absolute;
+width: 960px; height:475px;
+left:10px;
+overflow:hidden;
+}
+
+.slider .slide {
+width:860px;
+height:415px;
+padding:30px 50px;
+}
+
+.slider .slide h3{
+	font:30px "MyriadSemibold", sans-serif;
+	padding-bottom:30px;
+}
+
+.slider .slide img {
+	float:right;
+	margin:-20px 15px 0 35px;
+}
+
+.slider .slide p {
+	padding-bottom:20px;
+	text-align:justify;
+}
+
+.pager {
+width:120px;
+position: absolute;
+bottom:55px;
+left:50%;
+margin-left:-60px;
+z-index:10;
+}
+
+.pager a {
+display:block;
+float:left;
+margin:0 7px;
+width:15px;
+height:15px;
+background: url(../images/slider/pager.png) 0px -15px no-repeat;
+overflow:hidden;
+text-indent:15px;
+}
+
+.pager a.activeSlide,
+.pager a.activeSlide:hover {
+background-position:0px 0px;
+}
+
+.pager a:hover {
+background-position:0px -30px;
+}
+
+.arrow{
+	width:15px;
+	height:38px;
+	background-image:url(../images/slider/arrow.png);
+	background-repeat:no-repeat;
+	position:absolute;
+	top:190px;
+	cursor:pointer;
+	z-index:10;
+}
+
+.arrow.right{
+	background-position:0px -38px;
+	right:25px;
+}
+
+.arrow.left{
+	background-position:0px 0px;
+	left:25px;
+}

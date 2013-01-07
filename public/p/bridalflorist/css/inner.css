@@ -1,0 +1,105 @@
+@font-face{
+	font-family:Myriad Pro Light;
+	src:url(../fonts/MyriadPro-Light.ttf);
+	src:url(../fonts/MyriadPro-Light.otf);
+	font-style:normal;
+	font-weight:normal;
+}
+
+body{
+	font:14px Arial, Helvetica, sans-serif;
+}
+
+.top{
+	position:relative;
+	height:40px;
+	line-height:40px;
+}
+
+.social{
+	top:5px;
+}
+
+.content{
+	width:960px;
+	margin:0 auto;
+	position:relative;
+}
+
+header{
+	height:70px;
+	line-height:90px;
+	margin:0 0 10px 20px;
+	border-bottom:1px #dadada solid;
+}
+
+.search-form{
+	width:651px;
+	position:absolute;
+	top:0;
+	right:20px;
+}
+
+.search-form input{
+	border:1px #cccccc solid;
+}
+
+.search-form input[type='text']{
+	width:593px;
+	height:40px;
+	border-right:none;
+}
+
+.search-form input[type='submit']{
+	border-left:none;
+}
+
+.search-result{
+	margin:30px 20px;
+	margin-roght:0;
+}
+
+.search-result > p{
+	padding:1px 0;
+}
+
+.search-result > p.title a, .search-result > p.title a:visited, .search-result > p.title a:active{
+	color:#4495d1;
+	text-decoration:underline;
+	font-weight:bold;
+}
+
+.search-result > p.title a:hover{
+	text-decoration:none;
+}
+
+.search-result > p.url a, .search-result > p.url a:visited, .search-result > p.url a:hover, .search-result > p.url a:active{
+	color:#f1a965;
+	text-decoration:none;
+	font-size:15px;
+	font-weight:bold;
+}
+
+.search-result > p.description{
+	color:#827f7f;
+}
+
+.pager{
+	padding:25px 0 120px 20px;
+}
+
+.pager a, .pager a:visited, .pager a:hover, .pager a:active{
+	color:#84b9e1;
+	text-decoration:none;
+	margin:0 2px;
+}
+
+.pager a.pager-active, .pager a.pager-active:visited, .pager a.pager-active:hover, .pager a.pager-active:active{
+	color:#818181;
+	font-weight:bold;
+}
+
+.footer{
+	position:inherit;
+	margin-top:-75px;
+}

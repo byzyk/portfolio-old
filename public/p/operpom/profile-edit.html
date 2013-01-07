@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content='' name='keywords' />
+    <meta content='' name='description' />
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />    
+    <link rel="stylesheet" type="text/css" href="css/slider.css" />  
+    <link rel="stylesheet" type="text/css" href="css/carousel.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>    
+    <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="js/func.js"></script>
+    <title>Оперативная Помощь</title>
+    <!--[if IE]>	
+    	<script type="text/javascript" src="js/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/PIE.js"></script>
+        <script type="text/javascript" src="js/ie.js"></script>        
+        <link rel="stylesheet" type="text/css" href="css/ie.css" /> 
+    <![endif]-->
+    <!--[if IE 7]>	<link rel="stylesheet" type="text/css" href="css/ie7.css" /> 	<![endif]-->
+</head>
+<body>
+	<div class="wrap" id="profile-edit">
+    	<header class="round box-shadow">
+        	<h1 class="text-shadow">Оперативная помощь <span>Ваше спасение в любой ситуации</span></h1>
+            <p class="phone text-shadow"><span>+7 (495)</span> 777-55-44</p>
+        </header>
+        <div class="header-sub round box-shadow">
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">О приложении</a></li>
+                    <li><a href="#">Преимущества</a></li>
+                    <li><a href="#">Возможности</a></li>
+                    <li><a href="#">Наши клиенты</a></li>
+                    <li><a href="#">Регистрация</a></li>
+                </ul>
+            </nav>
+            <form action="#" id="main-login-form">
+                <input type="text" placeholder="Логин" class="input"><!--
+                --><input type="password" placeholder="Пароль" class="input">
+                <input type="submit" value=" ">
+            </form>
+        </div>
+        <section class="content">
+        	<h2>Редактирование профиля</h2>
+            <form action="#">
+                <div class="edit-block">
+                    <label>Полное название организации:</label>
+                    <input type="text" class="input" id="edit-input-1">
+                    <label>Юридический адрес:</label>
+                    <textarea class="input" id="edit-input-2"></textarea>
+                    <label>Генеральный директор:</label>
+                    <input type="text" class="input" id="edit-input-3">
+                </div>
+                <span class="line"></span>
+                <div class="edit-block">
+                    <label>ОРГН:</label>
+                    <input type="text" class="input" id="edit-input-4">
+                    <label>ОКПО:</label>
+                    <input type="text" class="input" id="edit-input-5">
+                    <label>ИНН:</label>
+                    <input type="text" class="input" id="edit-input-6">
+                    <label>КПП:</label>
+                    <input type="text" class="input" id="edit-input-7">
+                </div>
+                <span class="line"></span>
+                <div class="edit-block">
+                    <label>Реквизиты р/с:</label>
+                    <input type="text" class="input" id="edit-input-8">
+                    <label>Реквизиты к/с:</label>
+                    <input type="text" class="input" id="edit-input-9">
+                    <label>БИК:</label>
+                    <input type="text" class="input" id="edit-input-10">
+                    <label>Наименование банка:</label>
+                    <input type="text" class="input" id="edit-input-11">
+                </div>
+                <span class="line"></span>
+                <div class="edit-block">
+                    <label>Контактное лицо:</label>
+                    <input type="text" class="input" id="edit-input-12">
+                    <label>Телефон:</label>
+                    <input type="text" class="input" id="edit-input-13">
+                </div>
+                <div class="form-button"><input type="submit" value="Сохранить"></div>
+            </form>
+        </section>
+        <div class="clear"></div>       
+        <footer>
+        	<p>2012 &copy; Оперативная помощь +7 (495) 777-55-44</p>
+            <ul>
+                <li><a href="#">О приложении</a></li>
+                <li><a href="#">Преимущества</a></li>
+                <li><a href="#">Возможности</a></li>
+                <li><a href="#">Наши клиенты</a></li>
+                <li><a href="#">Регистрация</a></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="counter li"></div>
+            <div class="counter mailru"></div>
+            <div class="social">
+            	<p class="fb"></p>
+            	<p class="vk"></p>
+            	<p class="tw"></p>
+            	<p class="gp"></p>
+            </div>
+        </footer>
+    </div>
+    
+<script type="text/javascript">
+/**
+ * We use the initCallback callback
+ * to assign functionality to the controls
+ */
+function mycarousel_initCallback(carousel) {
+    jQuery('.jcarousel-control a').bind('click', function() {
+        carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+        return false;
+    });
+
+    jQuery('.jcarousel-scroll select').bind('change', function() {
+        carousel.options.scroll = jQuery.jcarousel.intval(this.options[this.selectedIndex].value);
+        return false;
+    });
+
+    jQuery('#mycarousel-next').bind('click', function() {
+        carousel.next();
+        return false;
+    });
+
+    jQuery('#mycarousel-prev').bind('click', function() {
+        carousel.prev();
+        return false;
+    });
+};
+
+// Ride the carousel...
+jQuery(document).ready(function() {
+    jQuery("#mycarousel").jcarousel({
+        scroll: 1,
+        initCallback: mycarousel_initCallback,
+        // This tells jCarousel NOT to autobuild prev/next buttons
+        buttonNextHTML: null,
+        buttonPrevHTML: null
+    });
+});
+
+</script>
+
+</body>
+</html>

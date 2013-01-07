@@ -1,0 +1,329 @@
+@media only screen and (min-width: 0px)  and (max-width: 1300px){
+.wrap{
+	width:100%;
+	min-width:1300px;
+}
+}
+
+@font-face{
+	font-family: Zero;
+	src: url('../fonts/zerotwos.eot');
+	src: local('☺'), url('../fonts/zerotwos.ttf') format('truetype'), url('../fonts/zerotwos.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*{
+	padding:0;
+	margin:0;
+	border:0;
+}
+
+html,
+body{
+	width:100%;
+	height:100%;
+	font:14px Arial, Helvetica, sans-serif;
+	color:#fff;
+}
+
+body{
+	background:url(../images/bg.jpg) 0% 50% no-repeat;
+}
+
+.black{
+	background-color:#000;
+}
+
+.pink{
+	background-color:#ea4ba7;
+}
+
+.blue{
+	background-color:#43a5ef;
+}
+
+.green{
+	background-color:#76af4a;
+}
+
+/*HEADER*/
+header{
+	width:466px;
+	height:165px;
+	position:absolute;
+	top:-190px;
+	left:-20px;
+}
+
+header > a{
+	display:block;
+	width:466px;
+	height:165px;
+}
+
+/*CONTENT*/
+#content{
+	position:relative;
+	top:0;
+	left:0;
+	width:100% !important;
+	height:575px;
+	padding-bottom:100px;
+	overflow:hidden;
+}
+
+#content > section.page{
+	float:left;
+	width:1100px;
+	position:absolute;
+	top:0;
+	left:0;
+	margin-top:210px;
+}
+
+.arrow{
+	width:41px;
+	height:34px;
+	background:url(../images/arrow.png) 0px 0px no-repeat;
+	position:absolute;
+	top:150px;
+}
+
+.arrow a{
+	display:inline-block;
+	width:41px;
+	height:34px;
+}
+
+.arrow.right:hover{
+	background-position:0px -72px;
+}
+
+.arrow.left{
+	background-position:0px -35px;
+}
+
+.arrow.left:hover{
+	background-position:0px -107px;
+}
+
+nav{
+	float:left;
+}
+
+nav ul li{
+	list-style-image:none;
+	list-style-type:none;
+	width:152px;
+	height:30px;
+	padding:0 10px;
+	margin-bottom:30px;
+}
+
+nav ul li a,
+nav ul li a:visited{
+	display:inline-block;
+	width:100%;
+	height:30px;
+	line-height:30px !important;
+	color:#fff;
+	font:18px Zero;
+	text-transform:uppercase;
+	text-decoration:none;
+}
+
+nav ul li a:hover{
+	text-decoration:underline;
+}
+
+.text{
+	float:left;
+	width:440px;
+}
+
+h2{
+	font:18px Zero;
+	text-transform:uppercase;
+	margin-bottom:30px;
+	height:30px;
+	line-height:30px;
+	padding:0 0 0 20px;
+	text-decoration:underline;
+}
+
+article{
+	height:225px;
+	padding:15px 20px;
+	text-align:justify;
+}
+
+#exesia{
+	padding-left:140px;	
+}
+
+#exesia .arrow.right{
+	left:1100px;
+}
+
+#exesia .text{
+	margin-left:265px;
+	position:relative;
+}
+
+#exesia aside{
+	width:100%;
+	height:125px;
+	margin-top:30px;
+}
+
+#exesia aside > a{
+	display:block;
+	background-position:0px 0px;
+	background-repeat:no-repeat;
+	float:left;
+}
+
+#exesia aside > a.psnstore{
+	width:89px;
+	height:125px;
+	background-image:url(../images/psnstore.png);
+	margin-left:22px;
+}
+
+#exesia aside > a.steam{
+	width:84px;
+	height:84px;
+	background-image:url(../images/steam.png);
+	margin:16px 0 0 22px;
+}
+
+#exesia aside > a.appstore{
+	width:176px;
+	height:68px;
+	background-image:url(../images/appstore.png);
+	margin:26px 0 0 26px;
+}
+
+#exesia .social{
+	position:absolute;
+	bottom:7px;
+}
+
+#exesia .social a{
+	display:inline-block;
+	background-position:0px 0px;
+	background-repeat:no-repeat;
+	width:39px;
+	height:39px;
+}
+
+#exesia .social a.fb{
+	background-image:url(../images/fb.png);
+}
+
+#exesia .social a.tw{
+	background-image:url(../images/tw.png);
+}
+
+#exesia .social a.v{
+	background-image:url(../images/v.png);
+}
+
+#exesia .social a.yt{
+	width:38px;
+	background-image:url(../images/yt.png);
+}
+
+#exesia .social a.li{
+	width:41px;
+	background-image:url(../images/li.png);
+}
+
+#synaesthesia-kaleidoscope{
+	margin-left:1430px;
+}
+
+#synaesthesia-kaleidoscope .arrow.left{
+	left:-100px;
+}
+
+#synaesthesia-kaleidoscope .arrow.right{
+	left:1100px;
+}
+
+#synaesthesia-kaleidoscope .k-last{
+	margin-left:170px;
+}
+
+#synaesthesia-kaleidoscope aside{
+	font-size:16px;
+	padding:15px 10px 15px 20px;
+	margin-top:60px;
+}
+
+#synaesthesia-kaleidoscope aside .author{
+	text-align:right;
+	padding-top:20px;
+}
+
+#synaesthesia-kaleidoscope aside .stars{
+	display:inline-block;
+	float:left;
+	margin-top:-8px;
+	height:33px;
+	background:url(../images/stars.png) 0px 0px no-repeat;
+}
+
+#synaesthesia-kaleidoscope aside .stars.five{
+	width:134px;
+}
+
+#synaesthesia-kaleidoscope aside .stars.four{
+	width:107px;
+}
+
+#synaesthesia-kaleidoscope aside .stars.three{
+	width:80px;
+}
+
+#synaesthesia-kaleidoscope aside .stars.two{
+	width:54px;
+}
+
+#synaesthesia-kaleidoscope aside .stars.one{
+	width:27px;
+}
+
+#levels{
+	margin-left:2853px;
+	padding-right:50px;
+}
+
+#levels .arrow.left{
+	left:-100px;
+}
+
+#levels .youtube > object{
+	margin-left:100px;
+}
+
+#levels .screens{
+	width:100%;
+	height:95px;
+	margin-top:50px;
+}
+
+#levels .screens a{
+	display:inline-block;
+	margin-left:12px;
+}
+
+#levels .screens a:first-child{
+	margin-left:0;
+}
+
+#levels .screens img{
+	width:170px;
+	height:95px;
+}

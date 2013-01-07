@@ -1,5 +1,6 @@
 {
   "id": "photoart",
-  "name": "Pgit add hotoart",
-  "text": "html5, css3, jquery"
+  "name": "PhotoArt",
+  "text": "html5, css3, jquery",
+  "url": false
 }

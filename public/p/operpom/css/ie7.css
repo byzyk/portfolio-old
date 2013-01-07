@@ -1,0 +1,11 @@
+#main-login-form > input[type='submit']{
+	top:-3px;
+}
+
+.form-button *{
+	padding:1px 4px;
+}
+
+#profile-edit .edit-block{
+	overflow:hidden;
+}

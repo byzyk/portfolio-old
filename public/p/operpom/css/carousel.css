@@ -1,0 +1,148 @@
+.clients{
+	width:960px;
+	height:196px;
+	position:relative;
+	top:30px;
+	left:0;
+	padding:30px 0 40px;
+	background: url(../images/carousel/bg.png) 0px 0px no-repeat;
+}
+
+.clients h2{
+	padding-bottom:30px;
+}
+
+.clients .control{
+	width:15px;
+	height:38px;
+	background-image:url(../images/slider/arrow.png);
+	background-repeat:no-repeat;
+	position:absolute;
+	top:110px;
+	cursor:pointer;
+	z-index:10;
+}
+
+.clients .control.left{
+	background-position:0px 0px;
+	left:0;
+}
+
+.clients .control.right{
+	background-position:0px -38px;
+	right:0;
+}
+
+.carousel-img{
+	width:880px;
+	margin:0 auto;
+}
+
+.carousel-img li{
+	display:inline-block;
+	float:left;
+	list-style-image:none;
+	list-style-type:none;
+	margin:0 4px;
+	overflow:hidden;
+}
+
+.carousel-img li img{
+	position:relative;
+}
+
+.carousel-img li.okna-hob:hover img{ /* HOVER !!*/
+	top:-100%;
+}
+
+.carousel-img li.brevitor{
+	width:98px;
+	height:32px;
+	margin-top:12px;
+}
+
+.carousel-img li.brevitor img{
+	width:98px;
+	height:32px;
+}
+
+.carousel-img li.forward{
+	width:125px;
+	height:60px;
+}
+
+.carousel-img li.forward img{
+	width:125px;
+	height:60px;
+}
+
+.carousel-img li.hobbit{
+	width:112px;
+	height:89px;
+	margin-top:-11px;
+}
+
+.carousel-img li.hobbit img{
+	width:112px;
+	height:89px;
+}
+
+.carousel-img li.okna-hob{
+	width:171px;
+	height:69px;
+}
+
+.carousel-img li.okna-hob img{
+	width:171px;
+	height:138px;
+}
+
+.carousel-img li.isoco{
+	width:107px;
+	height:64px;
+	margin-top:5px;
+}
+
+.carousel-img li.isoco img{
+	width:107px;
+	height:64px;
+}
+
+.carousel-img li.kama{
+	width:122px;
+	height:69px;
+}
+
+.carousel-img li.kama img{
+	width:122px;
+	height:69px;
+}
+
+.carousel-img li.binbank{
+	width:94px;
+	height:52px;
+	margin-top:3px;
+}
+
+.carousel-img li.binbank img{
+	width:94px;
+	height:52px;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+    width: 880px;
+}
+
+
+.jcarousel-skin-tango .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+    width:  880px;
+	margin:0 20px;
+}

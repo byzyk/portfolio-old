@@ -1,0 +1,160 @@
+#inner-page{
+	position:relative;
+}
+
+.content, .clients{
+	width:960px;
+	margin:60px auto 0;
+}
+
+.content aside{
+	float:left;
+	width:215px;
+}
+
+#submenu{
+	height:200px;
+}
+
+#submenu > ul{	
+	height:130px;
+}
+
+/*SIDEBAR START*/
+
+.left-block{
+	width:214px;
+	background:url(../images/block-bg.png) left top repeat-y;
+	position:relative;
+	margin:0 1px 50px 0;
+	padding:0 0 10px 0;
+}
+
+.left-block:before{
+	content:'';
+	position:absolute;
+	top:-18px;
+	left:0;
+	background:url(../images/block-top.png) left top no-repeat;
+	width:214px;
+	height:18px;
+}
+
+.left-block:after{
+	content:'';
+	position:absolute;
+	bottom:-14px;
+	left:0;
+	background:url(../images/block-bottom.png) left top no-repeat;
+	width:214px;
+	height:14px;
+}
+
+.left-block h3, .questions p{
+	color:#636363;
+	font:16px Verdana, Geneva, sans-serif;
+	text-transform:uppercase;
+	padding:10px 0 10px 45px;
+	margin-left:10px;
+}
+
+.navigation h3{
+	background:url(../images/block-navigate.png) left top no-repeat;
+}
+
+.questions h3{
+	background:url(../images/block-questions.png) left top no-repeat;
+	padding-left:35px;
+}
+
+.navigation ul li{
+	list-style-image:none;
+	list-style-type:none;
+	background:url(../images/arrow2.png) 0% 50% no-repeat;
+	padding:2px 0 2px 18px;
+	margin:4px 0 4px 17px;
+}
+
+.navigation ul li a, .navigation ul li a:visited{
+	color:#636363;
+	font:12px Verdana, Geneva, sans-serif;
+	text-decoration:none;
+}
+
+.questions p{
+	text-transform:none;
+	padding:0;
+	margin:0;
+	text-align:center;
+	margin:15px 0 0;
+}
+
+.questions h3 + p{
+	margin-top:-7px;
+}
+
+.questions .button-2, .questions .button-2:visited{
+	left:0;
+}
+
+.questions p span{
+	color:#373737;
+	font:25px "Bebas";
+	display:inline-block;
+	margin-top:3px;
+}
+
+/*SIDEBAR END*/
+
+/*ARTICLE START*/
+.content article{
+	margin-left:250px;
+	width:710px;
+	color:#494949;
+}
+
+.content article h2{
+	font:20px Verdana, Geneva, sans-serif;
+	text-transform:uppercase;
+	margin:25px 0 10px 0;
+}
+
+.content article p{
+	font:13px Verdana, Geneva, sans-serif;
+	margin:5px 0;
+	line-height:26px;
+}
+
+/*ARTICLE END*/
+
+/* CLIENTS START */
+.clients{
+	margin-top:75px;
+	border-top:1px #a4a4a4 solid;
+}
+
+.client-block{
+	width:215px;
+	height:215px;
+	float:left;
+	margin:30px 10px 0 15px;
+	color:#5e5e5e;
+	font:12px Verdana, Geneva, sans-serif;
+	font-style:italic;
+	line-height:24px;
+	position:relative;
+}
+
+.client-block .author{
+	font-style:normal;
+	font-weight:bold;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+.client-block .author span{
+	display:block;	
+	font-weight:normal;
+}
+/* CLIENTS END */

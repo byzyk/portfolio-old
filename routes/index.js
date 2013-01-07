@@ -11,10 +11,13 @@ exports.index = function(req, res){
   var works = [];
   var json;
   var worksFiles = fs.readdirSync(worksDir);
-  worksFiles.sort(function(a, b) {
+  /*worksFiles.sort(function(a, b) {
     return fs.statSync(worksDir + a).mtime.getTime() - fs.statSync(worksDir + b).mtime.getTime();
   });
-  worksFiles.reverse();
+  worksFiles.reverse();*/
+  worksFiles.sort(function(a, b) {
+    return Math.random() - 0.5;
+  });
   for (var i = 0; i < worksFiles.length; i++) {
     json = fs.readFileSync(worksDir + worksFiles[i], 'utf-8');
     works.push(JSON.parse(json));

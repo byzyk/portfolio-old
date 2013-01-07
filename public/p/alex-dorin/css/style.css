@@ -1,0 +1,115 @@
+*{
+	padding:0;
+	margin:0;
+	border:0;
+	outline:0;
+}
+
+body{
+	background:#fff;
+	font-size:12px;
+	font-family:"Courier New", Courier, monospace;
+	color:#000;
+	letter-spacing:2px;
+	overflow:hidden;
+}
+
+a, a:visited, a:hover, a:active{
+	color:#000;
+	text-decoration: underline;
+}
+
+.clean{
+	clear:both;
+}
+
+.main-wrap, .border-wrap{
+	border:1px #000 solid;
+	margin:auto;
+	max-width:1260px;
+	max-height:740px;
+	position:absolute;
+	top:10px;
+	left:10px;
+	bottom:10px;
+	right:10px;
+	z-index:10;
+}
+
+.main-wrap{
+	border:none;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	
+}
+
+header{
+	padding:35px 0 0 50px;
+	width:100%;
+}
+
+.logo{
+	float:left;
+	width:470px;
+	padding-top:65px;
+}
+
+.logo a, .logo a:visited, .logo a:hover, .logo a:active{
+	background:url(../images/logo.jpg) left top no-repeat;
+	padding:20px 0 20px 80px;
+	text-decoration:none;
+	letter-spacing:normal;
+}
+
+.head{
+	float:left;
+	width:296px;
+}
+
+.head > p{
+	background:#000;
+	color:#fff;
+	padding:3px 5px;
+	font-weight:bold;
+}
+
+p.target-links{
+	background:none;
+	padding:21px 0 0 0;
+}
+
+.target-links a, .target-links a:visited, .target-links a:hover, .target-links a:active{
+	display:block;
+	padding:2px 1px;
+	font-weight:normal;
+}
+
+nav ul{
+}
+
+nav ul li{
+	list-style-image:none;
+	list-style-type:none;
+	background:url(../images/nav-list.png) 0% 50% no-repeat;
+	padding:3px 0 3px 10px;
+	margin-top:30px;
+}
+
+nav ul li a, nav ul li a:visited, nav ul li a:hover, nav ul li a:active{
+	text-decoration:none;
+}
+
+nav ul li a.active, nav ul li a.active:visited, nav ul li a.active:hover, nav ul li a.active:active{
+	text-decoration:underline;
+}
+
+.rectangle2{
+	width:762px;
+	height:236px;
+	background: url(../images/rectangle2.jpg) left top no-repeat;
+	position:absolute;
+	top:366px;
+	left:130px;
+}

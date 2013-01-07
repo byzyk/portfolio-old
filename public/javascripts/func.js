@@ -14,13 +14,16 @@ $(function() {
   $('#folio-detail .control').on('click', function() {
     var el = $(this).parent();
     var detailTop = el.css('top');
+    var back = $('#folio-back').css('top');
     var text;
     
     if(detailTop === '0px') {
       detailTop = '-90px';
+      back = '60px';
       text = "Show details";
     } else {
       detailTop = '0px';
+      back = '30px';
       text = "Hide details";
     }
     
@@ -31,6 +34,10 @@ $(function() {
           .find('.control')
           .text(text);
       });
+    
+    $('#folio-back')
+      .stop(true, true)
+      .animate({top: back}, 400);
   });
   
   

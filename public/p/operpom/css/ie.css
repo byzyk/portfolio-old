@@ -1,0 +1,42 @@
+.box-shadow{
+	box-shadow: 0px 2px 1px #ccc;
+}
+
+.form-button{
+	overflow:hidden;
+}
+
+.form-button *{
+	background:none;
+	box-shadow: 0px 1px 2px #555;
+    -pie-background: linear-gradient(top, #f4f5f5, #dbdfe3);
+}
+
+.form-button input{
+	position:relative;
+}
+
+.form-button:hover *{
+	background:none;
+    -pie-background: linear-gradient(top, #f4f5f5, #f0f5f9);
+}
+
+.header-sub{	
+	-pie-background: linear-gradient(top, #f4f5f5, #dbdfe3);
+}
+
+.input{
+	border-color:#ccc;
+	background:#fff;
+	position:relative;
+	padding-top:5px;
+	height:17px;
+}
+
+#main-login-form > input[type='submit']{
+	top:-1px;
+}
+
+.slider *{
+	background:none !important;
+}

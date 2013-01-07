@@ -1,0 +1,40 @@
+.works-wrap{
+	width:800px;
+	height:755px;
+	overflow-y: scroll;
+}
+
+.works-wrap2{
+	overflow:hidden;
+	width:784px;
+	height:725px;
+	position:relative;
+	top:0px;
+	left:220px;
+}
+
+.works{
+	width:800px;
+	height:200px;
+	margin:265px 0 0;
+}
+
+.works > p.spacer{
+	padding:0;
+	background:none;
+	width:100%;
+	height:277px;
+}
+
+.work{
+	position:relative;
+	margin-bottom:100px;
+}
+
+.work > p{
+	position:absolute;
+	bottom:10px;
+	left:40%;
+	background:#fff;
+	padding:0 3px;
+}

@@ -1,0 +1,33 @@
+.niceCheck {
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	cursor: pointer;
+	background: url('../images/checkbox.png');
+	overflow: hidden;
+	margin-left:10px;
+}
+.niceChecked {
+	background-position: 0 -13px;
+}
+.niceCheck input {
+	margin-left: -1000px;
+}
+
+
+.niceRadio {
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	cursor: pointer;
+	background: url('../images/checkbox.png');
+	overflow: hidden;
+	margin-left:10px;
+}
+.radioChecked {
+	background-position: 0 -13px;
+}
+.niceRadio input {
+	margin-left: -1000px;
+}
+		
