@@ -40,7 +40,8 @@ exports.portfolio = function(req, res){
     console.log(path);
     res.render('portfolio', {
       contacts: contacts,
-      path: path
+      path: path,
+      work: work
     });
   }
 };

@@ -33,4 +33,12 @@ $(function() {
       });
   });
   
+  
+  $('#folio-view').on('load', iframeHeight);
+  
+  function iframeHeight() {
+    $(this).height($(window).height() - 10);
+    $('body').css('overflow', 'hidden')
+  }
+  
 });

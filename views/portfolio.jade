@@ -5,4 +5,13 @@ block content
   section.portfolio-view
     #folio-detail
       .control Show details
-    iframe(src=path, frameborder="0", border="0", scrolling="yes", width="100%", height="100", id="folio-view", onload="document.getElementById('folio-view').height = document.body.scrollHeight - 10;document.body.style.overflow = 'hidden'", style="position:relative;top:-90px;")
+      h1= settings.title
+      .desc
+        p.title= work.name
+        if(work.url)
+          p.url
+            a(href=work.url)=work.url
+        p.text 
+          strong Using: 
+          =work.text
+    iframe(src=path, frameborder="0", border="0", scrolling="auto", width="100%", height="0", id="folio-view", style="position:relative;top:-90px;")

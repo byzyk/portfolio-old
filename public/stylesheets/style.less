@@ -36,6 +36,9 @@ a:hover {
   overflow:hidden;
   padding-bottom:100px;
   background:url(../images/planet.png) -50px 486px no-repeat;
+  &.index{
+    width:870px;
+  }
   section {
     float:left;
     &.author {    
@@ -153,6 +156,37 @@ a:hover {
     font-weight:700;
     &:hover {
       cursor:pointer;
+    }
+  }
+  h1{
+    font:20px "Rambla";    
+    padding: 37px 0px 0px 130px;
+    float:left;
+  }
+  .desc{
+    float: left;
+    margin-left: 50px;
+    margin-top:10px;
+    border-left:3px #999 solid;
+    padding-left:10px;
+    .title{
+      font-size:24px;
+      margin-bottom:5px;
+    }
+    .url{
+      a, a:visited{
+        color:#999;
+        text-decoration:none;
+      }
+      a:hover{
+        color:#333;
+      }
+    }
+    .text{
+      font-size:12px;
+      font-style:italic;
+      color:#555;
+      width:200px;
     }
   }
 }

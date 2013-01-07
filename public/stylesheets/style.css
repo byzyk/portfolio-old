@@ -29,6 +29,9 @@ a:hover {
   padding-bottom: 100px;
   background: url(../images/planet.png) -50px 486px no-repeat;
 }
+.main.index {
+  width: 870px;
+}
 .main section {
   float: left;
 }
@@ -139,6 +142,36 @@ a:hover {
 }
 #folio-detail .control:hover {
   cursor: pointer;
+}
+#folio-detail h1 {
+  font: 20px "Rambla";
+  padding: 37px 0px 0px 130px;
+  float: left;
+}
+#folio-detail .desc {
+  float: left;
+  margin-left: 50px;
+  margin-top: 10px;
+  border-left: 3px #999 solid;
+  padding-left: 10px;
+}
+#folio-detail .desc .title {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+#folio-detail .desc .url a,
+#folio-detail .desc .url a:visited {
+  color: #999;
+  text-decoration: none;
+}
+#folio-detail .desc .url a:hover {
+  color: #333;
+}
+#folio-detail .desc .text {
+  font-size: 12px;
+  font-style: italic;
+  color: #555;
+  width: 200px;
 }
 #folio-back,
 #folio-back:visited {
