@@ -18,10 +18,14 @@ header {
 }
 
 header .logo{
-  width:200px;
+  width:500px;
   height:85px;
-  position:relative;
-  left:-30px;
+  line-height:85px;
+  font-size:40px;
+  color:#fff;
+  font-style:italic;
+  margin:0;
+  display:inline-block;
 }
 
 header .top-bar{
