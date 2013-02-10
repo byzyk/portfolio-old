@@ -217,6 +217,7 @@ textarea {
   height:100%;
   background:#fff url(../img/sec1-bg.png) 50% 0 no-repeat;
   position:relative;
+    -webkit-backface-visibility:hidden;
 }
 
 #sec1 .video{
@@ -230,6 +231,7 @@ textarea {
   border-radius:50px / 250px;
   position:relative;
   top:3000px;
+    -webkit-backface-visibility:hidden;
 }
 
 #sec1 .video .play{
@@ -256,7 +258,8 @@ textarea {
 #vid {
   width:760px;
   height:427px;
-  margin:0 auto;
+  margin:0 auto;  
+    -webkit-backface-visibility:hidden;
 }
 
 #sec1 .scroll {
