@@ -63,7 +63,6 @@ $(function() {
     .append([
       TweenMax.to($('#sec2'), 1, {
         css:{top:0},
-        immediateRender:true,
         onStart: function() {
           $('#sec3').hide();
         },
