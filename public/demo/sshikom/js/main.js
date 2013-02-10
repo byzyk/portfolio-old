@@ -5,12 +5,15 @@ $(function() {
     video.next()
       .delay(400)
       .animate({top: 0, opacity: 1}, 400);
-    video.find('.play').on('click', function() {
+    /*video.find('.play').on('click', function() {
       video
         .css('padding-top', '17px')
         .animate({height: 444}, 600)
-        .html('<div style="width:760px;margin:0 auto;"><iframe src="'+videoUrl+'" width="760" height="427" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>');
-    })
+        .find('.play, .text')
+        .remove()
+        .next()
+        .show('fast');
+    })*/
   });  
   
   var log = $('#console'); 

@@ -253,6 +253,11 @@ textarea {
   letter-spacing:3px;
 }
 
+#vid {
+  width:760px;
+  margin:0 auto;
+}
+
 #sec1 .scroll {
   color:#4a4d58;
   font-size:14px;
@@ -540,7 +545,7 @@ textarea {
   height:44px;
   background-color:#d3d3d3;
   position:absolute;
-  top:700px;
+  top:720px;
 }
 
 #sec5 .timeline .line{
