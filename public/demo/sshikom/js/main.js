@@ -1,19 +1,16 @@
 $(function() {  
   var video = $('#sec1 .video');
-  var videoUrl = 'http://player.vimeo.com/video/59222440?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1';
+  var videoUrl = 'http://player.vimeo.com/video/59222440?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=0';
   video.animate({top: 110}, 1800, function() {
     video.next()
       .delay(400)
       .animate({top: 0, opacity: 1}, 400);
-    /*video.find('.play').on('click', function() {
+    video.find('.play').on('click', function() {
       video
         .css('padding-top', '17px')
         .animate({height: 444}, 600)
-        .find('.play, .text')
-        .remove()
-        .next()
-        .show('fast');
-    })*/
+        .html('<div id="vid"><iframe src="'+videoUrl+'" width="760" height="427" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>');
+    })
   });  
   
   var log = $('#console'); 
