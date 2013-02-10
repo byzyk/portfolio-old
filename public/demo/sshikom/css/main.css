@@ -257,6 +257,13 @@ textarea {
   width:760px;
   height:427px;
   margin:0 auto;
+  position:relative;
+}
+
+#vid iframe{
+  position:absolute;
+  top:0;
+  left:0;
 }
 
 #sec1 .scroll {
