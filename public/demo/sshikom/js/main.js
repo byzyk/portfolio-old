@@ -31,13 +31,15 @@ $(function() {
     }
   });
   
+  //log.html($(body).height()); //BODY HEIGHT HELPER
+  
   var pixelsToGo = [213, 1539, 2875, 4216, 6560];
   var sideControls = $('.sidebar-controls');
   
   var controller = $.superscrollorama();
   var progress, historyProgress, sec1Pos, winOffset;
   var duration = 7500;
-  var planTop = 1717 - $(window).height();
+  var planTop = 1817 - $(window).height();
   var historyTween = TweenMax.to($('#sec5 .wrap'), .8, {css:{left: '-100%'},
       onComplete: function() {      
         $('#footer').animate({opacity: 1}, 400);
@@ -48,10 +50,10 @@ $(function() {
       historyProgress = (progress > 80)?Math.round(historyTween.progress()*100):0;
       (isUserScrollBar)?'':timeline.slider( 'value', historyProgress);
       winOffset = $(window).scrollTop();
-      log.html(winOffset); //loggin
+      //log.html(winOffset); //loggin
       sec1Pos = (winOffset < pixelsToGo[1])?10:1;
       $('#sec1').css('z-index', sec1Pos);
-      if (winOffset >= pixelsToGo[1]-400) $('#sec2 .text').fadeIn(1200);
+      if (winOffset >= pixelsToGo[1]-400) $('#sec2 .text').fadeIn(800);
       if (winOffset >= pixelsToGo[4]) setActiveScreen('5');
       else if (winOffset >= pixelsToGo[3]) setActiveScreen('4');
       else if (winOffset >= pixelsToGo[2]) setActiveScreen('3');
@@ -68,7 +70,8 @@ $(function() {
         },
         onComplete: function() {
           $('#sec3').show();
-        }
+        },
+        delay: .2
       })
     ])
     .append([
@@ -78,10 +81,10 @@ $(function() {
       }),
       TweenMax.to($('#sec3 .text'), 1, {
         css:{top:'50%'},
+        delay: .2,
         onComplete: function() {
           $('#sec4').show();
-        },
-        delay: .2
+        }
       })     
     ])
     .append([
@@ -96,6 +99,7 @@ $(function() {
     ])
     .append(TweenMax.to($('#sec4'), 1, {
       css:{marginTop:'-'+planTop+'px'},
+      onStart: planAnimation,
       onComplete: function() {
         $('#sec5').show();
       },
@@ -156,5 +160,21 @@ $(function() {
         return;
       }
     });
+  }
+  
+  function planAnimation () {
+    var animation = $('.plan-anim');
+    var speed = 5;
+    var timeline = new TimelineLite({
+      autoRemoveChildren: true
+    });
+    for (var i = 1; i < 17; i++) {
+      timeline.append(TweenMax.to(animation.find('.p'+i), speed, {css:{opacity:1}}).timeScale(.3))
+    }     
+    controller.addTween(
+      '.plan-anim',
+      timeline,
+      1500
+    ); 
   }
 });
