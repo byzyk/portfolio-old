@@ -41,7 +41,7 @@ $(function(){
 		$("body").removeClass("popup-frame");
 		window.location.hash = "";
 	});
-	$(window).scroll(function(){
+	/*$(window).scroll(function(){
 		var $t = $(this),
 			sT = $t.scrollTop();
 		if (sT > 511) {
@@ -49,7 +49,7 @@ $(function(){
 		} else {
 			$("body").removeClass("sidebars-fixed");
 		}
-	});
+	});*/
 	if (window.location.hash == "#order") {
 		$("a.popup-opener").eq(0).trigger("click");
 	}

@@ -76,8 +76,6 @@ textarea {
   right:0;
   float:right;
   background:#dba9a7;
-  list-style-type:none;
-  width:;
   margin:0;
   z-index:99;
   width:44px;
@@ -85,9 +83,20 @@ textarea {
   padding:10px 0;
 }
 
-.sidebars-fixed .sidebar-control {
+.sidebar-control,
+ul.social-links,
+a.popup-opener {
   position:fixed;
-  top:60px;
+  top:50%;
+  margin-top:-100px;
+}
+
+.sidebar-control {
+  margin-top:-40px;  
+}
+
+a.popup-opener {
+  margin-top:-33px;  
 }
 
 .sidebar-control .control{
@@ -215,7 +224,7 @@ textarea {
 #sec1 {
   width:100%;
   height:100%;
-  background:#fff url(../img/sec1-bg.png) 50% 0 no-repeat;
+  background:#fff url(../img/sec1-bg.jpg) 50% 50% no-repeat;
   position:relative;
     -webkit-backface-visibility:hidden;
 }
@@ -269,7 +278,7 @@ textarea {
   margin:0 auto;
   text-align:center;
   background:url(../img/scroll.png) 50% 100% no-repeat;
-  padding:110px 0 55px;
+  padding:100px 0 55px;
   opacity:0;
   position:relative;
   top:-15px;
@@ -278,7 +287,7 @@ textarea {
 /* === SECTION 2 */
 #sec2 {
   background:#c92f1c url(../img/sec2-bg.jpg) 50% 100% no-repeat;
-  top:100%;
+  top:150%;
   z-index:15;
 }
 
@@ -288,7 +297,7 @@ textarea {
   color:#fff;
   position:absolute;
   left:50%;
-  bottom:350px;
+  bottom:340px;
   display:none;
 }
 
@@ -315,14 +324,26 @@ textarea {
   left:-133px;
 }
 
+#sec2 .num.empl span{
+  color:#faecee;
+}
+
 #sec2 .num.cli {
   top:506px;
   left:172px;
 }
 
+#sec2 .num.cli span{
+  color:#e7f0e8;
+}
+
 #sec2 .num.year {
   top:510px;
   left:504px;
+}
+
+#sec2 .num.year span{
+  color:#d5d3d9;
 }
 
 #sec2 .num.proj {
@@ -331,12 +352,17 @@ textarea {
   width:200px;
 }
 
+#sec2 .num.proj span{
+  color:#f8cbd2;
+}
+
 
 /* === SECTION 3 */
 #sec3 {
   width:100%;
   height:100%;
-  background:url(../img/sec3-bg.jpg) 50% 0 repeat-x;
+  background:url(../img/sec3-bg.jpg) 50% 50% repeat-x;
+  background-size:1920px auto;
   position:absolute;
   top:0;
   z-index:3;
@@ -350,7 +376,7 @@ textarea {
   padding:50px 0 80px;
   color:#181818;
   position:absolute;
-  top:100%;
+  top:150%;
   left:50%;
   background-color:rgba(255,255,255,0.9);
   -webkit-border-radius:350px / 70px;

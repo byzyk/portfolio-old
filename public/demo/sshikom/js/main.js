@@ -1,6 +1,6 @@
 $(function() {  
   var video = $('#sec1 .video');
-  var videoUrl = 'http://player.vimeo.com/video/59222440?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=0';
+  var videoUrl = 'http://player.vimeo.com/video/59390089?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1';
   video.animate({top: 110}, 1800, function() {
     video.next()
       .delay(400)
@@ -73,29 +73,34 @@ $(function() {
     ])
     .append([
       TweenMax.to($('#sec2'), 1, {
-        css:{top:'-100%'}
+        css:{top:'-100%'},
+        delay: .2
       }),
       TweenMax.to($('#sec3 .text'), 1, {
         css:{top:'50%'},
         onComplete: function() {
           $('#sec4').show();
-        }
+        },
+        delay: .2
       })     
     ])
     .append([
       TweenMax.to($('#sec3'), 1, {
-        css:{top:'-100%'}
+        css:{top:'-100%'},
+        delay: .2
       }),
-      TweenMax.to($('#sec3 .text'), .8, {
-        css:{top:'50%'}
+      TweenMax.to($('#sec3 .text'), 1, {
+        css:{top:'50%'},
+        delay: .2
       })
     ])
     .append(TweenMax.to($('#sec4'), 1, {
       css:{marginTop:'-'+planTop+'px'},
       onComplete: function() {
         $('#sec5').show();
-      }
-    }).timeScale(1.5))
+      },
+      delay: .1
+    }).timeScale(0.7))
     .append(TweenMax.to($('#sec5'), 1, {
       css:{top:0},
       onStart: function() {
