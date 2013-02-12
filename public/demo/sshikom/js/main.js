@@ -14,7 +14,7 @@ $(function() {
   });  
   
   var log = $('#console'); 
-  var timeline = $('.timeline .line2');
+  var timeline = $('.scroll-wrap .scroll-bar');
   var step, isUserScrollBar;
   timeline.slider({
     start: function (event, ui) {
@@ -33,17 +33,16 @@ $(function() {
   
   //log.html($(body).height()); //BODY HEIGHT HELPER
   
-  var pixelsToGo = [213, 1539, 2875, 4216, 6560];
+  var pixelsToGo = [213, 1539, 2875, 4216, 6800];
   var sideControls = $('.sidebar-controls');
   
   var controller = $.superscrollorama();
   var progress, historyProgress, sec1Pos, winOffset;
   var duration = 7500;
   var planTop = 1817 - $(window).height();
-  var historyTween = TweenMax.to($('#sec5 .wrap'), .8, {css:{left: '-100%'},
-      onComplete: function() {      
-        $('#footer').animate({opacity: 1}, 400);
-      }});
+  var historyTween = TweenMax.to($('#sec5 .wrap'), .8, {css:{left: '-1000px'}, onComplete: function() {
+    //$('#footer').animate({opacity: 1}, 400);
+  }});
   var anim = new TimelineLite({
     onUpdate: function() {
       progress = Math.round(this.progress() * 100);
@@ -108,8 +107,10 @@ $(function() {
     .append(TweenMax.to($('#sec5'), 1, {
       css:{top:0},
       onStart: function() {
-        var sec5Height = ($(window).height() <= 770)?'770px':'100%';
-        $('.sections').css('height', sec5Height);
+        //var sec5Height = (+$(window).height() <= 775)?'775px':'100%';
+        /*$('.sections')
+          .css('height', '800px')
+          .css('margin-bottom', '0')*/
       }
     }))
     .append(historyTween);
@@ -117,12 +118,15 @@ $(function() {
   controller.pin($('.sections'), duration, {
     anim: anim, 
     onPin: function() {
-      $('.sections').css('height','100%');
-      $('.sections').css('paddingBottom', 0);
-      $('#footer').animate({opacity: 0}, 200);
+      $('.sections')
+        .css('height','100%')
     }, 
     onUnpin: function() {
-      $('.sections').css('height','770px');
+      var newMargin = (winOffset > 1000)?'400px':'0px';
+      var newHeight = (winOffset < 1000)?'1000px':'1050px';
+      $('.sections')
+        .css('marginBottom', newHeight)
+        .css('height', newHeight)
     }
   });
   
@@ -174,7 +178,7 @@ $(function() {
     controller.addTween(
       '.plan-anim',
       timeline,
-      1500
+      900
     ); 
   }
 });

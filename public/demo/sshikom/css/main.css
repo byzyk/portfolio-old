@@ -23,7 +23,6 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-    height:7717px;
 }
 
 ::-moz-selection {
@@ -67,7 +66,7 @@ textarea {
 }
 
 #footer {
-  opacity:0;
+  top:150px;
 }
 
 .sidebar-control {
@@ -208,11 +207,10 @@ a.popup-opener {
 
 .sections {
   width:100%;
-  height:100%;
+  height:1000px;
   position:relative;
   overflow:hidden;
   top:-14px;
-  padding-bottom:100px;
 }
 
 .sections > div {
@@ -226,7 +224,6 @@ a.popup-opener {
   width:100%;
   height:100%;
   background:#fff url(../img/sec1-bg.jpg) 50% 50% no-repeat;
-    -webkit-backface-visibility:hidden;
 }
 
 #sec1 .video{
@@ -554,23 +551,78 @@ a.popup-opener {
   height:100%;
   position:absolute;
   top:100%;
-  padding-top:110px;
   overflow:hidden;
-  background:#fff url(../img/sec1-bg.png) 50% 0 no-repeat;
+  background:#f9f8f8;
   z-index:2;
   display:none;
 }
 
 #sec5 .wrap{
   width:100%;
-  height:600px;
+  height:630px;
   position:relative;
-  left:0%;
-  margin-left:200px;
+  top:110px;
+  left:200px;
 }
 
 #sec5 .wrap > div{
   position:absolute;
+}
+
+#sec5 .wrap .line{
+  bottom:5px;
+  left:-2000px;
+  background:url(../img/sprites.png) 0 0 repeat-x;
+  width:8000px;
+  height:3px;
+}
+
+#sec5 .wrap .years{
+  list-style:none;
+  position:absolute;
+  bottom:10px;
+  left:0;
+  z-index:0;
+  width:1500px;
+  height:740px;
+  white-space:nowrap;
+}
+
+#sec5 .wrap .years li{
+  list-style:none;
+  display:inline-block;
+  margin-left:230px;  
+  position:relative;
+  width:70px;
+  text-align:center;
+  padding-top:720px;
+  background:url(../img/timeline-year.png) 50% 0 repeat-y;
+}
+
+#sec5 .wrap .years li span{
+  position:absolute;
+  bottom:-20px;
+  left:14px;
+  color:#b2b2b2;
+  font:18px/14px "Daxline Bold";
+}
+
+#sec5 .wrap .years li:first-child{
+  margin-left:-150px; 
+}
+
+#sec5 .scroll-wrap {
+  width:100%;
+  height:33px;
+  background-color:#d3d3d3;
+  position:relative;
+  top:110px;
+}
+
+#sec5 .scroll-bar {
+  width:960px;
+  margin:0 auto;
+  position:relative;
 }
 
 #sec5 .text {
@@ -707,74 +759,36 @@ a.popup-opener {
   color:#a4231c;
 }
 
-#sec5 .timeline {
-  width:100%;
-  height:44px;
-  background-color:#d3d3d3;
-  position:absolute;
-  top:720px;
+#sec5 .h-item.percent {
+  left: 1560px;
+  top: -10px;
 }
 
-#sec5 .timeline .line{
-  position:absolute;
-  top:-5px;
-  left:0;
-  background:url(../img/sprites.png) 0 0 repeat-x;
-  width:100%;
-  height:5px;
+#sec5 .h-item.percent .icon{
+  background-position: 0 -900px;
+  width: 190px;
+  height: 54px;
 }
 
-#sec5 .timeline .line2{
-  width:960px;
-  margin:0 auto;
-  position:relative;
+#sec5 .h-item.percent h3{
+  color:#873793;
 }
 
-#sec5 .timeline .line2 .years{
-  position:absolute;
-  top:-54px;
-  white-space:nowrap;
+#sec5 .h-item.gear {
+  left: 1800px;
+  top: 120px;
+  width:330px;
 }
 
-#sec5 .timeline .line2 .years li{
-  list-style:none;
-  display:inline-block;
-  color:#b2b2b2;
-  font:24px/20px "Daxline Bold";
-  margin-left:230px;  
-  position:relative;
-  padding-bottom:20px;
-  width:70px;
-  text-align:center;
+#sec5 .h-item.gear .icon{
+  background-position: 0 -1050px;
+  width: 164px;
+  height: 135px;
 }
 
-#sec5 .timeline .line2 .years li:after{
-  content: "";
-  position:absolute;
-  bottom:0;
-  left:50%;
-  margin-left:-1px;
-  width:2px;
-  height:5px;
-  background:url(../img/sprites.png) 0 -50px no-repeat;
+#sec5 .h-item.gear h3{
+  color:#8a8926;
 }
-
-#sec5 .timeline .line2 .years li:first-child{
-  margin-left:-27px;
-}
-
-/*#sec5 .timeline .line2 .control{
-  background:#817884 url(../img/control.png) 50% 50% no-repeat;
-  width:95px;
-  height:58px;
-  -webkit-border-radius:40px / 13px;
-     -moz-border-radius:40px / 13px;
-         border-radius:40px / 13px;
-  position:absolute;
-  top:-7px;
-  left:0;
-  cursor:move;
-}*/
 
 
 
@@ -870,16 +884,16 @@ a.popup-opener {
 }
 .ui-slider .ui-slider-handle {
   background:#817884 url(../img/control.png) 50% 50% no-repeat;
-  width:96px;
-  height:58px;
+  width:52px;
+  height:29px;
   margin-left:-48px;
-  -webkit-border-radius:40px / 13px;
-     -moz-border-radius:40px / 13px;
-         border-radius:40px / 13px;
+  -webkit-border-radius:40px / 10px;
+     -moz-border-radius:40px / 10px;
+         border-radius:40px / 10px;
   position:absolute;
-  top:-7px;
+  top:2px;
   left:0;
-  cursor:move;
+  cursor:pointer;
 }
 .ui-slider .ui-slider-handle:focus {
   outline:none !important;
