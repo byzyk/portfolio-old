@@ -1,7 +1,8 @@
-$(function() {  
+$(function() {    
+  var sec1StartHeight = ($(window).height() - 150) / 2;
   var video = $('#sec1 .video');
   var videoUrl = 'http://player.vimeo.com/video/59390089?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1';
-  video.animate({top: '290px'}, 1800, function() {
+  video.animate({top: sec1StartHeight}, 1800, function() {
     video.find('.scroll')
       .delay(400)
       .animate({bottom: '-165px', opacity: 1}, 400);
@@ -31,8 +32,6 @@ $(function() {
       $(window).scrollTop(step);
     }
   });
-  
-  
   //log.html($(body).height()); //BODY HEIGHT HELPER
   
   var pixelsToGo = [213, 1539, 2875, 4216, 6800];
@@ -48,7 +47,6 @@ $(function() {
       historyProgress = (progress > 80)?Math.round(historyTween.progress()*100):0;
       (isUserScrollBar)?'':timeline.slider( 'value', historyProgress);
       winOffset = $(window).scrollTop();
-      //log.html(winOffset); //loggin
       sec1Pos = (winOffset < pixelsToGo[1])?10:1;
       $('#sec1').css('z-index', sec1Pos);
       if (winOffset >= pixelsToGo[1]-400) $('#sec2 .text').fadeIn(800);
@@ -156,15 +154,15 @@ $(function() {
     anim: anim, 
     onPin: function() {
       $('.sections').css('height','100%');
-      video.animate({top: '50%'}, 600);
+      //video.animate({top: '50%'}, 600);
     }, 
     onUnpin: function() {
       var newHeight = (winOffset < 1000)?'1000px':'1030px';
       if (winHeight < 775) { newHeight = '850px' }
       $('.sections').css('height', newHeight)
-      if(winOffset < 1000) { 
+      /*if(winOffset < 1000) { 
         video.animate({top: '290px'}, 600);
-      }
+      }*/
     }
   });
   
@@ -206,17 +204,24 @@ $(function() {
   
   function planAnimation () {
     var animation = $('.plan-anim');
-    var speed = 5;
+    var speed = .25;
+    var itemSelector;    
+    
     var timeline = new TimelineLite({
       autoRemoveChildren: true
     });
+    
     for (var i = 1; i < 17; i++) {
-      timeline.append(TweenMax.to(animation.find('.p'+i), speed, {css:{opacity:1}}).timeScale(.3))
-    }     
+      itemSelector = '.p'+i;
+      timeline.append(TweenLite.to(animation.find(itemSelector), speed, {
+        css:{opacity:1, left: "+=40"}
+      }))
+    }
+       
     controller.addTween(
-      '.plan-anim',
+      '.p1',
       timeline,
-      900
-    ); 
+      $(window).height()
+    );
   }
 });
