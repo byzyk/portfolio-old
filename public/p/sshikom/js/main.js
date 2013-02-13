@@ -178,7 +178,7 @@ $(function() {
     $(".read-button").replaceWith(function(){
       var screen = $(this).attr('data-screen');
       var color = (screen === '4')?'blue':'yellow';
-      return '<a href="#sec' + screen + '" class="read-button ' + color + '">Далее</a>'
+      return '<a href="#sec' + screen + '" class="read-button ' + color + '">' + $(this).text() + '</a>'
     });
     
     var timeline = $('.scroll-wrap .scroll-bar');
