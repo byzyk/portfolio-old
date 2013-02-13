@@ -156,6 +156,7 @@ a.popup-opener {
   position:relative;
   cursor:pointer;
   display:inline-block;
+  text-decoration:none;
 }
 
 .read-button:after,

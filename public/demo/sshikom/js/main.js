@@ -16,7 +16,7 @@ $(function() {
   })
   
   
-  if (false) { //Mobile devices check
+  if (!mobile()) { //Mobile devices check
      
     var sec1StartHeight = ($(window).height() - 150) / 2;
     video.animate({top: sec1StartHeight}, 1800, function() {
@@ -173,7 +173,28 @@ $(function() {
     $('.sidebar-control > div, .read-button').on('click', switchScreen);
   
   } else {
+    
     $('body').addClass('mobile');
+    $(".read-button").replaceWith(function(){
+      var screen = $(this).attr('data-screen');
+      var color = (screen === '4')?'blue':'yellow';
+      return '<a href="#sec' + screen + '" class="read-button ' + color + '">Далее</a>'
+    });
+    
+    var timeline = $('.scroll-wrap .scroll-bar');
+    var step;
+    timeline.slider({
+      start: function (event, ui) {
+        $('.ui-slider-handle').css('background-color', '#555');
+      },
+      stop: function (event, ui) {
+        $('.ui-slider-handle').css('background-color', '#817884');
+      },
+      slide: function (event, ui) {
+        step = -ui.value * 11;
+        $('#sec5 .wrap').css('left', step);
+      }
+    });
   }
   
   
