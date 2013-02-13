@@ -1,0 +1,122 @@
+.mobile #body {
+  height:auto;
+}
+
+.mobile .sections {
+  height:auto;
+}
+
+.mobile .sections > div {
+  height:auto;
+  position:relative;
+}
+
+.mobile .sidebar-control {
+  display:none;
+}
+
+/* === SECTION 1 */
+.mobile #sec1 {
+  height:900px;
+}
+
+.mobile #sec1 .video{
+  top:250px;
+}
+
+.mobile #sec1 .scroll{
+  opacity:1;
+}
+
+/* === SECTION 2 */
+.mobile #sec2 {
+  top:0;
+  height:800px;
+}
+
+.mobile #sec2 .text{
+  display:block;
+}
+
+.mobile #sec2 .num {
+  display:block;
+}
+
+
+/* === SECTION 3 */
+.mobile #sec3 {
+  height:800px;
+  position:relative;
+  top:0;
+  display:block;
+}
+
+.mobile #sec3 .text{
+  top:50%;
+}
+
+
+/* === SECTION 4 */
+.mobile #sec4 {
+  height:1717px;
+  min-height:1717px;
+  position:relative;
+  display:block;
+}
+
+.mobile #sec4 .text{
+  top:0;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item {
+  opacity:1;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p2 {
+  left:-733px;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p3 {
+  left:275px;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p4 {
+  left: -199px;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p6 {
+  top: 360px;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p7 {
+  left: -102px;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p8 {
+  left: 202px;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p10 {
+  left: -516px;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p12 {
+  left: 17px;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p13 {
+  top: 838px;
+}
+
+.mobile #sec4 .plan-anim .plan-anim-item.p16 {
+  top: 830px;
+}
+
+
+/* === SECTION 5 */
+.mobile #sec5 {
+  height:1000px;
+  position:relative;
+  top:0;
+  display:block;
+}
