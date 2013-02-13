@@ -633,6 +633,8 @@ a.popup-opener {
   text-align:left;
   top:0px;
   left:0px;
+  width:1000px;
+  margin:0 auto;
 }
 
 #sec5 .text h1,
