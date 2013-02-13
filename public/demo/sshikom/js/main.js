@@ -33,11 +33,7 @@ $(function() {
   });
   
   
-  /*var sec1StartHeight = $(window).height();
-  $('#sec1').css('height', sec1StartHeight + '!important');*/
-  $('#sec1').css('marginBottom', '500px');
-  
-  log.html($(body).height()); //BODY HEIGHT HELPER
+  //log.html($(body).height()); //BODY HEIGHT HELPER
   
   var pixelsToGo = [213, 1539, 2875, 4216, 6800];
   var sideControls = $('.sidebar-controls');  
@@ -45,14 +41,15 @@ $(function() {
   var progress, historyProgress, sec1Pos, winOffset;
   var duration = 7500;
   var planTop = 1817 - $(window).height();
-  var historyTween = TweenMax.to($('#sec5 .wrap'), .8, {css:{left: '-1000px'}});
+  var historyTween = TweenMax.to($('#sec5 .wrap'), .8, {css:{left: '-1100px'}});
   var anim = new TimelineLite({
     onUpdate: function() {
       progress = Math.round(this.progress() * 100);
       historyProgress = (progress > 80)?Math.round(historyTween.progress()*100):0;
       (isUserScrollBar)?'':timeline.slider( 'value', historyProgress);
       winOffset = $(window).scrollTop();
-      log.html(winOffset); //loggin
+      //log.html(winOffset); //loggin
+      log.html(Math.round($('#sec5 .ui-slider .ui-slider-handle').offset().left)); //loggin
       sec1Pos = (winOffset < pixelsToGo[1])?10:1;
       $('#sec1').css('z-index', sec1Pos);
       if (winOffset >= pixelsToGo[1]-400) $('#sec2 .text').fadeIn(800);
@@ -120,15 +117,13 @@ $(function() {
     anim: anim, 
     onPin: function() {
       $('.sections').css('height','100%');
-      video.animate({top: '50%'}, 800);
+      video.animate({top: '50%'}, 600);
     }, 
     onUnpin: function() {
       var newHeight = (winOffset < 1000)?'1000px':'1030px';
-      $('.sections')
-        .css('height', newHeight)
+      $('.sections').css('height', newHeight)
       if(winOffset < 1000) { 
-        //$('#sec1').css('height', sec1StartHeight);
-        video.animate({top: '290px'}, 800);
+        video.animate({top: '290px'}, 600);
       }
     }
   });
