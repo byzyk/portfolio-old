@@ -1,3 +1,35 @@
+function iOSDevicesDetected(){
+	return ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))||(navigator.userAgent.match(/iPad/i)));
+};
+
+function fixRightPositionedBlocks(){
+	if (iOSDevicesDetected()) return;
+	var columnWidth = 1022;
+	if($(window).width()<columnWidth){
+		$('#langMenu').css('left',columnWidth - 65 - 256);
+		$('#topSearchForm').css('left',columnWidth - 156 - 80);
+		$('#phone').css('left',columnWidth - 152 - 80);
+	} else {
+		$('#langMenu').css('left','auto');
+		$('#topSearchForm').css('left','auto');
+		$('#phone').css('left','auto');
+	}
+}
+
+$(window).resize(function(){
+	fixRightPositionedBlocks();
+});
+
+
+$(function(){
+  fixRightPositionedBlocks();
+});
+
+
+
+
+
+
 !function($, w, undefined) {
 $(function(){
 	function getGets(name) {

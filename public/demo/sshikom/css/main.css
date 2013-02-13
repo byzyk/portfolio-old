@@ -292,11 +292,13 @@ a.popup-opener {
 
 #sec2 .text{
   width:860px;
+  height:500px;
+  margin-top:-250px;
   margin-left:-430px;
   color:#fff;
   position:absolute;
   left:50%;
-  bottom:340px;
+  top:50%;
   display:none;
 }
 
@@ -304,13 +306,22 @@ a.popup-opener {
   top:40px;
 }
 
+#sec2 .num-wrap {
+  width:100px;
+  position:absolute;
+  bottom:0;
+  left:50%;
+  margin-left:-50px;
+}
+
 #sec2 .num {
   position:absolute;
   font:16px "Daxline Regular";
   color:#fff;
-  width:100px;
+  width:200px;
   text-align:center;
   text-transform:uppercase;
+  display:none;
 }
 
 #sec2 .num span{
@@ -319,40 +330,40 @@ a.popup-opener {
 }
 
 #sec2 .num.empl {
-  top:352px;
-  left:-133px;
+  bottom: 222px;
+  left: -563px;
 }
 
-#sec2 .num.empl span{
-  color:#faecee;
+#sec2 .num.empl span {
+  color: #FAECEE;
 }
 
 #sec2 .num.cli {
-  top:506px;
-  left:172px;
+  bottom: 55px;
+  left: -237px;
+  width:150px;
 }
 
-#sec2 .num.cli span{
-  color:#e7f0e8;
+#sec2 .num.cli span {
+  color: #E7F0E8;
 }
 
 #sec2 .num.year {
-  top:510px;
-  left:504px;
+  bottom: 59px;
+  left: 76px;
 }
 
-#sec2 .num.year span{
-  color:#d5d3d9;
+#sec2 .num.year span {
+  color: #D5D3D9;
 }
 
 #sec2 .num.proj {
-  top:375px;
-  left:650px;
-  width:200px;
+  bottom: 202px;
+  left: 270px;
 }
 
-#sec2 .num.proj span{
-  color:#f8cbd2;
+#sec2 .num.proj span {
+  color: #F8CBD2;
 }
 
 

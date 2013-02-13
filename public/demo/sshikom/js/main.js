@@ -38,7 +38,7 @@ $(function() {
   var pixelsToGo = [213, 1539, 2875, 4216, 6800];
   var sideControls = $('.sidebar-controls');  
   var controller = $.superscrollorama();
-  var progress, historyProgress, sec1Pos, winOffset;
+  var progress, historyProgress, sec1Pos, winOffset, winHeight;
   var duration = 7500;
   var planTop = 1817 - $(window).height();
   var historyTween = TweenMax.to($('#sec5 .wrap'), .8, {css:{left: '-1100px'}});
@@ -49,7 +49,6 @@ $(function() {
       (isUserScrollBar)?'':timeline.slider( 'value', historyProgress);
       winOffset = $(window).scrollTop();
       //log.html(winOffset); //loggin
-      log.html(Math.round($('#sec5 .ui-slider .ui-slider-handle').offset().left)); //loggin
       sec1Pos = (winOffset < pixelsToGo[1])?10:1;
       $('#sec1').css('z-index', sec1Pos);
       if (winOffset >= pixelsToGo[1]-400) $('#sec2 .text').fadeIn(800);
@@ -66,9 +65,22 @@ $(function() {
         css:{top:0},
         onStart: function() {
           $('#sec3').hide();
+          winHeight = $(window).height();
+          if (winHeight < 775) {
+            $('#sec2 .text')
+              .css('marginTop', 0)
+              .css('top', '50px')
+          }
         },
         onComplete: function() {
           $('#sec3').show();
+          $('#sec2 .num.empl').fadeIn(200, function() {
+            $('#sec2 .num.year').fadeIn(200, function() {
+              $('#sec2 .num.cli').fadeIn(200, function() {
+                $('#sec2 .num.proj').fadeIn(200);
+              });
+            });
+          });
         },
         delay: .2
       })
@@ -105,6 +117,33 @@ $(function() {
       onStart: planAnimation,
       onComplete: function() {
         $('#sec5').show();
+        winHeight = $(window).height();
+        if (winHeight < 775) {
+          var history = $('#sec5 .wrap');
+          history
+            .css('top', '60px')
+            .css('height', '530px')
+            .find('.h-item h3')
+              .css('margin', '5px 0')
+              .end()
+            .find('.text')
+              .css('top', '-40px')
+              .end()
+            .find('.man4')
+              .css('top', '260px')
+              .end()
+            .find('.guests350')
+              .css('top', '265px')
+              .end()
+            .find('.car')
+              .css('top', '240px')
+              .end()
+            .find('.star')
+              .css('top', '-30px')
+              .end();            
+          $('.scroll-wrap').css('top', '60px');
+          $('#footer').css('top', '90px');
+        }
       },
       delay: .1
     }).timeScale(0.7))
@@ -121,6 +160,7 @@ $(function() {
     }, 
     onUnpin: function() {
       var newHeight = (winOffset < 1000)?'1000px':'1030px';
+      if (winHeight < 775) { newHeight = '850px' }
       $('.sections').css('height', newHeight)
       if(winOffset < 1000) { 
         video.animate({top: '290px'}, 600);
