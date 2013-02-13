@@ -36,6 +36,8 @@ exports.portfolio = function(req, res){
   var work = req.params.work;
   if (typeof(work) === 'undefined') {
     res.redirect('/');
+  } else if (work === 'sshikom') {    
+    res.redirect('/demo/sshikom');
   } else {
     var json = fs.readFileSync(worksDir + work + '.json', 'utf-8');
     work = JSON.parse(json);    
