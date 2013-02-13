@@ -1,14 +1,15 @@
 $(function() {  
   var video = $('#sec1 .video');
   var videoUrl = 'http://player.vimeo.com/video/59390089?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1';
-  video.animate({top: 110}, 1800, function() {
-    video.next()
+  video.animate({top: '290px'}, 1800, function() {
+    video.find('.scroll')
       .delay(400)
-      .animate({top: 0, opacity: 1}, 400);
+      .animate({bottom: '-165px', opacity: 1}, 400);
     video.find('.play').on('click', function() {
       video
         .css('padding-top', '17px')
-        .animate({height: 444}, 600)
+        .animate({height: 444, marginTop: '-260px'}, 600)
+        .find('.vid')
         .html('<div id="vid"><iframe src="'+videoUrl+'" width="760" height="427" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>');
     })
   });  
@@ -31,25 +32,27 @@ $(function() {
     }
   });
   
-  //log.html($(body).height()); //BODY HEIGHT HELPER
+  
+  /*var sec1StartHeight = $(window).height();
+  $('#sec1').css('height', sec1StartHeight + '!important');*/
+  $('#sec1').css('marginBottom', '500px');
+  
+  log.html($(body).height()); //BODY HEIGHT HELPER
   
   var pixelsToGo = [213, 1539, 2875, 4216, 6800];
-  var sideControls = $('.sidebar-controls');
-  
+  var sideControls = $('.sidebar-controls');  
   var controller = $.superscrollorama();
   var progress, historyProgress, sec1Pos, winOffset;
   var duration = 7500;
   var planTop = 1817 - $(window).height();
-  var historyTween = TweenMax.to($('#sec5 .wrap'), .8, {css:{left: '-1000px'}, onComplete: function() {
-    //$('#footer').animate({opacity: 1}, 400);
-  }});
+  var historyTween = TweenMax.to($('#sec5 .wrap'), .8, {css:{left: '-1000px'}});
   var anim = new TimelineLite({
     onUpdate: function() {
       progress = Math.round(this.progress() * 100);
       historyProgress = (progress > 80)?Math.round(historyTween.progress()*100):0;
       (isUserScrollBar)?'':timeline.slider( 'value', historyProgress);
       winOffset = $(window).scrollTop();
-      //log.html(winOffset); //loggin
+      log.html(winOffset); //loggin
       sec1Pos = (winOffset < pixelsToGo[1])?10:1;
       $('#sec1').css('z-index', sec1Pos);
       if (winOffset >= pixelsToGo[1]-400) $('#sec2 .text').fadeIn(800);
@@ -94,6 +97,10 @@ $(function() {
       TweenMax.to($('#sec3 .text'), 1, {
         css:{top:'50%'},
         delay: .2
+      }),
+      TweenMax.to($('#sec4 .text'), 1, {
+        css:{top:0},
+        delay: .2
       })
     ])
     .append(TweenMax.to($('#sec4'), 1, {
@@ -105,28 +112,24 @@ $(function() {
       delay: .1
     }).timeScale(0.7))
     .append(TweenMax.to($('#sec5'), 1, {
-      css:{top:0},
-      onStart: function() {
-        //var sec5Height = (+$(window).height() <= 775)?'775px':'100%';
-        /*$('.sections')
-          .css('height', '800px')
-          .css('margin-bottom', '0')*/
-      }
+      css:{top:0}
     }))
     .append(historyTween);
   
   controller.pin($('.sections'), duration, {
     anim: anim, 
     onPin: function() {
-      $('.sections')
-        .css('height','100%')
+      $('.sections').css('height','100%');
+      video.animate({top: '50%'}, 800);
     }, 
     onUnpin: function() {
-      var newMargin = (winOffset > 1000)?'400px':'0px';
-      var newHeight = (winOffset < 1000)?'1000px':'1050px';
+      var newHeight = (winOffset < 1000)?'1000px':'1030px';
       $('.sections')
-        .css('marginBottom', newHeight)
         .css('height', newHeight)
+      if(winOffset < 1000) { 
+        //$('#sec1').css('height', sec1StartHeight);
+        video.animate({top: '290px'}, 800);
+      }
     }
   });
   
