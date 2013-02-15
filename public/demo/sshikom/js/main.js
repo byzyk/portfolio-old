@@ -186,19 +186,18 @@ $(function() {
     history
       .on('movestart', function(e) {
         start = parseInt($(this).find('.wrap').css('left'));
+        if ((e.distX > e.distY && e.distX < -e.distY) || (e.distX < e.distY && e.distX > -e.distY)) {
+          e.preventDefault();
+        }
       })
       .on('move', function(e) {
-        if(e.distY/e.distX > 1) {
-          e.preventDefault();
-        } else {
-          step = start + e.distX;
-          $(this).find('.wrap').css({left: step});
-          timeline.slider( 'value', -step/11);
-          if(step >= 140 || step <= -1100) {
-            leftCssValue = (step >= 140)?140:-1100;
-            if( parseInt($(this).find('.wrap').css('left')) !== leftCssValue ) {
-              $(this).find('.wrap').css('left', leftCssValue);
-            }
+        step = start + e.distX;
+        $(this).find('.wrap').css({left: step});
+        timeline.slider( 'value', -step/11);
+        if(step >= 140 || step <= -1100) {
+          leftCssValue = (step >= 140)?140:-1100;
+          if( parseInt($(this).find('.wrap').css('left')) !== leftCssValue ) {
+            $(this).find('.wrap').css('left', leftCssValue);
           }
         }
       });
