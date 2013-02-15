@@ -191,8 +191,8 @@ $(function() {
         step = start + e.distX;
         $(this).find('.wrap').css({left: step});
         timeline.slider( 'value', -step/11);
-        if(step >= 140 || step <= -1100) {
-          leftCssValue = (step >= 140)?140:-1100;
+        if(step >= 40 || step <= -1100) {
+          leftCssValue = (step >= 40)?40:-1100;
           if( parseInt($(this).find('.wrap').css('left')) !== leftCssValue ) {
             $(this).find('.wrap').css('left', leftCssValue);
           }
@@ -209,7 +209,7 @@ $(function() {
         $('.ui-slider-handle').css('background-color', '#817884');
       },
       slide: function (event, ui) {
-        step = 140 -ui.value * 11;
+        step = 40 -ui.value * 11;
         $('#sec5 .wrap').css('left', step);
       }
     });
