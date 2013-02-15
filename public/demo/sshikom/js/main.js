@@ -16,7 +16,7 @@ $(function() {
   })
   
   
-  if (false) { //Mobile devices check
+  if (!mobile()) { //Mobile devices check
      
     var sec1StartHeight = ($(window).height() - 150) / 2;
     video.animate({top: sec1StartHeight}, 1800, function() {
