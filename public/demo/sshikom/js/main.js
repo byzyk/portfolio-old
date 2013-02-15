@@ -186,6 +186,7 @@ $(function() {
     history
       .on('movestart', function(e) {
         start = parseInt($(this).find('.wrap').css('left'));
+        e.preventDefault();
       })
       .on('move', function(e) {
         step = start + e.distX;
