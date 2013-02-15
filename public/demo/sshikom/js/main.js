@@ -1,7 +1,7 @@
 $(function() {
   function mobile() {
     var os = navigator.userAgent;
-    return ((os.match(/Android/i)) || (os.match(/iPad/i)));
+    return ((os.match(/Android/i)) || (os.match(/iPad/i)) || (os.match(/iPod/i)) || (os.match(/iPhone/i)));
   }
   
   
@@ -16,7 +16,7 @@ $(function() {
   })
   
   
-  if (!mobile()) { //Mobile devices check
+  if (false) { //Mobile devices check
      
     var sec1StartHeight = ($(window).height() - 150) / 2;
     video.animate({top: sec1StartHeight}, 1800, function() {
@@ -181,6 +181,24 @@ $(function() {
       return '<a href="#sec' + screen + '" class="read-button ' + color + '">' + $(this).text() + '</a>'
     });
     
+    var history = $('#sec5 .wrap-helper');
+    var start, step, leftCssValue;
+    history
+      .on('movestart', function(e) {
+        start = parseInt($(this).find('.wrap').css('left'));
+      })
+      .on('move', function(e) {
+        step = start + e.distX;
+        $(this).find('.wrap').css({left: step});
+        timeline.slider( 'value', -step/11);
+        if(step >= 40 || step <= -1100) {
+          leftCssValue = (step >= 40)?40:-1100;
+          if( parseInt($(this).find('.wrap').css('left')) !== leftCssValue ) {
+            $(this).find('.wrap').css('left', leftCssValue);
+          }
+        }
+      });
+    
     var timeline = $('.scroll-wrap .scroll-bar');
     var step;
     timeline.slider({
@@ -191,7 +209,7 @@ $(function() {
         $('.ui-slider-handle').css('background-color', '#817884');
       },
       slide: function (event, ui) {
-        step = -ui.value * 11;
+        step = 40 -ui.value * 11;
         $('#sec5 .wrap').css('left', step);
       }
     });

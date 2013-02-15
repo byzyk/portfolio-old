@@ -206,11 +206,12 @@ a.popup-opener {
 
 .text h2{
   font:23px/1em "Daxline Regular";
-  margin:5px 0 25px;
+  margin:10px 0 25px;
 }
 
 .text p{
   font-size:12px;
+  line-height:1.6em;
 }
 
 .sections {
@@ -324,7 +325,7 @@ a.popup-opener {
 
 #sec2 .num {
   position:absolute;
-  font:16px "Daxline Regular";
+  font:14px "Daxline Regular";
   color:#fff;
   width:200px;
   text-align:center;
@@ -338,22 +339,24 @@ a.popup-opener {
 }
 
 #sec2 .num.empl {
-  bottom: 222px;
-  left: -563px;
+  bottom: 95px;
+  left: -415px;
 }
 
 #sec2 .num.empl span {
-  color: #FAECEE;
+  color: #ffe0c9;
+  opacity:0.92;
 }
 
 #sec2 .num.cli {
-  bottom: 55px;
+  bottom: 45px;
   left: -237px;
   width:150px;
 }
 
 #sec2 .num.cli span {
-  color: #E7F0E8;
+  color: #fff;
+  opacity:0.84;
 }
 
 #sec2 .num.year {
@@ -362,16 +365,17 @@ a.popup-opener {
 }
 
 #sec2 .num.year span {
-  color: #D5D3D9;
+  color: #f3e8f6;
+  opacity:0.79;
 }
 
 #sec2 .num.proj {
-  bottom: 202px;
+  bottom: 182px;
   left: 270px;
 }
 
 #sec2 .num.proj span {
-  color: #F8CBD2;
+  color: #f9cfd3;
 }
 
 

@@ -3,7 +3,7 @@ function iOSDevicesDetected(){
 };
 
 function fixRightPositionedBlocks(){
-	if (iOSDevicesDetected()) return;
+	//if (iOSDevicesDetected()) return;
 	var columnWidth = 1022;
 	if($(window).width()<columnWidth){
 		$('#langMenu').css('left',columnWidth - 65 - 256);
