@@ -44,7 +44,7 @@ $(function() {
   $('#folio-view').on('load', iframeHeight);
   
   function iframeHeight() {
-    $(this).height($(window).height();
+    $(this).height($(window).height());
     $('body').css('overflow', 'hidden')
   }
   
