@@ -14,22 +14,25 @@ $(function() {
   $('#folio-detail .control').on('click', function() {
     var el = $(this).parent();
     var detailTop = el.css('top');
+    var detailOpacity = el.css('opacity');
     var back = $('#folio-back').css('top');
     var text;
     
     if(detailTop === '0px') {
       detailTop = '-90px';
+      detailOpacity = .4;
       back = '60px';
       text = "Show details";
     } else {
       detailTop = '0px';
+      detailOpacity = 1;
       back = '30px';
       text = "Hide details";
     }
     
     el
       .stop(true, true)
-      .animate({top: detailTop}, 400, function() {
+      .animate({top: detailTop, opacity: detailOpacity}, 400, function() {
         $(this)
           .find('.control')
           .text(text);
