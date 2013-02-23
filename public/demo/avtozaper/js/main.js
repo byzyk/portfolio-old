@@ -1,34 +1,152 @@
-$(function(){
+$(function(){  
   
-  //make submit button
-  $('.submit').on('click', function() {
-    $(this).parents('form').submit();
-  });
-  
-  //input style fix
-  
+  formSubmitActivate();  
   
   $('.login .btn').on('click', {open: 'login'}, modalOpen);
   
+  
+  //SELECT STYLED
+  var Select = {
+    obj: {},
+    getStyled: function(callback) {
+      $('select').each(function() {
+        var select = $(this);
+        select
+          .wrap('<div class="select-wrap ' + select.attr('class') + '">')
+          .hide();
+        var wrap = select.parent('.select-wrap');
+        var styledOptions = '';
+        var groupControl = "";       
+        if (checkOptGroup()) {
+          var groups = "";
+          select.find('optgroup').each(function(index) {
+            groups = groups + '<div class="control" data-list="' + index + '">' + $(this).attr('label') + '</div>';
+          });
+          groupControl = '<div class="select-options-control">' + groups + '</div>';
+          var listItem;
+        } 
+        select.find('option').each(function() {
+          listItem = checkOptGroup()?$(this).parent('optgroup').index():0;
+          styledOptions = styledOptions + '<div class="select-option" data-value="' + $(this).attr('value') + '" data-list-item="' + listItem + '">' + $(this).text() + '</div>';
+        });  
+        var styledSelect = '<div class="select-active">' + select.attr('data-title') + '</div><div class="select-options">'+ groupControl + styledOptions + '</div>';
+        wrap.prepend(styledSelect);      
+        function checkOptGroup() {
+          return select.find('> *').is('optgroup');
+        }
+      }); 
+      Select.obj.active = $('.select-wrap .select-active');
+      Select.obj.control = $('.select-wrap .select-options-control .control'); 
+      Select.obj.option = $('.select-wrap .select-option');     
+      if(callback) { callback(); }
+    },
+    openClose: function() {
+      var currentSelect = $(this).next('.select-options');
+      if (currentSelect.css('display') === 'none') {
+        $('.select-options').hide();               
+        currentSelect
+          .find('.select-option')
+          .hide()
+          .filter('[data-list-item="0"]')
+          .show()
+          .end()
+          .end()
+          .show();   
+      } else {              
+        currentSelect.hide();          
+      }
+    },
+    changeValue: function() {
+      var select = $(this).parents('.select-wrap');
+      var text = $(this).text();
+      var value = $(this).attr('data-value');
+      var currentText = select.find('.select-active').text();
+      if (text !== currentText) {
+        select
+          .removeClass('error')
+          .find('.select-active').text(text)
+          .end()
+          .find('select option:selected')
+          .removeAttr('selected')
+          .end()
+          .find('select option[value="' + value + '"]')
+          .attr('selected', 'selected');
+      }
+      select.find('.select-options').hide();
+    },
+    switchGroup: function() {
+      var groupID = $(this).attr('data-list');
+      var list = $(this).parents('.select-options').find('.select-option');
+      list.hide();
+      list.each(function() {
+        var id = $(this).attr('data-list-item');
+        if (id === groupID) {
+          $(this).show();
+        }
+      })
+    },
+    init: function() {
+      Select.getStyled(function() {      
+        Select.obj.active.on('click', Select.openClose);
+        Select.obj.control.on('click', Select.switchGroup); 
+        Select.obj.option.on('click', Select.changeValue);   
+        formSubmitActivate();     
+      });
+    }
+  }
+  
+  Select.init();
+  
 });
+
+
+function formSubmitActivate() {
+  $('.submit').on('click', function() {
+    var form = $(this).parents('form');
+    if(!form.find('div').is('.select-wrap')) {
+      form.find(':text, :password').each(function() {
+        var value = $(this).val();
+        if (value === '') {
+          $(this).parent('.input').addClass('error');
+        } else {
+          $(this).parent('.input').removeClass('error');
+        }
+      });
+    } else {
+      form.find('select').each(function() {
+        var select = $(this).parent('.select-wrap');
+        if (select.find('.select-active').text() === $(this).attr('data-title')) {
+          select.addClass('error');
+        } else {
+          select.removeClass('error');
+        }
+      });
+    }
+    if(form.find('div').is('.error')) {
+      return false
+    } else {
+      form.submit();
+    }
+  });
+}
 
 function modalOpen(event) {
   if (event.data.open === 'login') {
     var close = true;
-    var modal = $('#modal-wrap');
-    if ($('div').is('#modal-wrap')) {
-      modal.show();
-    } else {
+    var modal = $('#modal-wrap');    
+    if (!$('div').is('#modal-wrap')) {
       var text = $('.login .form').html();
       $('body').prepend('<div id="modal-wrap"><div class="modal">' + text + '</div></div>');
       modal = $('#modal-wrap');
       var modalWin = $('#modal-wrap .modal');
+      formSubmitActivate();
     }
+    modal.fadeIn(200);
     modalWin.on('mouseover', function() { close = false; });
     modalWin.on('mouseout', function() { close = true;  });
     modal.on('click', function() {
       if (close === true) {
-        modal.hide();
+        modal.fadeOut(200);
       }
     });
   }
