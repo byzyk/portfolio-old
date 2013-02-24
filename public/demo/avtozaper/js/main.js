@@ -1,7 +1,7 @@
 $(function(){ 
   
   //DELETE THIS BEFORE DEPLOY!!!
-  $('.sections').css({left: '-100%'})
+  $('.sections').css({left: '-200%'})
    
   
   formSubmitActivate();  
