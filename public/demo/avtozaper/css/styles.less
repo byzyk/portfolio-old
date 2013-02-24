@@ -480,12 +480,30 @@ footer{
     font-size:24px;
     font-weight:400;
     text-align:center;
+    margin-bottom:30px;
   }
   .sub-title{
     font-size:18px;
     color:#313131;
     background:url(../img/green-dot.png) 0 50% no-repeat;
     padding-left:20px;
+    position:relative;
+    #cityChange{
+      border-bottom:1px dashed #313131;
+      &:hover{
+        cursor:pointer;
+      }
+    }
+    .input{
+      width:250px;
+      display:inline-block;
+      position:absolute;
+      top:-7px;
+      margin-left:15px;
+      input{
+        width:100%;
+      }
+    }
   }
   .select-form{
     overflow:hidden;

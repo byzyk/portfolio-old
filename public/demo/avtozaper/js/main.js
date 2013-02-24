@@ -2,6 +2,7 @@ $(function(){
   
   formSubmitActivate();  
   
+  
   $('.login .btn').on('click', {open: 'login'}, modalOpen);
   
   
@@ -96,6 +97,27 @@ $(function(){
   }
   
   Select.init();
+  
+  
+  //cityChange
+  $('p').on('click', '#cityChange', function() {
+    $(this).replaceWith('<div class="input"><input value="' + $(this).text() + '" type="text" id="cityChange-input"></div>');
+    var city = [
+      "Москва",
+      "Санкт-Петербург"
+    ];
+    $('#cityChange-input')
+      .autocomplete({
+        source: city,
+        select: submitInput
+      })
+      .on('blur', submitInput);
+    
+    function submitInput(event, ui) {
+      var selectedCity = typeof(ui) === 'undefined' ? $(this).val() : ui.item.value;
+      $(this).parent('.input').replaceWith('<span id="cityChange">' +  selectedCity + '</span>');
+    }
+  });
   
 });
 
