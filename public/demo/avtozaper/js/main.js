@@ -1,7 +1,7 @@
 $(function(){ 
   
   //DELETE THIS BEFORE DEPLOY!!!
-  $('.sections').css({left: '-200%'})
+  //$('.sections').css({left: '-200%'})
    
   
   formSubmitActivate();  
@@ -121,9 +121,15 @@ $(function(){
     function submitInput(event, ui) {
       var selectedCity = typeof(ui) === 'undefined' ? $(this).val() : ui.item.value;
       $(this).parent('.input').replaceWith('<span id="cityChange">' +  selectedCity + '</span>');
+      $('input[name="city"]').val($('#cityChange').text());
     }
   });
   
+  
+  //goBack
+  $('#goBack').on('click', function() {
+    switchScreen(0);
+  });
   
   //add Detail
   $('.add-detail').on('click', addDetail);
@@ -164,9 +170,13 @@ function formSubmitActivate() {
       });
     }
     if(form.find('div').is('.error')) {
-      return false
+      return false;
     } else {
-      form.submit();
+      if (form.hasClass('select-form')) {
+        switchScreen(1);
+      } else if (form.hasClass('order-form')) {
+        switchScreen(2);
+      } 
     }
   });
 }
@@ -205,4 +215,13 @@ function addDetail() {
   }
   var input = '<div class="input detail-input"><input type="text" placeholder="' + placeholder + '">' + addPhoto + '</div>';
   $('.detail-input:last').after(input);
+}
+
+function switchScreen(screen) {
+  var Positions = [['0%', '-100%', '-200%'], ['70%', '50%', '30%']];
+  var position = Positions[0][screen];
+  var carPosition = Positions[1][screen];
+  var speed = 600;
+  $('.sections').animate({ left: position }, speed); 
+  $('.car').animate({ left: carPosition }, speed); 
 }
