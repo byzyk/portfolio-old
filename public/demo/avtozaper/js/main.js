@@ -1,4 +1,8 @@
-$(function(){  
+$(function(){ 
+  
+  //DELETE THIS BEFORE DEPLOY!!!
+  $('.sections').css({left: '-100%'})
+   
   
   formSubmitActivate();  
   
@@ -100,15 +104,16 @@ $(function(){
   
   
   //cityChange
-  $('p').on('click', '#cityChange', function() {
-    $(this).replaceWith('<div class="input"><input value="' + $(this).text() + '" type="text" id="cityChange-input"></div>');
-    var city = [
+  var Cities = [
       "Москва",
       "Санкт-Петербург"
     ];
+    
+  $('p').on('click', '#cityChange', function() {
+    $(this).replaceWith('<div class="input"><input value="' + $(this).text() + '" type="text" id="cityChange-input"></div>');
     $('#cityChange-input')
       .autocomplete({
-        source: city,
+        source: Cities,
         select: submitInput
       })
       .on('blur', submitInput);
@@ -118,6 +123,20 @@ $(function(){
       $(this).parent('.input').replaceWith('<span id="cityChange">' +  selectedCity + '</span>');
     }
   });
+  
+  
+  //add Detail
+  $('.add-detail').on('click', addDetail);
+  
+  //add Photo
+  $('form').on('click', '.add-photo', function() {
+    $(this).next().trigger('click');
+  });
+  
+  //Insert selected city
+  $('input[name="city"]')
+    .val($('#cityChange').text())
+    .autocomplete({ source: Cities });
   
 });
 
@@ -172,4 +191,18 @@ function modalOpen(event) {
       }
     });
   }
+}
+
+function addDetail() {
+  var detailType = $(this).attr('id');
+  var placeholder, addPhoto;
+  if (detailType === 'addDetail') {
+    placeholder = 'Название запчасти';
+    addPhoto = '<span class="add-photo">прикрепить фото</span><input type="file">';
+  } else if (detailType === 'addVIN') {
+    placeholder = 'Номер VIN';
+    addPhoto = '';    
+  }
+  var input = '<div class="input detail-input"><input type="text" placeholder="' + placeholder + '">' + addPhoto + '</div>';
+  $('.detail-input:last').after(input);
 }
