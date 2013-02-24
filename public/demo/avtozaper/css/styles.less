@@ -128,6 +128,7 @@
     position:relative;
     background:url(../img/buttons.png) 0 -150px repeat-x;
     cursor:pointer;
+    white-space:nowrap;
     &:after, &:before{
       content: "";
       display:block;
@@ -178,11 +179,12 @@
   .select-options{
     color:#313131;
     margin-top:10px;
-    width:0;
+    width:1000px;
     display:none;
+    position:absolute;
     .select-options-control{
-      float:left;
-      clear:left;
+      position:absolute;
+      top:-33px;
       margin-bottom:10px;
       border-top:4px solid #d2d1d1;
       white-space:nowrap;
@@ -201,17 +203,24 @@
       }
     }
     .select-option{
-      border-bottom:1px dashed #313131;
       float:left;
       clear:left;
       margin-bottom:5px;
       white-space:nowrap;
-      display:none;
+      span{
+        border-bottom:1px dashed #313131;        
+      }
       &:hover{
         cursor:pointer;
         color:darken(#313131, 50%);
-        border-bottom-color:darken(#313131, 50%);
+        span{ border-bottom-color:darken(#313131, 50%); }
       }
+    }
+    .select-option[data-list-item="1"]{
+      clear:none;
+      margin-right:50px;
+      width:120px;
+      margin-bottom:6px;
     }
   }
 }
@@ -351,6 +360,44 @@ select{
         }          
       }
     }
+  }
+}
+
+.tip{
+  display:none;
+  position:absolute;
+  top:0;
+  z-index:10;
+  background-color:rgba(0,0,0,0.15);
+  color:#fff;
+  font-size:14px;
+  .border-radius(5px);
+  padding:3px 15px;
+  &:after{
+    content:'';
+    position:absolute;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+  }
+  &.selectTip{
+    top:-55px;
+    width:140px;
+    &:after{      
+      top:100%;
+      left:20px;
+      border-top-color:rgba(0,0,0,0.15);
+    }
+  }
+  &.inputTip{
+    top:-2px;
+    width:122px;
+    left:-191px;
+    &:after{      
+      left:100%;
+      top:17px;
+      border-left-color:rgba(0,0,0,0.15);
+    }    
   }
 }
 
@@ -514,7 +561,7 @@ footer{
       }
     }
     .select-form{
-      overflow:hidden;
+      //overflow:hidden;
       > div {
         float:left;
         margin-right:58px;

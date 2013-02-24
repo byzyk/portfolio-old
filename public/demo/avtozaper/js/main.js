@@ -35,7 +35,7 @@ $(function(){
         } 
         select.find('option').each(function() {
           listItem = checkOptGroup()?$(this).parent('optgroup').index():0;
-          styledOptions = styledOptions + '<div class="select-option" data-value="' + $(this).attr('value') + '" data-list-item="' + listItem + '">' + $(this).text() + '</div>';
+          styledOptions = styledOptions + '<div class="select-option" data-value="' + $(this).attr('value') + '" data-list-item="' + listItem + '"><span>' + $(this).text() + '</span></div>';
         });  
         var styledSelect = '<div class="select-active">' + select.attr('data-title') + '</div><div class="select-options">'+ groupControl + styledOptions + '</div>';
         wrap.prepend(styledSelect);      
@@ -97,13 +97,21 @@ $(function(){
       Select.getStyled(function() {      
         Select.obj.active.on('click', Select.openClose);
         Select.obj.control.on('click', Select.switchGroup); 
-        Select.obj.option.on('click', Select.changeValue);   
-        formSubmitActivate();     
+        Select.obj.option.on('click', Select.changeValue); 
+        $('div.brand').tip('Начните с выбора<br> марки и авто', 'selectTip');
+        formSubmitActivate();    
       });
     }
   }
   
   Select.init();
+  
+  //Select changer fix
+  $('.select-options').each(function() {
+    if ( $(this).find('div').is('.select-options-control') ) {
+      $(this).css({marginTop: 40});
+    }
+  });
   
   
   //cityChange
@@ -133,7 +141,7 @@ $(function(){
   $('#goBack').on('click', function() {
     switchScreen(0);
   });
-  
+    
   //add Detail
   $('.add-detail').on('click', addDetail);
   
@@ -177,6 +185,7 @@ function formSubmitActivate() {
     } else {
       if (form.hasClass('select-form')) {
         switchScreen(1);
+        $('.detail-input:first').tip('Наберите нужную<br> Вам запчасть', 'inputTip');
       } else if (form.hasClass('order-form')) {
         switchScreen(2);
       } 
@@ -235,5 +244,19 @@ function footerFix() {
     $('footer').addClass('not-fixed');
   } else {
     $('footer').removeClass('not-fixed');    
+  }
+}
+
+$.fn.tip = function(text, addClass) {
+  var tipSelector = '.' + addClass;
+  if (!$(this).prev().hasClass(addClass)) {
+    $(this)
+      .before('<div class="tip ' + addClass + '">' + text + '</div>')
+      .prev()
+      .fadeIn()
+      .end()
+      .add(tipSelector)
+      .wrapAll('<div style="position:relative;">');
+    setTimeout(function() { $(tipSelector).fadeOut(); }, 5000);
   }
 }
