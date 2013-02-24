@@ -4,7 +4,10 @@ $(function(){
   //$('.sections').css({left: '-200%'})
    
   
-  formSubmitActivate();  
+  formSubmitActivate();
+  footerFix();
+  
+  $(window).on('resize', footerFix);
   
   
   $('.login .btn').on('click', {open: 'login'}, modalOpen);
@@ -224,4 +227,13 @@ function switchScreen(screen) {
   var speed = 600;
   $('.sections').animate({ left: position }, speed); 
   $('.car').animate({ left: carPosition }, speed); 
+}
+
+function footerFix() {
+  var winHeight = $(window).height();
+  if (winHeight <= 1018) {
+    $('footer').addClass('not-fixed');
+  } else {
+    $('footer').removeClass('not-fixed');    
+  }
 }

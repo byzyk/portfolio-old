@@ -432,6 +432,10 @@ footer{
   z-index:-1;
   background:#e9ecef;
   .size(100%, @footerHeight);
+  &.not-fixed{
+    position:relative;
+    top:800px;
+  }
   .wrap {
     overflow:hidden;
     > div {
