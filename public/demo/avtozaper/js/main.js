@@ -1,7 +1,7 @@
 $(function(){ 
   
   //DELETE THIS BEFORE DEPLOY!!!
-  //$('.sections').css({left: '-200%'})
+  //$('.sections').css({left: '-100%'})
    
   
   formSubmitActivate();
@@ -15,7 +15,9 @@ $(function(){
   
   //SELECT STYLED
   var Select = {
-    obj: {},
+    obj: {
+      fastLink: $('.fast-links .select-option')
+    },
     getStyled: function(callback) {
       $('select').each(function() {
         var select = $(this);
@@ -24,27 +26,14 @@ $(function(){
           .hide();
         var wrap = select.parent('.select-wrap');
         var styledOptions = '';
-        var groupControl = "";       
-        if (checkOptGroup()) {
-          var groups = "";
-          select.find('optgroup').each(function(index) {
-            groups = groups + '<div class="control" data-list="' + index + '">' + $(this).attr('label') + '</div>';
-          });
-          groupControl = '<div class="select-options-control">' + groups + '</div>';
-          var listItem;
-        } 
         select.find('option').each(function() {
-          listItem = checkOptGroup()?$(this).parent('optgroup').index():0;
-          styledOptions = styledOptions + '<div class="select-option" data-value="' + $(this).attr('value') + '" data-list-item="' + listItem + '"><span>' + $(this).text() + '</span></div>';
+          styledOptions = styledOptions + '<div class="select-option" data-value="' + $(this).attr('value') + '"><span>' + $(this).text() + '</span></div>';
         });  
-        var styledSelect = '<div class="select-active">' + select.attr('data-title') + '</div><div class="select-options">'+ groupControl + styledOptions + '</div>';
+        var styledSelect = '<div class="select-active">' + select.attr('data-title') + '</div><div class="select-options">'+ styledOptions + '</div>';
         wrap.prepend(styledSelect);      
-        function checkOptGroup() {
-          return select.find('> *').is('optgroup');
-        }
       }); 
       Select.obj.active = $('.select-wrap .select-active');
-      Select.obj.control = $('.select-wrap .select-options-control .control'); 
+      Select.obj.control = $('.fast-links .select-options-control .control'); 
       Select.obj.option = $('.select-wrap .select-option');     
       if(callback) { callback(); }
     },
@@ -52,20 +41,16 @@ $(function(){
       var currentSelect = $(this).next('.select-options');
       if (currentSelect.css('display') === 'none') {
         $('.select-options').hide();               
-        currentSelect
-          .find('.select-option')
-          .hide()
-          .filter('[data-list-item="0"]')
-          .show()
-          .end()
-          .end()
-          .show();   
+        currentSelect.show();   
       } else {              
         currentSelect.hide();          
       }
     },
     changeValue: function() {
       var select = $(this).parents('.select-wrap');
+      if (typeof select.attr('class') === 'undefined') {
+        select = $('.select-wrap.brand');
+      }
       var text = $(this).text();
       var value = $(this).attr('data-value');
       var currentText = select.find('.select-active').text();
@@ -84,7 +69,7 @@ $(function(){
     },
     switchGroup: function() {
       var groupID = $(this).attr('data-list');
-      var list = $(this).parents('.select-options').find('.select-option');
+      var list = $(this).parents('.fast-links').find('.select-option');
       list.hide();
       list.each(function() {
         var id = $(this).attr('data-list-item');
@@ -97,7 +82,7 @@ $(function(){
       Select.getStyled(function() {      
         Select.obj.active.on('click', Select.openClose);
         Select.obj.control.on('click', Select.switchGroup); 
-        Select.obj.option.on('click', Select.changeValue); 
+        Select.obj.option.add(Select.obj.fastLink).on('click', Select.changeValue); 
         $('div.brand').tip('Начните с выбора<br> марки и авто', 'selectTip');
         formSubmitActivate();    
       });
@@ -143,7 +128,8 @@ $(function(){
   });
     
   //add Detail
-  $('.add-detail').on('click', addDetail);
+  $('#addDetail').on('click', addDetail);
+  $('#addVIN').one('click', addDetail);
   
   //add Photo
   $('form').on('click', '.add-photo', function() {

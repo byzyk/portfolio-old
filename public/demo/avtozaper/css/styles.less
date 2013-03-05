@@ -177,51 +177,73 @@
     }
   }
   .select-options{
+    font-size:14px;
     color:#313131;
-    margin-top:10px;
-    width:1000px;
+    margin-top:-5px;
     display:none;
     position:absolute;
-    .select-options-control{
-      position:absolute;
-      top:-33px;
-      margin-bottom:10px;
-      border-top:4px solid #d2d1d1;
-      white-space:nowrap;
-      .control{
-        display:inline-block;
-        border-top:4px solid #313131;
-        margin-top:-4px;
-        &:hover{
-          cursor:pointer;
-          color:#cf6803;
-          border-top-color:#cf6803;
-        }
-        &:first-child{
-          margin-right:8px;
-        }
-      }
-    }
-    .select-option{
-      float:left;
-      clear:left;
-      margin-bottom:5px;
-      white-space:nowrap;
-      span{
-        border-bottom:1px dashed #313131;        
-      }
+    overflow-y:auto;
+    height:391px;
+    .select-option{      
+      background-color:#fff;
+      padding:6px 10px;
+      border:1px solid #ccc;
+      border-top:0;
       &:hover{
         cursor:pointer;
-        color:darken(#313131, 50%);
-        span{ border-bottom-color:darken(#313131, 50%); }
+        background-color:#f1f1f1;
+      }
+      &:first-child{
+        border-top:1px solid #ccc;;        
       }
     }
-    .select-option[data-list-item="1"]{
-      clear:none;
-      margin-right:50px;
-      width:120px;
-      margin-bottom:6px;
+  }
+}
+
+.fast-links{
+  overflow:hidden;
+  font-size:18px;
+  .select-options-control-wrap{
+    width:120px;
+  }
+  .select-options-control{
+    margin:10px 0;
+    border-top:4px solid #d2d1d1;
+    white-space:nowrap;
+    .control{
+      display:inline-block;
+      border-top:4px solid #313131;
+      margin-top:-4px;
+      &:hover{
+        cursor:pointer;
+        color:#cf6803;
+        border-top-color:#cf6803;
+      }
+      &:first-child{
+        margin-right:8px;
+      }
     }
+  }
+  .select-option{
+    float:left;
+    clear:left;
+    margin-bottom:5px;
+    white-space:nowrap;
+    span{
+      border-bottom:1px dashed #313131;        
+    }
+    &:hover{
+      cursor:pointer;
+      color:darken(#313131, 50%);
+      span{ border-bottom-color:darken(#313131, 50%); }
+    }
+  }
+  .select-option[data-list-item="1"]{
+    display:none;
+    clear:none;
+    margin-right:50px;
+    width:120px;
+    margin-bottom:6px;
   }
 }
 
