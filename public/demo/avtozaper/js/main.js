@@ -127,8 +127,11 @@ $(function(){
   
   //checkForm
   $('.order-form').on('keydown', 'input:text', function() {    
-    checkFormFilled('2');
-  })
+    checkFormFilled('2', 'order');
+  });
+  $('.phone-form').on('keydown', 'input:text', function() {    
+    checkFormFilled('2', 'phone');
+  });
     
   //add Detail
   $('#addDetail').on('click', addDetail);
@@ -175,7 +178,6 @@ function formSubmitActivate() {
     } else {
       if (form.hasClass('select-form')) {
         switchScreen(1);
-        checkFormFilled('2');
         $('.detail-input:first').tip('Наберите нужную<br> Вам запчасть', 'inputTip');
       } else if (form.hasClass('order-form')) {
         switchScreen(2);
@@ -184,7 +186,7 @@ function formSubmitActivate() {
   });
 }
 
-function checkFormFilled(f) {
+function checkFormFilled(f, ff) {
   var flag = true;
   var form, formItemsSelector, compare;
   if (f === '1') {
@@ -196,7 +198,7 @@ function checkFormFilled(f) {
       }        
     }   
   } else if (f === '2') {
-    form = $('.order-form');
+    form = $('.' + ff + '-form');
     formItemsSelector = 'input:text';
     compare = function() {
       if ($(this).val() === '') {
