@@ -71,6 +71,18 @@
     right:-18px;
     background-position:0 -550px;
   }
+  &.disabled{
+    cursor:default!important;
+    background-position:0 -1050px;
+    &:before{
+      left:-18px;
+      background-position:-28px -800px;
+    }
+    &:after{
+      right:-18px;
+      background-position:0 -850px;
+    }    
+  }
   &.arrow{
     background-position:0 -650px;
     &:before{
@@ -80,7 +92,17 @@
     &:after{
       right:-18px;
       background-position:-12px -700px;
-    }    
+    }      
+    &.disabled{
+      cursor:default!important;
+      background-position:0 -950px;
+      &:before{
+        background-position:-16px -900px;
+      }
+      &:after{
+        background-position:-12px -1000px;
+      }    
+    }  
   }
 }
 

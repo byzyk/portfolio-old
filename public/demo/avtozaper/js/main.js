@@ -1,13 +1,12 @@
 $(function(){ 
   
   //DELETE THIS BEFORE DEPLOY!!!
-  //$('.sections').css({left: '-100%'})
-   
+  //$('.sections').css({left: '-100%'})   
   
   formSubmitActivate();
-  footerFix();
+  //footerFix();
   
-  $(window).on('resize', footerFix);
+  //$(window).on('resize', footerFix);
   
   
   $('.login .btn').on('click', {open: 'login'}, modalOpen);
@@ -50,6 +49,9 @@ $(function(){
       var select = $(this).parents('.select-wrap');
       if (typeof select.attr('class') === 'undefined') {
         select = $('.select-wrap.brand');
+        if($(this).attr('data-list-item') === '1') {
+          $('.fast-links .control').eq(0).trigger('click');
+        }
       }
       var text = $(this).text();
       var value = $(this).attr('data-value');
@@ -66,9 +68,11 @@ $(function(){
           .attr('selected', 'selected');
       }
       select.find('.select-options').hide();
+      checkFormFilled('1');  
     },
     switchGroup: function() {
       var groupID = $(this).attr('data-list');
+      groupID == '1' ? footerSlide(120) : footerSlide(-120);
       var list = $(this).parents('.fast-links').find('.select-option');
       list.hide();
       list.each(function() {
@@ -84,20 +88,14 @@ $(function(){
         Select.obj.control.on('click', Select.switchGroup); 
         Select.obj.option.add(Select.obj.fastLink).on('click', Select.changeValue); 
         $('div.brand').tip('Начните с выбора<br> марки и авто', 'selectTip');
-        formSubmitActivate();    
+        formSubmitActivate();
+        checkFormFilled('1');  
       });
     }
   }
   
   Select.init();
-  
-  //Select changer fix
-  $('.select-options').each(function() {
-    if ( $(this).find('div').is('.select-options-control') ) {
-      $(this).css({marginTop: 40});
-    }
-  });
-  
+    
   
   //cityChange
   var Cities = [
@@ -126,6 +124,11 @@ $(function(){
   $('#goBack').on('click', function() {
     switchScreen(0);
   });
+  
+  //checkForm
+  $('.order-form').on('keydown', 'input:text', function() {    
+    checkFormFilled('2');
+  })
     
   //add Detail
   $('#addDetail').on('click', addDetail);
@@ -167,16 +170,46 @@ function formSubmitActivate() {
       });
     }
     if(form.find('div').is('.error')) {
+      form.find('.submit').addClass('disabled');
       return false;
     } else {
       if (form.hasClass('select-form')) {
         switchScreen(1);
+        checkFormFilled('2');
         $('.detail-input:first').tip('Наберите нужную<br> Вам запчасть', 'inputTip');
       } else if (form.hasClass('order-form')) {
         switchScreen(2);
       } 
     }
   });
+}
+
+function checkFormFilled(f) {
+  var flag = true;
+  var form, formItemsSelector, compare;
+  if (f === '1') {
+    form = $('.select-form');
+    formItemsSelector = 'select';
+    compare = function() {
+      if ($(this).attr('data-title') === $(this).parent('.select-wrap').find('.select-active').text()) {
+        flag = false;
+      }        
+    }   
+  } else if (f === '2') {
+    form = $('.order-form');
+    formItemsSelector = 'input:text';
+    compare = function() {
+      if ($(this).val() === '') {
+        flag = false;
+      }        
+    }      
+  }
+  form.find(formItemsSelector).each(compare);  
+  if (flag === false) {
+    form.find('.submit').addClass('disabled');
+  } else {
+    form.find('.submit').removeClass('disabled');
+  }
 }
 
 function modalOpen(event) {
@@ -224,12 +257,21 @@ function switchScreen(screen) {
   $('.car').animate({ left: carPosition }, speed); 
 }
 
-function footerFix() {
+/*function footerFix() {
   var winHeight = $(window).height();
   if (winHeight <= 1018) {
     $('footer').addClass('not-fixed');
   } else {
     $('footer').removeClass('not-fixed');    
+  }
+}*/
+
+function footerSlide(slide) {
+  var footer = $('footer');
+  if (slide) {
+    footer
+      .addClass('not-fixed')
+      .animate({top: '+=' + slide}, 400);
   }
 }
 
