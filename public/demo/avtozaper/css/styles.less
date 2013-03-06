@@ -289,7 +289,7 @@ html,body{
   width:100%;
   height:100%;
   position:relative;
-  overflow-x:hidden;
+  overflow-x:hidden!important;
 }
 
 ul{
@@ -329,7 +329,7 @@ select{
   position:absolute;
   bottom:@footerHeight;
   left:50%;
-  z-index:-1;
+  z-index:0;
   margin-left:-1250px;
   background:url(../img/light.png) 0 0 no-repeat;
   .car {
@@ -337,7 +337,7 @@ select{
     position:absolute;
     bottom:0;
     left:70%;
-    z-index:0;
+    z-index:1;
     margin-left:-629px;
     background:url(../img/car.png) 0 0 no-repeat;
     
@@ -589,6 +589,7 @@ footer{
 
 .sections{
   position:relative;
+  z-index:5;
   > section {
     position:absolute;
     width:100%;
@@ -603,7 +604,7 @@ footer{
   }
   #sec1 {
     h2{
-      margin:-20px 0 0 0;
+      margin-top:-20px;
     }
     .sub-title-wrap{
       margin:-10px 0 60px 290px;
