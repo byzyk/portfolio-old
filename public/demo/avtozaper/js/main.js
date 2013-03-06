@@ -1,7 +1,9 @@
+var scrollAPI;
+
 $(function(){ 
   
   //DELETE THIS BEFORE DEPLOY!!!
-  //$('.sections').css({left: '-100%'})   
+  $('.sections').css({left: '-100%'})   
   
   formSubmitActivate();
   //footerFix();
@@ -72,7 +74,7 @@ $(function(){
     },
     switchGroup: function() {
       var groupID = $(this).attr('data-list');
-      groupID == '1' ? footerSlide(120) : footerSlide(-120);
+      groupID == '1' ? footerSlide(920) : footerSlide(800);
       var list = $(this).parents('.fast-links').find('.select-option');
       list.hide();
       list.each(function() {
@@ -124,6 +126,14 @@ $(function(){
   $('#goBack').on('click', function() {
     switchScreen(0);
   });
+  
+  //scroll
+  initScroll();  
+  $('.scroll-pane').jScrollPane({
+      verticalDragMinHeight: 58,
+      verticalDragMaxHeight: 58
+    });
+  scrollAPI = $('.scroll-pane').data('jsp');
   
   //checkForm
   $('.order-form').on('keydown', 'input:text', function() {    
@@ -248,6 +258,7 @@ function addDetail() {
   }
   var input = '<div class="input detail-input"><input type="text" placeholder="' + placeholder + '">' + addPhoto + '</div>';
   $('.detail-input:last').after(input);
+  scrollAPI.reinitialise();
 }
 
 function switchScreen(screen) {
@@ -273,7 +284,7 @@ function footerSlide(slide) {
   if (slide) {
     footer
       .addClass('not-fixed')
-      .animate({top: '+=' + slide}, 400);
+      .animate({top: slide}, 400);
   }
 }
 
@@ -289,4 +300,26 @@ $.fn.tip = function(text, addClass) {
       .wrapAll('<div style="position:relative;">');
     setTimeout(function() { $(tipSelector).fadeOut(); }, 5000);
   }
+}
+
+
+//scroll
+function initScroll() {    
+  $('.scroll-pane')
+    .on('jsp-initialised', function(event, isScrollable) {
+      vJspDrag = $(this).find('.jspDrag');
+      vJspDrag.data('prevPositionY', 0);
+      vJspDrag.before('<div class="jspBeforeDrag"></div>');
+    })
+    .on('jsp-scroll-y', function(event, scrollPositionY, isAtTop, isAtBottom) {
+        vJspDrag = $(this).find('.jspDrag');
+        new_h = vJspDrag.css('top');
+  
+        $(this).find('.jspBeforeDrag').css('height', new_h);
+        vJspDrag.css('top', 0);
+    })
+    .jScrollPane({
+      verticalDragMinHeight: 54,
+      verticalDragMaxHeight: 54
+    });
 }
