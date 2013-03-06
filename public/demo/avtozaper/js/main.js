@@ -281,12 +281,13 @@ function addDetail() {
     }); 
 }
 
+
 function switchScreen(screen) {
   var Positions = [['0%', '-100%', '-200%'], ['70%', '50%', '30%']];
   var position = Positions[0][screen];
   var carPosition = Positions[1][screen];
   var speed = 600;
-  $('.sections').animate({ left: position }, speed); 
+  $('.sections').animate({ left: position }, speed);
   $('.car').animate({ left: carPosition }, speed); 
 }
 
