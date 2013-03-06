@@ -258,6 +258,9 @@ function addDetail() {
   }
   var input = '<div class="input detail-input"><input type="text" placeholder="' + placeholder + '">' + addPhoto + '</div>';
   $('.detail-input:last').after(input);
+  $('.detail-input:last')
+    .hide()
+    .slideDown(400);
   scrollAPI.reinitialise();
 }
 
