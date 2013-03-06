@@ -1,9 +1,9 @@
-var scrollAPI;
+var scrollAPI, tipStart = false;
 
 $(function(){ 
   
   //DELETE THIS BEFORE DEPLOY!!!
-  $('.sections').css({left: '-100%'})   
+  //$('.sections').css({left: '-100%'})   
   
   formSubmitActivate();
   //footerFix();
@@ -49,8 +49,12 @@ $(function(){
     },
     changeValue: function() {
       var select = $(this).parents('.select-wrap');
+      var selectID = select.index();
+      if (select.hasClass('first')) { selectID = 0 }
+      if (select.hasClass('year')) { selectID = 2 }
       if (typeof select.attr('class') === 'undefined') {
         select = $('.select-wrap.brand');
+        selectID = 0;
         if($(this).attr('data-list-item') === '1') {
           $('.fast-links .control').eq(0).trigger('click');
         }
@@ -71,6 +75,7 @@ $(function(){
       }
       select.find('.select-options').hide();
       checkFormFilled('1');  
+      nextTip(selectID);
     },
     switchGroup: function() {
       var groupID = $(this).attr('data-list');
@@ -89,7 +94,7 @@ $(function(){
         Select.obj.active.on('click', Select.openClose);
         Select.obj.control.on('click', Select.switchGroup); 
         Select.obj.option.add(Select.obj.fastLink).on('click', Select.changeValue); 
-        $('div.brand').tip('Начните с выбора<br> марки и авто', 'selectTip');
+        setTimeout(tipsEnable, 5000);
         formSubmitActivate();
         checkFormFilled('1');  
       });
@@ -131,7 +136,8 @@ $(function(){
   initScroll();  
   $('.scroll-pane').jScrollPane({
       verticalDragMinHeight: 58,
-      verticalDragMaxHeight: 58
+      verticalDragMaxHeight: 58,      
+      animateScroll: true
     });
   scrollAPI = $('.scroll-pane').data('jsp');
   
@@ -142,6 +148,13 @@ $(function(){
   $('.phone-form').on('keydown', 'input:text', function() {    
     checkFormFilled('2', 'phone');
   });
+  
+  //hide Tip
+  $('.detail-input:first').on('change', function() {
+    $(this)
+      .prev()
+      .fadeOut();
+  })
     
   //add Detail
   $('#addDetail').on('click', addDetail);
@@ -188,7 +201,7 @@ function formSubmitActivate() {
     } else {
       if (form.hasClass('select-form')) {
         switchScreen(1);
-        $('.detail-input:first').tip('Наберите нужную<br> Вам запчасть', 'inputTip');
+        setTimeout(function() { $('.detail-input:first').tip('Наберите нужную<br> Вам запчасть', 'inputTip') }, 5000);
       } else if (form.hasClass('order-form')) {
         switchScreen(2);
       } 
@@ -260,8 +273,7 @@ function addDetail() {
   $('.detail-input:last').after(input);
   $('.detail-input:last')
     .hide()
-    .slideDown(400);
-  scrollAPI.reinitialise();
+    .slideDown(150, scrollAPI.reinitialise);
 }
 
 function switchScreen(screen) {
@@ -293,18 +305,38 @@ function footerSlide(slide) {
 
 $.fn.tip = function(text, addClass) {
   var tipSelector = '.' + addClass;
-  if (!$(this).prev().hasClass(addClass)) {
-    $(this)
+  if (addClass !== 'inputTip') { $(tipSelector).fadeOut(); }
+  var el = $(this);
+  if (!el.prev().hasClass(addClass)) {
+    el
       .before('<div class="tip ' + addClass + '">' + text + '</div>')
       .prev()
-      .fadeIn()
-      .end()
-      .add(tipSelector)
+      .fadeIn();
+    var tipSel = el.prev();
+    el
+      .add(tipSel)
       .wrapAll('<div style="position:relative;">');
-    setTimeout(function() { $(tipSelector).fadeOut(); }, 5000);
   }
 }
 
+function tipsEnable() {
+  if (!tipStart) {
+    $('div.brand').tip('Начните с выбора<br> марки и авто', 'selectTip');
+    tipStart = true;
+  }   
+}
+
+function nextTip(selectID) {
+  tipStart = true; 
+  switch (selectID) {
+    case 0: $('.model').tip('Выберите<br> модель', 'selectTip');
+      break;
+    case 1: $('.year').tip('Выберите год<br> выпуска', 'selectTip');
+      break;
+    case 2: $('.mod').tip('Выберите<br> модификацию', 'selectTip');
+      break;
+  }
+}
 
 //scroll
 function initScroll() {    
@@ -323,6 +355,7 @@ function initScroll() {
     })
     .jScrollPane({
       verticalDragMinHeight: 54,
-      verticalDragMaxHeight: 54
+      verticalDragMaxHeight: 54,      
+      animateScroll: true
     });
 }
