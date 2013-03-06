@@ -10,7 +10,6 @@ $(function(){
   
   //$(window).on('resize', footerFix);
   
-  
   $('.login .btn').on('click', {open: 'login'}, modalOpen);
   
   
@@ -283,7 +282,7 @@ function addDetail() {
 
 
 function switchScreen(screen) {
-  var Positions = [['0%', '-100%', '-200%'], ['70%', '50%', '30%']];
+  var Positions = [['0', '-100%', '-200%'], ['70%', '50%', '30%']];
   var position = Positions[0][screen];
   var carPosition = Positions[1][screen];
   var speed = 600;
