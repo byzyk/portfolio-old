@@ -226,7 +226,7 @@
   overflow:hidden;
   font-size:18px;
   .select-options-control-wrap{
-    width:120px;
+    width:150px;
   }
   .select-options-control{
     margin:10px 0;
@@ -234,7 +234,7 @@
     white-space:nowrap;
     .control{
       display:inline-block;
-      border-top:4px solid #313131;
+      border-top:4px solid #d2d1d1; 
       margin-top:-4px;
       &:hover{
         cursor:pointer;
@@ -243,6 +243,9 @@
       }
       &:first-child{
         margin-right:8px;
+      }
+      &.active{
+        border-top-color:#313131;        
       }
     }
   }
@@ -412,7 +415,7 @@ select{
   position:absolute;
   top:0;
   z-index:10;
-  background-color:rgba(0,0,0,0.25);
+  background-color:rgba(0,0,0,0.42);
   color:#fff;
   font-size:14px;
   .border-radius(5px);
@@ -430,7 +433,7 @@ select{
     &:after{      
       top:100%;
       left:20px;
-      border-top-color:rgba(0,0,0,0.25);
+      border-top-color:rgba(0,0,0,0.42);
     }
   }
   &.inputTip{
@@ -440,7 +443,7 @@ select{
     &:after{      
       left:100%;
       top:17px;
-      border-left-color:rgba(0,0,0,0.25);
+      border-left-color:rgba(0,0,0,0.42);
     }    
   }
 }
@@ -542,12 +545,21 @@ footer{
         .size(32px, 32px); 
         &.vk{
           background-position:0 -150px;
+          &:hover{
+            background-position:0 -450px;
+          }
         }
         &.tw{
           background-position:0 -200px;
+          &:hover{
+            background-position:0 -500px;
+          }
         }
         &.fb{
           background-position:0 -250px;
+          &:hover{
+            background-position:0 -550px;
+          }
         }     
       }    
     }
@@ -584,28 +596,34 @@ footer{
     margin-bottom:30px;
   }
   #sec1 {
-    .sub-title{
-      font-size:18px;
-      color:#313131;
-      background:url(../img/green-dot.png) 0 50% no-repeat;
-      padding-left:20px;
-      position:relative;
-      #cityChange{
-        border-bottom:1px dashed #313131;
-        &:hover{
-          cursor:pointer;
+    h2{
+      margin:-20px 0 0 0;
+    }
+    .sub-title-wrap{
+      margin:-10px 0 60px 290px;
+      .sub-title{
+        font-size:18px;
+        color:#313131;
+        background:url(../img/green-dot.png) 0 50% no-repeat;
+        padding-left:20px;
+        position:relative;
+        #cityChange{
+          border-bottom:1px dashed #313131;
+          &:hover{
+            cursor:pointer;
+          }
         }
-      }
-      .input{
-        width:250px;
-        display:inline-block;
-        position:absolute;
-        top:-7px;
-        margin-left:15px;
+        .input{
+          width:250px;
+          display:inline-block;
+          position:absolute;
+          top:-7px;
+          margin-left:15px;
+        }
       }
     }
     .select-form{
-      //overflow:hidden;
+      margin-bottom:10px;
       > div {
         float:left;
         margin-right:58px;

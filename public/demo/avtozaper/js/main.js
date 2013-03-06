@@ -49,9 +49,10 @@ $(function(){
     },
     changeValue: function() {
       var select = $(this).parents('.select-wrap');
-      var selectID = select.index();
-      if (select.hasClass('first')) { selectID = 0 }
+      if (select.hasClass('brand')) { selectID = 0 }
+      if (select.hasClass('model')) { selectID = 1 }
       if (select.hasClass('year')) { selectID = 2 }
+      if (select.hasClass('mod')) { selectID = 3 }
       if (typeof select.attr('class') === 'undefined') {
         select = $('.select-wrap.brand');
         selectID = 0;
@@ -78,6 +79,8 @@ $(function(){
       nextTip(selectID);
     },
     switchGroup: function() {
+      $('.control').removeClass('active');
+      $(this).addClass('active');
       var groupID = $(this).attr('data-list');
       groupID == '1' ? footerSlide(920) : footerSlide(800);
       var list = $(this).parents('.fast-links').find('.select-option');
@@ -136,8 +139,7 @@ $(function(){
   initScroll();  
   $('.scroll-pane').jScrollPane({
       verticalDragMinHeight: 58,
-      verticalDragMaxHeight: 58,      
-      animateScroll: true
+      verticalDragMaxHeight: 58
     });
   scrollAPI = $('.scroll-pane').data('jsp');
   
@@ -150,7 +152,7 @@ $(function(){
   });
   
   //hide Tip
-  $('.detail-input:first').on('change', function() {
+  $('.detail-input:first').on('keydown', function() {
     $(this)
       .prev()
       .fadeOut();
@@ -270,10 +272,13 @@ function addDetail() {
     addPhoto = '';    
   }
   var input = '<div class="input detail-input"><input type="text" placeholder="' + placeholder + '">' + addPhoto + '</div>';
-  $('.detail-input:last').after(input);
+  $('.detail-input:last').after(input);  
   $('.detail-input:last')
     .hide()
-    .slideDown(150, scrollAPI.reinitialise);
+    .slideDown(200, function() {
+      scrollAPI.reinitialise();
+      scrollAPI.scrollToBottom();
+    }); 
 }
 
 function switchScreen(screen) {
@@ -311,17 +316,16 @@ $.fn.tip = function(text, addClass) {
     el
       .before('<div class="tip ' + addClass + '">' + text + '</div>')
       .prev()
-      .fadeIn();
-    var tipSel = el.prev();
-    el
-      .add(tipSel)
+      .andSelf()
       .wrapAll('<div style="position:relative;">');
+    el.prev().fadeIn();
   }
 }
 
 function tipsEnable() {
   if (!tipStart) {
-    $('div.brand').tip('Начните с выбора<br> марки и авто', 'selectTip');
+    $('.brand').tip('Начните с выбора<br> марки и авто', 'selectTip');
+    $('.brand').addClass('error');
     tipStart = true;
   }   
 }
@@ -329,16 +333,20 @@ function tipsEnable() {
 function nextTip(selectID) {
   tipStart = true; 
   switch (selectID) {
-    case 0: $('.model').tip('Выберите<br> модель', 'selectTip');
+    case 0: $('.model').tip('Выберите<br> модель', 'selectTip');    
+            $('.model').addClass('error');
       break;
-    case 1: $('.year').tip('Выберите год<br> выпуска', 'selectTip');
+    case 1: $('.year').tip('Выберите год<br> выпуска', 'selectTip');  
+            $('.year').addClass('error');
       break;
-    case 2: $('.mod').tip('Выберите<br> модификацию', 'selectTip');
+    case 2: $('.mod').tip('Выберите<br> модификацию', 'selectTip');  
+            $('.mod').addClass('error');
+      break;
+    case 3: $('.mod').prev().fadeOut();
       break;
   }
 }
 
-//scroll
 function initScroll() {    
   $('.scroll-pane')
     .on('jsp-initialised', function(event, isScrollable) {
