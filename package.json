@@ -7,12 +7,18 @@
   },
   "engines": {
     "node": "0.8.x",
-    "npm":  "1.1.x"
+    "npm": "1.1.x"
   },
   "dependencies": {
     "express": "3.0.5",
     "jade": "*",
     "less-middleware": "*",
     "fs": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-stylus": "~0.4.1"
   }
 }
