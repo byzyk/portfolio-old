@@ -1,4 +1,5 @@
 node_modules
 .settings
 public/admin
+public/dev
 .idea
