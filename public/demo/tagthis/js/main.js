@@ -15,7 +15,22 @@ $(function() {
         .on('mouseleave', '.modal:visible', {cursor: true}, Modal.setCursor);
     $(document).on('click', function() { if (Modal.cursor) Modal.closeAll(); });
 
+
+    //Checkbox
+    $('.checkbox').on('click', function() {
+        var icon = $(this).find('i');
+        var checkbox = $(this).find(':checkbox');
+        icon.toggleClass('checked');
+        if (!checkbox.attr('checked')) {
+            checkbox.attr('checked', 'checked');
+        } else {
+            checkbox.removeAttr('checked');
+        }
+    });
+
 });
+
+
 
 
 function searchResultsGrid() {

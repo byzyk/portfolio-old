@@ -98,15 +98,23 @@ i.icon{
   background: url("../img/icons.png") 0 0 no-repeat;
   &.icon-vk{
     background-position: 0 0;
+    width: 32px;
+    height: 32px;
   }
   &.icon-fb{
     background-position: 0 -50px;
+    width: 32px;
+    height: 32px;
   }
   &.icon-tw{
     background-position: 0 -100px;
+    width: 32px;
+    height: 32px;
   }
   &.icon-g{
     background-position: 0 -150px;
+    width: 32px;
+    height: 32px;
   }
   &.icon-star-large{
     background-position: -50px 0;
@@ -140,7 +148,7 @@ i.icon{
   }
   &.icon-tag{
     background-position: -50px -250px;
-    width: 20px;
+    width: 24px;
     height: 20px;
   }
   &.icon-ok{
@@ -158,11 +166,13 @@ i.icon{
     width: 50px;
     height: 50px;
   }
-  &.icon-checkbox-active{
-    background-position: -100px -150px;
-  }
   &.icon-checkbox{
     background-position: -100px -200px;
+    width: 18px;
+    height: 18px;
+    &.checked{
+      background-position: -100px -150px;
+    }
   }
 }
 
@@ -283,103 +293,222 @@ i.icon{
     .shadow(0 2px 6px #bcbcbc);
     border:1px solid #fff;
     text-align: center;
+    width: 426px;
+    line-height: normal;.modal-form{
+    .input{
+      display: inline-block;
+      background-color: #fff;
+      .shadow(inset 0 1px 0 #d8d8d8);
+      .radius(@inputHeight / 2.2, @inputHeight / 2.2, @inputHeight / 2.2, @inputHeight / 2.2);
+      border: 0;
+      outline:0;
+      width:360px;
+      height: @inputHeight;
+      resize:none;
+      padding: 0 15px;
+      margin-top:20px;
+      color:#a7a7a7;
+      font:15px "Segoe UI";
+      &.input-tag{
+        width:335px;
+        padding-left: 40px;
+      }
+    }
+    textarea.input{
+      padding: 7px 15px;
+    }
+    .status{
+      font-size: 13px;
+      font-weight: 300;
+      text-align: right;
+      overflow: hidden;
+      padding:0 20px 1px;
+      margin: 20px 0;
+      .success, .error{
+        float: left;
+        display: none;
+        margin-top: 5px;
+      }
+      .success{
+        color: #5a5a5a;
+      }
+      .error{
+        color: #ff162c;
+      }
+    }
+    .button{
+      display: inline-block;
+      background-color: #6cbffd;
+      .shadow(0 1px 0 #007bd6);
+      .radius(5px, 5px, 5px, 5px);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      &:hover{
+        cursor: pointer;
+        background-color: darken(#6cbffd, 10%);
+      }
+    }
+    .checkbox{
+      float: left;
+      margin-top: 2px;
+      color: #9c9b9b;
+      font-size: 14px;
+      &:hover{
+        cursor: pointer;
+      }
+      i{
+        position: relative;
+        top:5px;
+      }
+      input[type="checkbox"]{
+        display: none;
+      }
+    }
+    .social{
+      background-color: rgba(255,255,255,0.5);
+      border-top:1px solid rgba(0,0,0,0.08);
+      text-align: left;
+      padding:8px 10px;
+      .social-text{
+        display: inline-block;
+        text-align:right;
+        width:175px;
+        font-size: 13px;
+        color: @mainColor!important;
+        text-shadow: 0 1px 0 #ffffff;
+      }
+      .social-icons{
+        display: inline-block;
+        position: relative;
+        top: 3px;
+        li{
+          display: inline-block;
+          margin-left: 15px;
+          &:first-child{
+            margin-left: 33px;
+          }
+        }
+      }
+    }
+    &.success{
+      .success{
+        display: block;
+      }
+    }
+    &.error{
+      .error{
+        display: block;
+      }
+    }
+  }
     &:after{
       content: "";
       position: absolute;
       z-index:15;
       height: 46px;
       background: #f7f7f7 url(../img/modal-bg.png) 0 0 repeat;
-      .shadow(0 3px 3px #bcbcbc);
       border:1px solid #fff;
     }
-    &.modal-bottom{
-      .radius(@modalRadius, @modalRadius, 0, @modalRadius);
+    &.modal-top{
+      top:92px;
       &:after{
-        background-position: 3px 0;
-        width: 160px;
-        bottom:-46px;
-        right:-1px;
-        border-top:0;
-        .radius(0, 0, @modalRadius, @modalRadius);
+        background-position: 4px 0;
+        width: 150px;
+        top:-47px;
+        border-bottom:0;
+        .radius(@modalRadius, @modalRadius, 0, 0);
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        top: -40px;
+        z-index:13;
+        height: 46px;
+        background: transparent;
+        border:0;
+        .shadow(0 -6px 6px #bcbcbc);
+        .radius(@modalRadius, @modalRadius, 0, 0);
+      }
+    }
+    &.modal-add{
+      left:-7px;
+      .radius(0, @modalRadius, @modalRadius, @modalRadius);
+      .icon-tag{
+        position:absolute;
+        top: 116px;
+        left: 26px;
+        z-index: 21;
+      }
+      &:after{
+        left:-1px;
+        width:140px;
+      }
+      &:before{
+        left:-1px;
+        width: 142px;
+      }
+    }
+    &.modal-signup{
+      left:-160px;
+      .radius(@modalRadius, @modalRadius, @modalRadius, @modalRadius);
+      .button{
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      &:after{
+        left:148px;
+        width:170px;
+      }
+      &:before{
+        left:148px;
+        width: 172px;
+      }
+    }
+    &.modal-signin{
+      left:-339px;
+      .radius(@modalRadius, @modalRadius, @modalRadius, @modalRadius);
+      .checkbox{
+        margin-left:170px;
+      }
+      .button{
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+      &:after{
+        left:326px;
+        width:70px;
+      }
+      &:before{
+        left:326px;
+        width: 72px;
       }
     }
     &.modal-feedback{
       bottom:37px;
       right:22px;
-      width: 426px;
-      .input{
-        width:360px;
-        margin-top:20px;
-      }
+      .radius(@modalRadius, @modalRadius, 0, @modalRadius);
       textarea.input{
         height:50px;
       }
       .status{
-        margin: 20px 0;
         .success{
-          margin:5px 0 0 110px;
+          margin-left:110px;
         }
         .error{
-          margin:5px 0 0 -10px;
+          margin-left:-10px;
         }
       }
-    }
-    .modal-form{
-      .input{
-        display: inline-block;
-        background-color: #fff;
-        .shadow(inset 0 1px 0 #d8d8d8);
-        .radius(@inputHeight / 2.2, @inputHeight / 2.2, @inputHeight / 2.2, @inputHeight / 2.2);
-        border: 0;
-        outline:0;
-        height: @inputHeight;
-        resize:none;
-        padding: 0 15px;
-      }
-      textarea.input{
-        padding: 10px 15px;
-      }
-      .status{
-        font-size: 13px;
-        font-weight: 300;
-        text-align: right;
-        overflow: hidden;
-        padding:0 20px 1px;
-        .success{
-          color: #5a5a5a;
-          float: left;
-          display: none;
-        }
-        .error{
-          color: #ff162c;
-          float: left;
-          display: none;
-        }
-      }
-      .button{
-        display: inline-block;
-        background-color: #6cbffd;
-        .shadow(0 1px 0 #007bd6);
-        .radius(5px, 5px, 5px, 5px);
-        color: #ffffff;
-        font-size: 13px;
-        font-weight: 800;
-        text-transform: uppercase;
-        padding: 5px 10px;
-        &:hover{
-          cursor: pointer;
-          background-color: darken(#6cbffd, 10%);
-        }
-      }
-      &.success{
-        .success{
-          display: block;
-        }
-      }
-      &.error{
-        .error{
-          display: block;
-        }
+      &:after{
+        background-position: 3px 0;
+        width: 150px;
+        bottom:-46px;
+        right:-1px;
+        border-top:0;
+        .radius(0, 0, @modalRadius, @modalRadius);
+        .shadow(0 3px 3px #bcbcbc);
       }
     }
   }
@@ -427,7 +556,7 @@ header{
     position: absolute;
     top:0;
     right:0;
-    ul li {
+    > ul > li {
       display: inline-block;
       margin-left:25px;
       color: @linkColor;

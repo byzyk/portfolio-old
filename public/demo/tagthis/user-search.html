@@ -27,7 +27,27 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#"><i class="icon icon-plus"></i>Добавить сайт</a></li>
+                        <li>
+                            <div class="modal-wrap">
+                                <a href="#"><i class="icon icon-plus"></i>Добавить сайт</a>
+                                <div class="modal modal-add modal-top">
+                                    <form action="#" class="modal-form error">
+                                        <input type="text" class="input" placeholder="адрес сайта">
+                                        <input type="text" class="input" placeholder="название">
+                                        <i class="icon icon-tag"></i><input type="text" class="input input-tag" placeholder="теги">
+                                        <div class="status">
+                                            <div class="success">
+                                                <i class="icon icon-ok"></i> Сайт добавлен успешно!
+                                            </div>
+                                            <div class="error">
+                                                <i class="icon icon-error"></i> Произошла ошибка, уже работаем над этим
+                                            </div>
+                                            <div class="submit button">добавить</div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
                         <li><a href="#">Мои закладки</a></li>
                         <li class="username">Tilion</li>
                         <li class="slash"></li>
@@ -135,7 +155,7 @@
                     Знаете как сделать TagThis лучше? <br>
                     <div class="modal-wrap">
                         <a href="#">Оставьте отзыв</a>
-                        <div class="modal modal-feedback modal-bottom">
+                        <div class="modal modal-feedback">
                             <form action="#" class="modal-form error">
                                 <input type="text" class="input" placeholder="тема сообщения">
                                 <textarea class="input" placeholder="сообщение"></textarea>

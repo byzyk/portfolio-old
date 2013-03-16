@@ -27,10 +27,79 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#"><i class="icon icon-plus"></i>Добавить сайт</a></li>
-                        <li><a href="#">Зарегистрироваться</a></li>
+                        <li>
+                            <div class="modal-wrap">
+                                <a href="#"><i class="icon icon-plus"></i>Добавить сайт</a>
+                                <div class="modal modal-add modal-top">
+                                    <form action="#" class="modal-form error">
+                                        <input type="text" class="input" placeholder="адрес сайта">
+                                        <input type="text" class="input" placeholder="название">
+                                        <i class="icon icon-tag"></i><input type="text" class="input input-tag" placeholder="теги">
+                                        <div class="status">
+                                            <div class="success">
+                                                <i class="icon icon-ok"></i> Сайт добавлен успешно!
+                                            </div>
+                                            <div class="error">
+                                                <i class="icon icon-error"></i> Произошла ошибка, уже работаем над этим
+                                            </div>
+                                            <div class="submit button">добавить</div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="modal-wrap">
+                                <a href="#">Зарегистрироваться</a>
+                                <div class="modal modal-signup modal-top">
+                                    <form action="#" class="modal-form">
+                                        <input type="text" class="input" placeholder="логин">
+                                        <input type="password" class="input" placeholder="пароль">
+                                        <input type="password" class="input" placeholder="повторите пароль">
+                                        <div class="status">
+                                            <div class="submit button">зарегистрироваться</div>
+                                        </div>
+                                        <div class="social">
+                                            <div class="social-text">Так же вы можете войти используя следующие сайты:</div>
+                                            <ul class="social-icons">
+                                                <li><a href="#"><i class="icon icon-vk"></i></a></li>
+                                                <li><a href="#"><i class="icon icon-fb"></i></a></li>
+                                                <li><a href="#"><i class="icon icon-tw"></i></a></li>
+                                                <li><a href="#"><i class="icon icon-g"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
                         <li class="slash"></li>
-                        <li><a href="#">Войти</a></li>
+                        <li>
+                            <div class="modal-wrap">
+                                <a href="#">Войти</a>
+                                <div class="modal modal-signin modal-top">
+                                    <form action="#" class="modal-form">
+                                        <input type="text" class="input" placeholder="логин">
+                                        <input type="password" class="input" placeholder="пароль">
+                                        <div class="status">
+                                            <div class="checkbox">
+                                                <i class="icon icon-checkbox"></i> запомнить меня
+                                                <input type="checkbox">
+                                            </div>
+                                            <div class="submit button">войти</div>
+                                        </div>
+                                        <div class="social">
+                                            <div class="social-text">Так же вы можете войти используя следующие сайты:</div>
+                                            <ul class="social-icons">
+                                                <li><a href="#"><i class="icon icon-vk"></i></a></li>
+                                                <li><a href="#"><i class="icon icon-fb"></i></a></li>
+                                                <li><a href="#"><i class="icon icon-tw"></i></a></li>
+                                                <li><a href="#"><i class="icon icon-g"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -51,27 +120,27 @@
                 </form>
             </div>
 
-                <div class="promo">
-                    <div class="line"></div>
-                    <div class="wrap">
-                        <div class="promo-block promo-block-1">
-                            <div class="promo-block-logo"></div>
-                            <h3>Нашли интересный сайт?</h3>
-                            <p><a href="#" class="underlined">Добавьте ему тег</a>, чтобы потом с лёгкостью найти его вновь.</p>
-                        </div>
+            <div class="promo">
+                <div class="line"></div>
+                <div class="wrap">
+                    <div class="promo-block promo-block-1">
+                        <div class="promo-block-logo"></div>
+                        <h3>Нашли интересный сайт?</h3>
+                        <p><a href="#" class="underlined">Добавьте ему тег</a>, чтобы потом с лёгкостью найти его вновь.</p>
+                    </div>
 
-                        <div class="promo-block promo-block-2">
-                            <div class="promo-block-logo"></div>
-                            <h3><a href="#" class="underlined">Зарегистрируйтесь</a></h3>
-                            <p>И сформируйте личную коллекцию избранных сайтов.</p>
-                        </div>
+                    <div class="promo-block promo-block-2">
+                        <div class="promo-block-logo"></div>
+                        <h3><a href="#" class="underlined">Зарегистрируйтесь</a></h3>
+                        <p>И сформируйте личную коллекцию избранных сайтов.</p>
+                    </div>
 
-                        <div class="promo-block promo-block-3">
-                            <div class="promo-block-logo"></div>
-                            <p>Сохраняйте доступ к своей коллекции с любого компьютера, смартфона или планшета!</p>
-                        </div>
+                    <div class="promo-block promo-block-3">
+                        <div class="promo-block-logo"></div>
+                        <p>Сохраняйте доступ к своей коллекции с любого компьютера, смартфона или планшета!</p>
                     </div>
                 </div>
+            </div>
         </section>
 
 
@@ -81,8 +150,8 @@
                     Знаете как сделать TagThis лучше? <br>
                     <div class="modal-wrap">
                         <a href="#">Оставьте отзыв</a>
-                        <div class="modal modal-feedback modal-bottom">
-                            <form action="#" class="modal-form error">
+                        <div class="modal modal-feedback">
+                            <form action="#" class="modal-form success">
                                 <input type="text" class="input" placeholder="тема сообщения">
                                 <textarea class="input" placeholder="сообщение"></textarea>
                                 <input type="text" class="input" placeholder="ваша почта">
