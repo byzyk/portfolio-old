@@ -171,6 +171,28 @@ i.icon.icon-checkbox.checked {
   border-right: 8px solid #f8f8f8;
   left: -20px;
 }
+ul.tagit li.tagit-choice {
+  position: relative;
+  line-height: 1.15em;
+  display: inline-block;
+  background-color: #4b3c39;
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  margin: 8px 0 0 25px;
+}
+ul.tagit li.tagit-choice:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 17px solid transparent;
+  border-right: 12px solid #4b3c39;
+  left: -29px;
+}
+ul.tagit li.tagit-choice:first-child {
+  margin-left: 14px;
+}
 .tag-search .control {
   margin-left: 30px;
   padding-bottom: 18px;
@@ -237,15 +259,15 @@ i.icon.icon-checkbox.checked {
 .tag-search .form i.icon-search:hover {
   cursor: pointer;
 }
-.tag-search .form input[type='text'] {
-  position: relative;
+.tag-search .form ul.tagit {
+  position: absolute;
+  top: 0;
+  left: 65px;
   border: 0;
   outline: 0;
-  display: inline-block;
   padding: 0;
   width: 770px;
-  height: 42px;
-  top: -21px;
+  height: 46px;
   font: 22px "Open Sans", sans-serif;
 }
 .modal-wrap {

@@ -3,6 +3,22 @@ $(function() {
     searchResultsGrid();
 
     $('.tag-search .control li').on('click', searchSwitch);
+    var tagSearch = $('#tags');
+    var tagSearchPlaceholder = 'Найди сайт по тегам';
+    tagSearch.tagit({
+        placeholderText: tagSearchPlaceholder,
+        afterTagAdded: function(event, ui) {
+            tagSearch.find('input:text').removeAttr('placeholder');
+        },
+        beforeTagRemoved: function(event, ui) {
+            if (ui.tag.index() === 0) {
+                tagSearch.find('input:text').attr('placeholder', tagSearchPlaceholder);
+            }
+        },
+        onTagExists: function() {
+            return false;
+        }
+    });
 
     $('.submit').on('click', submitForm);
 
