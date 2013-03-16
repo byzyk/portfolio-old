@@ -79,7 +79,25 @@
             <div class="wrap">
                 <div class="feedback">
                     Знаете как сделать TagThis лучше? <br>
-                    <a href="#">Оставьте отзыв</a>
+                    <div class="modal-wrap">
+                        <a href="#">Оставьте отзыв</a>
+                        <div class="modal modal-feedback modal-bottom">
+                            <form action="#" class="modal-form error">
+                                <input type="text" class="input" placeholder="тема сообщения">
+                                <textarea class="input" placeholder="сообщение"></textarea>
+                                <input type="text" class="input" placeholder="ваша почта">
+                                <div class="status">
+                                    <div class="success">
+                                        <i class="icon icon-ok"></i> Спасибо за ваш отзыв
+                                    </div>
+                                    <div class="error">
+                                        <i class="icon icon-error"></i> Произошла ошибка, уже работаем над этим
+                                    </div>
+                                    <div class="submit button">отправить</div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
