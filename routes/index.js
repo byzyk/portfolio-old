@@ -19,8 +19,10 @@ exports.index = function(req, res){
     return Math.random() - 0.5;
   });
   for (var i = 0; i < worksFiles.length; i++) {
-    json = fs.readFileSync(worksDir + worksFiles[i], 'utf-8');
-    works.push(JSON.parse(json));
+    if (worksFiles[i] !== '.DS_Store') {
+        json = fs.readFileSync(worksDir + worksFiles[i], 'utf-8');
+        works.push(JSON.parse(json));
+    }
   }
   console.log(works);
   

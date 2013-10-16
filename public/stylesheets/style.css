@@ -1,200 +1,190 @@
 @import "http://fonts.googleapis.com/css?family=Rambla:400,700";
 
 @import "http://fonts.googleapis.com/css?family=Finger+Paint";
+
+@import "http://fonts.googleapis.com/css?family=Quicksand:300,400";
 /* ---------------------------------------- */
-* {
-  padding: 0;
-  margin: 0;
-}
-img {
-  border: 0;
-}
 body {
-  color: #333;
   font: 14px/1.2 Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
-  background: #ffffff url(../images/bg.jpg) 0 0 no-repeat;
   height: 100%;
 }
-a,
-a:visited {
-  color: #fff;
-}
-a:hover {
-  color: #777;
-}
-.main {
+.wrap {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  padding-bottom: 100px;
-  background: url(../images/planet.png) -50px 486px no-repeat;
+  margin: 0 auto;
 }
-.main.index {
-  width: 900px;
-}
-.main section {
-  float: left;
-}
-.main section.author {
-  width: 250px;
-  margin-top: 100px;
-}
-.main section.author h1 {
-  font: 34px "Rambla", sans-serif;
-  margin-left: 20px;
-}
-.main section.author h1 small {
-  color: #999;
-  display: block;
-  font-size: 20px;
-}
-.main section.author .contacts {
-  margin-top: 120px;
-  color: #555;
-  font-size: 11px;
-}
-.main section.author .contacts span {
-  font-weight: 700;
-  text-align: right;
-  width: 60px;
-  display: inline-block;
-  margin-right: 7px;
-  color: #333;
-}
-.main section.portfolio {
-  padding: 0 10px 10px 50px;
-  margin-top: 60px;
-  width: 580px;
-  overflow: hidden;
-}
-.main section.portfolio .portfolio-item {
-  float: left;
-  width: 240px;
-  height: 240px;
-  margin: 0 40px 40px 0;
-  position: relative;
-}
-.main section.portfolio .portfolio-item .image {
-  width: 240px;
-  height: 240px;
-  border: 5px rgba(225, 225, 225, 0.1) solid;
-  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.75), inset 0 0 12px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.75), inset 0 0 12px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.75), inset 0 0 12px rgba(0, 0, 0, 0.4);
-}
-.main section.portfolio .portfolio-item .text {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 200px;
-  height: 240px;
-  background: url(../images/hover.png) 0 0 repeat;
-  text-align: center;
+header {
+  background-color: #33ccff;
   color: #fff;
-  padding: 0 20px;
-  display: none;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  font-family: 'Quicksand', sans-serif;
+  z-index: 10;
 }
-.main section.portfolio .portfolio-item .text h2 {
-  font: 28px "Rambla";
-  text-shadow: -20px 0px 5px #000000, 20px 0px 5px #000000;
-  margin: 90px 0 15px;
+header h1,
+header h2 {
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+header h1 {
+  padding-top: 15px;
+  font-size: 24px;
   font-weight: 400;
 }
-.main section.portfolio .portfolio-item .text p {
-  color: #ddd;
-  font-size: 15px;
+header h2 {
+  font-size: 14px;
+  font-weight: 300;
 }
-.main section.portfolio .portfolio-item .text p a {
-  font-size: 18px;
-  display: inline-block;
-  margin-top: 17px;
+#contactMe {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  padding-bottom: 8px;
 }
-.main section.portfolio .portfolio-item .image {
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: 240px 240px;
-}
-.main section.portfolio-view {
+#headerFull {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  position: relative;
-  float: none;
-}
-#folio-detail {
-  height: 100px;
-  background: #EDEDED;
-  position: relative;
-  top: -90px;
-  left: 0;
-  z-index: 1;
-  opacity: 0.4;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
-}
-#folio-detail .control {
-  position: absolute;
-  bottom: -20px;
-  left: 10px;
-  width: 120px;
-  height: 30px;
-  color: #555;
-  background: #EDEDED;
-  border-radius: 10px;
-  text-align: center;
-  line-height: 2;
-  font-weight: 700;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-}
-#folio-detail .control:hover {
-  cursor: pointer;
-}
-#folio-detail h1 {
-  font: 20px "Rambla";
-  padding: 37px 0px 0px 130px;
-  float: left;
-}
-#folio-detail .desc {
-  float: left;
-  margin-left: 50px;
-  margin-top: 10px;
-  border-left: 3px #999 solid;
-  padding-left: 10px;
-}
-#folio-detail .desc .title {
-  font-size: 24px;
-  margin-bottom: 5px;
-}
-#folio-detail .desc .url a,
-#folio-detail .desc .url a:visited {
-  color: #999;
-  text-decoration: none;
-}
-#folio-detail .desc .url a:hover {
-  color: #333;
-}
-#folio-detail .desc .text {
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
   font-size: 12px;
-  font-style: italic;
-  color: #555;
-  width: 200px;
-}
-#folio-back,
-#folio-back:visited {
-  position: absolute;
-  top: 60px;
-  left: 20px;
-  width: 100px;
-  height: 40px;
-  z-index: 5;
-  cursor: pointer;
-  border-radius: 10px;
-  background: #fff;
+  color: #fff;
   text-align: center;
-  font: 20px/2 "Rambla", sans-serif;
-  font-weight: 700;
-  opacity: 0.75;
-  display: block;
-  color: #333;
-  text-decoration: none;
+  line-height: 25px;
+  box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s;
 }
-#folio-back:hover {
-  opacity: 1;
+#headerFull:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#headerFull.opened {
+  line-height: 50px;
+  font-size: 18px;
+  height: 50px;
+}
+.folio-items {
+  margin-top: 115px;
+}
+.folio-item {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  background-color: #EBFAFF;
+  border: 15px solid #EBFAFF;
+  margin: 0 auto 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+.folio-item img {
+  width: 250px;
+  height: 250px;
+}
+.folio-item-info {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+}
+.folio-item-info .btn {
+  opacity: 1 !important;
+}
+.folio-item-info p span {
+  color: #666;
+}
+footer {
+  text-align: center;
+  margin: 0 0 20px;
+}
+footer .smile {
+  display: inlin-block;
+  width: 20px;
+  margin: 0 auto;
+  cursor: default !important;
+  font-size: 35px;
+  font-weight: 700;
+  color: #ccc;
+  transition: -webkit-transform 0.4s 0.1s, color 0.4s 0.1s;
+}
+footer .smile:hover {
+  color: #33ccff;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(-270deg);
+}
+@media (min-width: 768px) {
+  .wrap {
+    width: 768px;
+  }
+  header h1,
+  header h2 {
+    text-align: center;
+  }
+  #contactMe {
+    top: 9px;
+  }
+  .folio-item {
+    width: 700px;
+    margin: 0 auto 30px;
+  }
+  .folio-item img {
+    float: left;
+  }
+  .folio-item-info {
+    position: static;
+    float: left;
+    margin-left: 15px;
+  }
+  .folio-item-info h3 {
+    color: #006B8F;
+    margin-top: 0;
+  }
+}
+@media (min-width: 900px) {
+  .wrap {
+    width: 900px;
+  }
+  header h1,
+  header h2 {
+    text-align: center;
+  }
+  .folio-item-wrap {
+    float: left;
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 0 0 30px 0;
+  }
+  .folio-item-wrap:nth-child(3n-1) {
+    margin: 0 30px;
+  }
+  .folio-item-wrap:nth-child(3n) .folio-item .folio-item-info {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+  .folio-item-wrap:nth-child(3n) .folio-item:hover {
+    width: 280px;
+    height: 590px;
+  }
+  .folio-item {
+    position: absolute;
+    width: 280px;
+    margin: 0 0 30px 0;
+    overflow: hidden;
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+  }
+  .folio-item:hover {
+    width: 590px;
+    background-color: #D6F5FF;
+    border-color: #D6F5FF;
+    z-index: 5;
+  }
+  .folio-item:hover .folio-item-info {
+    opacity: 1;
+  }
+  .folio-item-info {
+    width: 280px;
+    height: 280px;
+    opacity: 0;
+    transition: opacity 0.2s 0.2s;
+  }
 }

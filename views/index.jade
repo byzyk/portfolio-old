@@ -1,25 +1,17 @@
 extends layout
 
 block content
-  .main.index
-    section.author
-      h1= settings.title
-        small front-end dev
-      .contacts
-        each c in contacts
-          p
-            span=c[0] + ': '
-            =c[1]
-    section.portfolio
-      .portfolio-item
-          .image
-          .text
-            h2 Comming soon
-      each work in works
-        .portfolio-item
-          .image(style='background-image:url(/images/preview/' + work.id + '.jpg);')
-          .text
-            h2= work.name
-            p= work.text
-            p
-              a(href='/portfolio/' + work.id) View project
+
+    #folioList.folio-items.wrap.clearfix
+        each item in works
+            .folio-item-wrap
+                .folio-item.clearfix
+                    img(src='/images/preview/' + item.id + '.jpg')
+                    .folio-item-info
+                        .hidden-xs
+                            h3=item.name
+                            p
+                                span Technologies used:&nbsp;
+                                =item.text
+                        //.btn.btn-info.disabled 0
+                        //button.btn.btn-success Show

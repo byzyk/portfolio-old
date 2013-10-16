@@ -2,12 +2,32 @@ doctype 5
 html
   head
     title= settings.title + ' / byzyk'
+
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+    script(src='/javascripts/bootstrap.min.js')
     script(src='/javascripts/func.js')
-  body    
-    block content
-    
+
+  body
+        header
+          #headerFull show full information
+          button#contactMe.btn.btn-warning
+              span.glyphicon.glyphicon-envelope
+              span.hidden-xs contact me
+          h1= settings.title
+          h2 front-end developer
+          .wrap
+
+        block content
+
+        footer
+            .smile ;)
+
+
     script
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-37535142-1']);
