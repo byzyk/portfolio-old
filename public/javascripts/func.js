@@ -20,7 +20,7 @@ $(function() {
                     .addClass('opened');
             } else {
                 Header.el[0].animate({height: 100}, Header.settings.animSpeed);
-                Header.el[2].animate({marginTop: 115}, Header.settings.animSpeed);
+                Header.el[2].animate({marginTop: 130}, Header.settings.animSpeed);
                 Header.el[1]
                     .text(Header.settings.controlText[1])
                     .removeClass('opened');
@@ -34,10 +34,17 @@ $(function() {
     Header.init();
 
 
+    var ContactMeHtml = "email: <span>bohdan.kh@gmail.com</span> <br>" +
+                        "skype: <span>byzyk93</span>";
 
+    $('#contactMe').popover({
+        html: true,
+        placement: "left",
+        content: ContactMeHtml
+    });
 
   
-    $('#folio-detail .control').on('click', function() {
+    /*$('#folio-detail .control').on('click', function() {
     var el = $(this).parent();
     var detailTop = el.css('top');
     var detailOpacity = el.css('opacity');
@@ -67,13 +74,13 @@ $(function() {
     $('#folio-back')
       .stop(true, true)
       .animate({top: back}, 400);
-    });
+    });*/
 
     $('#folio-view').on('load', iframeHeight);
 
     function iframeHeight() {
-    $(this).height($(window).height());
-    $('body').css('overflow', 'hidden')
-  }
+        $(this).height($(window).height() - 75);
+        $('body').css('overflow', 'hidden')
+      }
   
 });

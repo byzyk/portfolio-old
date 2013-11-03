@@ -1,16 +1,14 @@
-@import "http://fonts.googleapis.com/css?family=Rambla:400,700";
-
-@import "http://fonts.googleapis.com/css?family=Finger+Paint";
+@import "http://fonts.googleapis.com/css?family=Rambla:300,400,700";
 
 @import "http://fonts.googleapis.com/css?family=Quicksand:300,400";
 /* ---------------------------------------- */
+html,
 body {
   font: 14px/1.2 Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
   height: 100%;
 }
 .wrap {
   width: 100%;
-  margin: 0 auto;
 }
 header {
   background-color: #33ccff;
@@ -21,6 +19,12 @@ header {
   top: 0;
   font-family: 'Quicksand', sans-serif;
   z-index: 10;
+}
+header.no-full {
+  height: 75px;
+}
+header.no-full #headerFull {
+  display: none;
 }
 header h1,
 header h2 {
@@ -41,6 +45,12 @@ header h2 {
   top: 20px;
   right: 10px;
   padding-bottom: 8px;
+}
+#contactMe + .popover .popover-content {
+  color: #999;
+}
+#contactMe + .popover .popover-content span {
+  color: #444;
 }
 #headerFull {
   position: absolute;
@@ -65,39 +75,79 @@ header h2 {
   height: 50px;
 }
 .folio-items {
-  margin-top: 115px;
+  margin-top: 130px;
+  text-align: center;
 }
-.folio-item {
+.folio-item-wrap {
+  display: inline-block;
   position: relative;
   width: 280px;
   height: 280px;
+  margin: 15px;
+}
+.folio-item {
+  text-decoration: none !important;
+  display: block;
+  position: absolute;
+  width: 280px;
+  height: 280px;
   background-color: #EBFAFF;
-  border: 15px solid #EBFAFF;
-  margin: 0 auto 30px;
+  padding: 15px;
   border-radius: 5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, top 0.2s, left 0.2s, padding 0.2s;
+}
+.folio-item .folio-item-text,
+.folio-item .folio-item-title {
+  transition: opacity 0.15s;
+}
+.folio-item:hover {
+  width: 320px;
+  height: 320px;
+  background-color: #D6F5FF;
+  z-index: 5;
+  top: -20px;
+  left: -20px;
+  padding: 35px;
+}
+.folio-item:hover .folio-item-text,
+.folio-item:hover .folio-item-title {
+  opacity: 1;
 }
 .folio-item img {
   width: 250px;
   height: 250px;
+  margin-bottom: 10px;
 }
-.folio-item-info {
+.folio-item-title,
+.folio-item-text {
+  text-align: center;
+  opacity: 0;
+}
+.folio-item-title {
+  color: #006B8F;
+  font: 18px Rambla, sans-serif;
+  font-weight: 300;
+  height: 20px;
+  margin-top: -30px;
+}
+.folio-item-text {
+  color: #777;
+  font-size: 11px;
+}
+#backButton {
   position: absolute;
-  top: -10px;
-  right: -5px;
-}
-.folio-item-info .btn {
-  opacity: 1 !important;
-}
-.folio-item-info p span {
-  color: #666;
+  top: 18px;
+  left: 30px;
+  z-index: 10;
 }
 footer {
   text-align: center;
-  margin: 0 0 20px;
+  padding: 0 0 20px;
 }
 footer .smile {
-  display: inlin-block;
+  display: inline-block;
   width: 20px;
   margin: 0 auto;
   cursor: default !important;
@@ -113,7 +163,7 @@ footer .smile:hover {
 }
 @media (min-width: 768px) {
   .wrap {
-    width: 768px;
+    padding: 0 20px;
   }
   header h1,
   header h2 {
@@ -122,69 +172,10 @@ footer .smile:hover {
   #contactMe {
     top: 9px;
   }
-  .folio-item {
-    width: 700px;
-    margin: 0 auto 30px;
-  }
-  .folio-item img {
-    float: left;
-  }
-  .folio-item-info {
-    position: static;
-    float: left;
-    margin-left: 15px;
-  }
-  .folio-item-info h3 {
-    color: #006B8F;
-    margin-top: 0;
-  }
 }
 @media (min-width: 900px) {
-  .wrap {
-    width: 900px;
-  }
   header h1,
   header h2 {
     text-align: center;
-  }
-  .folio-item-wrap {
-    float: left;
-    position: relative;
-    width: 280px;
-    height: 280px;
-    margin: 0 0 30px 0;
-  }
-  .folio-item-wrap:nth-child(3n-1) {
-    margin: 0 30px;
-  }
-  .folio-item-wrap:nth-child(3n) .folio-item .folio-item-info {
-    margin-left: 0;
-    margin-top: 15px;
-  }
-  .folio-item-wrap:nth-child(3n) .folio-item:hover {
-    width: 280px;
-    height: 590px;
-  }
-  .folio-item {
-    position: absolute;
-    width: 280px;
-    margin: 0 0 30px 0;
-    overflow: hidden;
-    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
-  }
-  .folio-item:hover {
-    width: 590px;
-    background-color: #D6F5FF;
-    border-color: #D6F5FF;
-    z-index: 5;
-  }
-  .folio-item:hover .folio-item-info {
-    opacity: 1;
-  }
-  .folio-item-info {
-    width: 280px;
-    height: 280px;
-    opacity: 0;
-    transition: opacity 0.2s 0.2s;
   }
 }

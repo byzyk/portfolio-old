@@ -1,17 +1,6 @@
 extends layout
 
 block content
-  a#folio-back(href='/') portfolio
-  section.portfolio-view
-    #folio-detail
-      .control Show details
-      h1= settings.title
-      .desc
-        p.title= work.name
-        if(work.url)
-          p.url
-            a(href=work.url)=work.url
-        p.text 
-          strong Using: 
-          =work.text
-    iframe(src=path, frameborder="0", border="0", scrolling="auto", width="100%", height="0px", id="folio-view", style="position:relative;top:-100px;")
+    a(href='/').btn.btn-success.hidden-xs#backButton portfolio
+
+    iframe(src=path, frameborder="0", border="0", scrolling="auto", width="100%", height="0px", id="folio-view", style="position:relative;top:75px;")

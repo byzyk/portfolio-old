@@ -5,13 +5,10 @@ block content
     #folioList.folio-items.wrap.clearfix
         each item in works
             .folio-item-wrap
-                .folio-item.clearfix
+                a(href='/portfolio/' + item.id).folio-item.clearfix
+                    h3.folio-item-title=item.name
                     img(src='/images/preview/' + item.id + '.jpg')
-                    .folio-item-info
-                        .hidden-xs
-                            h3=item.name
-                            p
-                                span Technologies used:&nbsp;
-                                =item.text
-                        //.btn.btn-info.disabled 0
-                        //button.btn.btn-success Show
+                    p.folio-item-text=item.text
+
+    footer
+        .smile ;)

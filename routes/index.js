@@ -2,8 +2,7 @@ var fs = require('fs');
 
 var contacts = [
   ['email', 'bohdan.kh@gmail.com'],
-  ['skype', 'byzyk93'],
-  ['phone', '+380 93 661 4427']
+  ['skype', 'byzyk93']
 ];
 var worksDir = './works/';
 
@@ -38,7 +37,7 @@ exports.portfolio = function(req, res){
   var work = req.params.work;
   if (typeof(work) === 'undefined') {
     res.redirect('/');
-  } else if (work === 'sshikom') {    
+  } else if (work === 'sshikom') {
     res.redirect('/demo/sshikom');
   } else {
     var json = fs.readFileSync(worksDir + work + '.json', 'utf-8');

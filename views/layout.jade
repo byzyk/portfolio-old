@@ -13,29 +13,24 @@ html
     script(src='/javascripts/func.js')
 
   body
-        header
+        header.no-full
           #headerFull show full information
           button#contactMe.btn.btn-warning
               span.glyphicon.glyphicon-envelope
               span.hidden-xs contact me
           h1= settings.title
           h2 front-end developer
-          .wrap
 
         block content
 
-        footer
-            .smile ;)
-
 
     script
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-37535142-1']);
-      _gaq.push(['_setDomainName', 'byzyk.in.ua']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37535142-1']);
+        _gaq.push(['_setDomainName', 'byzyk.com']);
+        _gaq.push(['_trackPageview']);
+            (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+        })();
