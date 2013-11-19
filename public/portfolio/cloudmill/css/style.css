@@ -1,0 +1,1442 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  border: 0;
+}
+html,
+body {
+  width: 100%;
+  min-width: 1000px;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
+  background: #ffffff url(../img/bg.png) 50% 0 no-repeat;
+}
+.wrap-all {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+.wrap {
+  width: 1000px;
+  height: 4265px;
+  margin: 0 auto;
+}
+.clear {
+  clear: both;
+}
+li {
+  list-style: none;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.deco {
+  position: absolute;
+  background: url(../img/decorations.png) 0 0 no-repeat;
+}
+.deco.cloud {
+  width: 150px;
+  height: 100px;
+}
+.deco.cloud.large {
+  width: 400px;
+  height: 200px;
+}
+.deco.cloud.small-left {
+  background-position: 0 -200px;
+}
+.deco.cloud.small-right {
+  background-position: 0 -400px;
+}
+.deco.cloud.lighten {
+  background-position: 0 -600px;
+}
+.deco.cloud.white {
+  background-position: 0 -800px;
+}
+.deco.cloud.small-white {
+  background-position: 0 -1000px;
+}
+.deco.icons.left {
+  width: 500px;
+  height: 500px;
+  background-position: 0 -2200px;
+  top: -76px;
+  left: -339px;
+}
+.deco.icons.right {
+  width: 200px;
+  height: 200px;
+  background-position: 0 -2700px;
+  top: 91px;
+  right: -127px;
+}
+.deco.robot {
+  width: 150px;
+  height: 200px;
+}
+.deco.robot.green-large {
+  background-position: 0 -1200px;
+}
+.deco.robot.orange-large {
+  background-position: 0 -1400px;
+}
+.deco.robot.green-small {
+  background-position: 0 -1800px;
+}
+.deco.robot.orange-small {
+  background-position: 0 -1600px;
+}
+/* =========================== HEADER === */
+header {
+  overflow: hidden;
+  position: relative;
+  z-index: 1001;
+}
+.bg-helper {
+  width: 100%;
+  height: 1200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: inherit;
+  right: inherit;
+  background: url(../img/bg.png) 50% 0px no-repeat;
+  z-index: 1000;
+}
+#lang {
+  float: right;
+  width: 75px;
+  height: auto;
+  border: 1px solid #3299c0;
+  overflow: hidden;
+  margin-top: 19px;
+  padding: 1px;
+  border-radius: 9px;
+  -moz-border-radius: 9px;
+  -webkit-border-radius: 9px;
+  -o-border-radius: 9px;
+  -ms-border-radius: 9px;
+}
+#lang div {
+  float: left;
+  width: 50%;
+  height: auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #3299c0;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -o-border-radius: 7px;
+  -ms-border-radius: 7px;
+}
+#lang div.active {
+  background-color: #3299c0;
+  color: #fff;
+}
+#logo {
+  float: left;
+  width: 241px;
+  height: 80px;
+  background: url(../img/logo3.png) 0 0 no-repeat;
+  margin-top: 50px;
+}
+nav {
+  float: left;
+  position: relative;
+  top: auto;
+  left: auto;
+  bottom: -22px;
+  right: -62px;
+  width: 740px;
+  height: 80px;
+  margin-left: 19px;
+}
+nav li {
+  float: left;
+  width: 148px;
+  height: auto;
+  overflow: hidden;
+}
+nav li a {
+  float: left;
+  display: block;
+  font: 16px "Archive";
+  color: #3299c0;
+  text-decoration: none;
+}
+nav li a:hover {
+  color: #6f5152;
+}
+nav li a:hover span {
+  color: rgba(111, 81, 82, 0.25);
+}
+nav li a span {
+  display: block;
+  font: 30px "Archive";
+  color: rgba(50, 153, 192, 0.25);
+}
+#topPhone {
+  float: left;
+  clear: left;
+  margin: 15px 0 0 15px;
+  text-align: center;
+  color: #6f5152;
+}
+#topPhone .number {
+  font: 24px "Archive";
+}
+#topPhone .number span {
+  color: rgba(111, 81, 82, 0.22999999999999998);
+}
+#topPhone .txt {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 3px;
+}
+/* =========================== FOOTER === */
+footer {
+  width: 1000px;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  top: -25px;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  margin-bottom: -22px;
+}
+footer div {
+  float: left;
+}
+footer div.address {
+  width: 395px;
+  height: auto;
+  background: url(../img/logo3.png) 50px 25px no-repeat;
+  background-size: 180px auto;
+  padding-top: 100px;
+  font-size: 13px;
+  color: #555;
+}
+footer div.address p {
+  padding: 9px 0 9px 30px;
+  background: url(../img/icons.png) 0 0 no-repeat;
+}
+footer div.address p.adr {
+  width: 250px;
+  height: auto;
+  background-position: 0 -293px;
+}
+footer div.address p.phn {
+  background-position: 0 -394px;
+}
+footer div.address p:last-child {
+  background-position: 0 -492px;
+}
+footer div.links {
+  margin-top: 20px;
+}
+footer div.links.about {
+  width: 205px;
+  height: auto;
+}
+footer div.links.service {
+  width: 204px;
+  height: auto;
+}
+footer div.links.info {
+  width: 196px;
+  height: auto;
+}
+footer div.links p.title {
+  font: 15px "Archive";
+  color: #0076a3;
+  margin-bottom: 15px;
+}
+footer div.links li {
+  margin: 3px 0;
+}
+footer div.links a,
+footer div.links a:visited {
+  font-size: 14px;
+  color: #555;
+  text-decoration: none;
+}
+footer div.links a:hover,
+footer div.links a:visited:hover {
+  color: #3299c0;
+  text-decoration: underline;
+}
+/* =========================== INDEX === */
+.dashed {
+  width: 100%;
+  height: 1px;
+  background: url(../img/dash.png) 0 0 repeat-x;
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: inherit;
+  right: inherit;
+}
+.dashed.first {
+  margin-top: 140px;
+  z-index: 1000;
+}
+.dashed.second {
+  margin-top: 240px;
+  z-index: 1000;
+}
+.dashed.third {
+  margin-top: 340px;
+  z-index: 1000;
+}
+.dashed.four {
+  margin-top: 367px;
+}
+#index section {
+  position: relative;
+}
+#index section h2 {
+  color: #3299c0;
+  font: 40px "Archive";
+}
+#index section h2.brown {
+  color: #6f5152;
+}
+#index section h2.white {
+  color: #fff;
+}
+#index section p.sub-headline {
+  color: #6f5152;
+  font: 18px "Archive";
+}
+#index section#slider {
+  width: auto;
+  height: 500px;
+}
+#index section#slider .slide .bg > div {
+  float: left;
+  width: 2560px;
+  height: 700px;
+  position: absolute;
+  top: -134px;
+  left: -790px;
+  bottom: inherit;
+  right: inherit;
+  z-index: 10;
+}
+#index section#slider .slide .bg > div.bg0 {
+  background-position: 50% 0;
+}
+#index section#slider .slide .bg > div.bg1 {
+  background-position: 50% -700px;
+}
+#index section#slider .slide .bg > div.bg2 {
+  background-position: 50% -1400px;
+}
+#index section#slider .slide .bg > div.bg3 {
+  background-position: 50% -2100px;
+}
+#index section#slider .slide .bg > div.bg4 {
+  background-position: 50% -2800px;
+}
+#index section#slider .slide.inkotek .bg > div {
+  background-image: url(../img/slide/inkotek2.png);
+}
+#index section#slider .slide.inkotek .bg > div.bg2 {
+  z-index: 9;
+}
+#index section#slider .slide.fuggi .bg > div {
+  background-image: url(../img/slide/fuggi.png);
+}
+#index section#slider .slide.lux .bg > div {
+  background-image: url(../img/slide/lux.png);
+}
+#index section#slider .slide.amba .bg > div {
+  background-image: url(../img/slide/amba2.png);
+}
+#index section#slider .slide .text {
+  width: 240px;
+  height: auto;
+  position: absolute;
+  z-index: 1500;
+}
+#index section#slider .slide .text h2 {
+  margin-bottom: 5px;
+}
+#index section#slider .slide .text p {
+  font: 12px Arial, Helvetica, sans-serif;
+  font-style: italic;
+  color: #555555;
+  margin-bottom: 18px;
+}
+#index section#slider .slide .text a,
+#index section#slider .slide .text a:visited {
+  display: block;
+  font: 17px "Archive";
+  color: #fff;
+  background-color: #30cb98;
+  width: 140px;
+  height: 30px;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -o-border-radius: 15px;
+  -ms-border-radius: 15px;
+  line-height: 30px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: underline;
+  background-color: #3299c0;
+}
+#index section#slider .slide .text a:hover,
+#index section#slider .slide .text a:visited:hover {
+  background-color: #368685;
+}
+#index section#slider .slide .text a:hover,
+#index section#slider .slide .text a:visited:hover {
+  background-color: #67b9d7;
+  text-decoration: none;
+}
+#index section#slider .slide.inkotek .text {
+  top: 20px;
+  left: 471px;
+}
+#index section#slider .slide.fuggi .text {
+  width: 280px;
+  height: auto;
+  top: 20px;
+  left: 225px;
+}
+#index section#slider .slide.fuggi .text p {
+  margin-bottom: 8px;
+}
+#index section#slider .slide.fuggi .text a {
+  margin-left: 120px;
+}
+#index section#slider .slide.lux .text {
+  width: 330px;
+  height: auto;
+  top: 20px;
+  left: 607px;
+}
+#index section#slider .slide.lux .text p {
+  width: 240px;
+  height: auto;
+  color: #fff;
+}
+#index section#slider .slide.amba .text {
+  width: 300px;
+  height: auto;
+  top: -10px;
+  left: 494px;
+}
+#index section#slider .slide.amba .text p {
+  margin-bottom: 8px;
+}
+#index section#slider .nav {
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  top: 360px;
+  left: 50%;
+  bottom: inherit;
+  right: inherit;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+  z-index: 1000;
+  margin-left: -50px;
+  background-color: #3299c0;
+}
+#index section#slider .nav div {
+  width: 26px;
+  height: 28px;
+  position: absolute;
+  top: 6px;
+  background-image: url(../img/icons.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+#index section#slider .nav div.prev {
+  background-position: 0 -700px;
+  left: 6px;
+}
+#index section#slider .nav div.prev:hover {
+  background-position: 0 -600px;
+}
+#index section#slider .nav div.next {
+  background-position: 0 -900px;
+  right: 6px;
+}
+#index section#slider .nav div.next:hover {
+  background-position: 0 -800px;
+}
+#index section#weDo {
+  width: 100%;
+  height: 500px;
+  z-index: 1000;
+  top: -75px;
+}
+#index section#weDo .deco.cloud {
+  opacity: 0.4;
+  top: 41px;
+  left: -84px;
+}
+#index section#weDo h2 {
+  text-align: right;
+  padding-top: 10px;
+}
+#index section#weDo .arrow-star {
+  width: 110px;
+  height: 146px;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 20px;
+  right: -73px;
+  z-index: 10;
+  opacity: 0;
+  background: url(../img/decorations.png) 3px -3000px no-repeat;
+}
+#index section#weDo .arrow-star p {
+  width: 50px;
+  height: auto;
+  margin: 92px 0 0 40px;
+  font: 11px "Archive";
+  text-align: center;
+  text-transform: uppercase;
+  color: #705153;
+}
+#index section#weDo .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: inherit;
+  right: inherit;
+  opacity: 0;
+  color: #fff;
+  font: 14px "Archive";
+  text-align: center;
+  z-index: 0;
+  cursor: pointer;
+}
+#index section#weDo .content .star {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin: 0 auto;
+  background: url(../img/icons.png) 50% 0 repeat-x;
+}
+#index section#weDo .content .star.brown {
+  background-position: 50% -100px;
+}
+#index section#weDo .content p {
+  line-height: 1.2em;
+  color: #fff;
+  font: 14px "Archive";
+}
+#index section#weDo .content p span {
+  display: block;
+  width: 100px;
+  height: auto;
+  margin: 5px auto 0;
+  font: 14px "PT Sans";
+  font-style: italic;
+}
+#index section#weDo #weDo_0 {
+  width: 360px;
+  height: 360px;
+  position: absolute;
+  top: 100px;
+  left: 330px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#weDo #weDo_0 .content {
+  width: 200px;
+  height: auto;
+  margin: 110px 80px 0;
+}
+#index section#weDo #weDo_0 .content .round-text div {
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  z-index: 10;
+  opacity: 0.5;
+  background-image: url(../img/round-text.png);
+  background-repeat: no-repeat;
+}
+#index section#weDo #weDo_0 .content .round-text div:hover {
+  cursor: pointer;
+  opacity: 1 !important;
+}
+#index section#weDo #weDo_0 .content .round-text div.corp {
+  width: 201px;
+  height: 54px;
+  background-position: 0 0;
+  top: -87px;
+  left: -11px;
+}
+#index section#weDo #weDo_0 .content .round-text div.social-net {
+  width: 76px;
+  height: 184px;
+  background-position: 0 -200px;
+  top: -44px;
+  left: 187px;
+}
+#index section#weDo #weDo_0 .content .round-text div.vis {
+  width: 125px;
+  height: 85px;
+  background-position: 0 -400px;
+  top: 150px;
+  left: 106px;
+}
+#index section#weDo #weDo_0 .content .round-text div.promo {
+  width: 116px;
+  height: 83px;
+  background-position: 0 -600px;
+  top: 152px;
+  left: -24px;
+}
+#index section#weDo #weDo_0 .content .round-text div.store {
+  width: 56px;
+  height: 172px;
+  background-position: 0 -800px;
+  top: -22px;
+  left: -65px;
+}
+#index section#weDo #weDo_0 .content .star {
+  width: 130px;
+  height: 26px;
+}
+#index section#weDo #weDo_0 .content p {
+  margin-top: 5px;
+  font-size: 36px;
+}
+#index section#weDo #weDo_1 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 290px;
+  left: 122px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#weDo #weDo_1 .content {
+  width: 150px;
+  height: auto;
+  margin: 50px 25px 0;
+}
+#index section#weDo #weDo_1 .content .star {
+  margin-bottom: 10px;
+}
+#index section#weDo #weDo_1 .content p {
+  font-size: 18px;
+}
+#index section#weDo #weDo_2 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 70px;
+  left: 678px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#weDo #weDo_2 .content {
+  width: 150px;
+  height: auto;
+  margin: 48px 25px 0;
+}
+#index section#weDo #weDo_2 .content .star {
+  margin-bottom: 8px;
+}
+#index section#weDo #weDo_2 .content p {
+  font-size: 14px;
+}
+#index section#weDo #weDo_2 .content p span {
+  width: 110px;
+  height: auto;
+  font-size: 11px;
+  color: #6f5152;
+}
+#index section#weDo #weDo_3 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 60px;
+  left: 130px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#weDo #weDo_3 .content {
+  width: 160px;
+  height: auto;
+  margin: 50px 20px 0;
+}
+#index section#weDo #weDo_3 .content .star {
+  margin-bottom: 8px;
+}
+#index section#weDo #weDo_3 .content p {
+  font-size: 12px;
+}
+#index section#weDo #weDo_3 .content p span {
+  width: 70px;
+  height: auto;
+  font-size: 12px;
+  color: #cccc03;
+}
+#index section#weDo #weDo_4 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 280px;
+  left: 665px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#weDo #weDo_4 .content {
+  width: 120px;
+  height: auto;
+  margin: 50px 40px 0;
+}
+#index section#weDo #weDo_4 .content .star {
+  margin-bottom: 3px;
+}
+#index section#weDo #weDo_4 .content p {
+  font-size: 16px;
+}
+#index section#weDo #weDo_5 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 167px;
+  left: -19px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#weDo #weDo_5 .content {
+  width: 100px;
+  height: auto;
+  margin: 65px 50px 0;
+}
+#index section#weDo #weDo_5 .content p {
+  font-size: 12px;
+}
+#index section#weDo #weDo_6 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 170px;
+  left: 820px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#weDo #weDo_6 .content {
+  width: 100px;
+  height: auto;
+  margin: 57px 50px 0;
+}
+#index section#weDo #weDo_6 .content .star {
+  margin-bottom: 2px;
+}
+#index section#weDo #weDo_6 .content p {
+  font-size: 12px;
+}
+#index section#weDo #weDo_6 .content p span {
+  width: 60px;
+  height: auto;
+  font-size: 11px;
+  color: #cccc03;
+  margin-top: 3px;
+}
+#index section#weStart {
+  top: -40px;
+}
+#index section#weStart h2 {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+#index section#weStart h2 span {
+  font-size: 24px;
+  color: #6f5152;
+}
+#index section#weStart #weStart_0 {
+  width: 1000px;
+  height: 300px;
+  margin-top: 30px;
+}
+#index section#weStart #weStart_0 .text {
+  position: absolute;
+  top: 167px;
+  left: 0;
+  bottom: inherit;
+  right: inherit;
+  background-color: #d6edf2;
+  color: #3299c0;
+  font: 16px "Archive";
+  font-style: italic;
+}
+#index section#weStart #weStart_0 .text p {
+  float: left;
+  opacity: 0;
+  margin-top: 15px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(1) {
+  margin-left: 28px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(2) {
+  margin-left: 28px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(3) {
+  margin-left: 38px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(4) {
+  margin-left: 38px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(5) {
+  margin-left: 25px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(6) {
+  margin-left: 28px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(7) {
+  margin-left: 16px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(8) {
+  margin-left: 15px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(9) {
+  margin-left: 0px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(10) {
+  margin-left: 7px;
+}
+#index section#weStart #weStart_0 .text p:nth-child(11) {
+  margin-left: 7px;
+}
+#index section#weStart #weStart_0 .text p.number {
+  color: #368685;
+  font-size: 90px;
+  font-style: normal;
+  margin-top: -12px;
+  line-height: 66px;
+}
+#index section#service {
+  top: -70px;
+  width: auto;
+  height: 340px;
+}
+#index section#service h2 {
+  text-align: right;
+}
+#index section#service .deco.cloud {
+  top: 323px;
+  right: -100px;
+}
+#index section#service div.service-simple {
+  float: left;
+  width: 200px;
+  height: auto;
+  text-align: center;
+  margin-top: -30px;
+}
+#index section#service div.service-simple p {
+  width: 170px;
+  height: auto;
+  margin: 0 15px;
+  font-size: 12px;
+  color: #898989;
+}
+#index section#service div.service-simple p.title {
+  width: 130px;
+  height: 45px;
+  margin: 0 35px 0;
+  padding-top: 100px;
+  background: url(../img/service.png) 0 0 no-repeat;
+}
+#index section#service div.service-simple p.title a,
+#index section#service div.service-simple p.title a:visited {
+  font: 16px "Archive";
+  color: #6f5152;
+  text-decoration: none;
+}
+#index section#service div.service-simple p.title a:hover,
+#index section#service div.service-simple p.title a:visited:hover {
+  color: #3299c0;
+}
+#index section#service #service_0 p.title {
+  background-position: 15px 19px;
+}
+#index section#service #service_1 p.title {
+  background-position: 15px -150px;
+}
+#index section#service #service_2 p.title {
+  background-position: 15px -286px;
+}
+#index section#service #service_3 p.title {
+  background-position: 15px -438px;
+}
+#index section#service #service_4 p.title {
+  background-position: 15px -603px;
+}
+#index section#service #service_5 {
+  display: block;
+  font: 17px "Archive";
+  color: #fff;
+  background-color: #30cb98;
+  width: 400px;
+  height: 40px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+  line-height: 40px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  margin: 25px auto 0;
+}
+#index section#service #service_5:hover {
+  background-color: #368685;
+}
+#index section#team {
+  top: -20px;
+  width: 1000px;
+  height: 800px;
+}
+#index section#team .deco.cloud.small-white {
+  top: 27px;
+  left: 767px;
+}
+#index section#team .deco.robot.green-large {
+  top: 3px;
+  right: -138px;
+}
+#index section#team .deco.robot.green-small {
+  top: 499px;
+  right: -141px;
+}
+#index section#team .deco.robot.orange-large {
+  top: 63px;
+  left: -129px;
+}
+#index section#team .deco.robot.orange-small {
+  top: 292px;
+  left: -120px;
+}
+#index section#team .plus {
+  opacity: 0;
+  color: #3299c0;
+  font-size: 50px;
+  font-weight: 700;
+  position: absolute;
+  top: 148px;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  z-index: 100;
+}
+#index section#team .plus:nth-child(1) {
+  left: 238px;
+}
+#index section#team .plus:nth-child(2) {
+  left: 486px;
+}
+#index section#team .plus:nth-child(3) {
+  left: 734px;
+}
+#index section#team .count {
+  float: left;
+  width: 250px;
+  height: auto;
+  position: relative;
+  top: inherit;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  text-align: center;
+}
+#index section#team .count p {
+  width: 200px;
+  height: auto;
+  margin: 10px auto 0;
+  font: 16px "Archive";
+  color: #6f5152;
+}
+#index section#team .count p:nth-child(2) {
+  opacity: 0;
+}
+#index section#team .count p.num {
+  font: 60px "Archive";
+  color: #358786;
+}
+#index section#team .count p.num span {
+  opacity: 0;
+}
+#index section#team .count p.pic {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -210px;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  z-index: 10;
+  background: url(../img/team.png) 0 0 no-repeat;
+  opacity: 0;
+}
+#index section#team .count p.arrow {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 135px;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  z-index: 10;
+  background: url(../img/arrows.png) 0 0 no-repeat;
+  opacity: 0;
+}
+#index section#team .count:nth-child(1) .pic {
+  background-position: 48px 6px;
+}
+#index section#team .count:nth-child(1) .arrow {
+  width: 250px;
+  height: 100px;
+  background-position: 95px 0px;
+}
+#index section#team .count:nth-child(2) .pic {
+  background-position: 48px -170px;
+}
+#index section#team .count:nth-child(2) .arrow {
+  top: 120px;
+  background-position: 50px -100px;
+}
+#index section#team .count:nth-child(3) .pic {
+  background-position: 45px -380px;
+}
+#index section#team .count:nth-child(3) .arrow {
+  top: 120px;
+  background-position: 36px -200px;
+}
+#index section#team .count:nth-child(4) .pic {
+  background-position: 40px -580px;
+}
+#index section#team .count:nth-child(4) .arrow {
+  top: 124px;
+  left: -20px;
+  background-position: 0px -300px;
+}
+#index section#team #how-much {
+  width: 500px;
+  height: 290px;
+  position: relative;
+  top: 0px;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  margin: 0 auto;
+  background: url(../img/how-much.png) 50% 100% no-repeat;
+  opacity: 0;
+}
+#index section#team #how-much form {
+  position: absolute;
+  top: 199px;
+  left: 149px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#team #how-much form input[type='text'] {
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #3299c0;
+  color: #898989;
+  font-size: 20px;
+}
+#index section#team #how-much form label {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 7px;
+  color: #3299c0;
+}
+#index section#team #how-much form div {
+  position: absolute;
+  top: -10px;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  font: 24px "Archive";
+  font-style: italic;
+  color: #30cb98;
+}
+#index section#team #how-much form div span {
+  display: block;
+  color: #3299c0;
+  margin-bottom: 6px;
+}
+#index section#team #how-much form div.error {
+  left: -415px;
+  top: 10px;
+}
+#index section#team #how-much form div.success {
+  width: 300px;
+  height: auto;
+  text-align: right;
+  left: 280px;
+}
+#index section#team #how-much .cloud.large {
+  top: 0;
+  left: 85px;
+}
+#index section#team #how-much .cloud.large p {
+  position: relative;
+  top: 64px;
+  left: -46px;
+  bottom: inherit;
+  right: inherit;
+  color: #fff;
+  font: 20px "Archive";
+  text-align: center;
+}
+#index section#team #how-much .cloud.small-left {
+  top: 100px;
+  left: 0px;
+}
+#index section#team #how-much .cloud.small-right {
+  top: 60px;
+  right: 0;
+}
+#index section#tech {
+  top: -5px;
+  z-index: 10;
+}
+#index section#tech .deco.cloud.small-left {
+  top: -85px;
+  right: -44px;
+}
+#index section#tech .deco.cloud.small-white {
+  top: 42px;
+  left: -101px;
+}
+#index section#tech .deco.cloud.white {
+  top: 401px;
+  left: -145px;
+}
+#index section#tech h2 {
+  margin-bottom: 5px;
+}
+#index section#tech p.sub-headline {
+  text-align: right;
+  margin-bottom: 27px;
+}
+#index section#tech #tech_0 {
+  position: relative;
+  top: inherit;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#tech #tech_0 p {
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  font: 14px "Archive";
+  color: #3299c0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+#index section#tech #tech_0 p span {
+  float: right;
+  opacity: 0.7;
+}
+#index section#tech #tech_0 p:nth-child(2) {
+  width: 980px;
+  height: auto;
+  color: #fff;
+  top: 6px;
+  padding: 0 10px;
+}
+#index section#tech #tech_0 p:nth-child(3) {
+  top: 37px;
+  left: 200px;
+}
+#index section#tech #tech_0 p:nth-child(4) {
+  top: 68px;
+  left: 365px;
+}
+#index section#tech #tech_0 p:nth-child(5) {
+  top: 99px;
+  left: 195px;
+}
+#index section#tech #tech_0 p:nth-child(6) {
+  top: 130px;
+  left: 30px;
+}
+#index section#tech #tech_0 p:nth-child(7) {
+  top: 161px;
+  left: 330px;
+}
+#index section#tech #tech_0 p:nth-child(8) {
+  top: 192px;
+  left: 585px;
+}
+#index section#tech .timeline {
+  position: relative;
+  top: -33px;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  z-index: 10;
+}
+#index section#tech .timeline p {
+  float: left;
+  width: 200px;
+  height: auto;
+  text-align: center;
+  color: #3299c0;
+  font: 18px "Archive";
+  background: url(../img/icons.png) 50% -200px no-repeat;
+  padding-top: 13px;
+  opacity: 0;
+}
+#index section#tech a,
+#index section#tech a:visited {
+  display: inline-block;
+  width: 150px;
+  height: 100%;
+  color: #6f5152;
+  font: 13px "Archive";
+  line-height: 1.3em;
+  margin-top: 11px;
+}
+#index section#tech a:hover,
+#index section#tech a:visited:hover {
+  color: #3299c0;
+}
+#index section#thx {
+  top: -65px;
+  width: auto;
+  height: 400px;
+}
+#index section#thx .deco.cloud.small-right {
+  top: 8px;
+  right: -106px;
+  opacity: 0.5;
+}
+#index section#thx .deco.cloud.lighten {
+  top: 280px;
+  left: -108px;
+  opacity: 0.6;
+}
+#index section#thx h2 {
+  font-size: 24px;
+  text-align: center;
+  padding-top: 110px;
+}
+#index section#thx #thx_0 {
+  float: left;
+  width: 210px;
+  height: 210px;
+  position: relative;
+  top: -70px;
+  left: 10px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#thx #thx_0 p {
+  width: 180px;
+  height: auto;
+  position: absolute;
+  top: 63px;
+  left: 20px;
+  bottom: inherit;
+  right: inherit;
+  font: 41px "Archive";
+  color: #336699;
+  line-height: 0.6em;
+}
+#index section#thx #thx_0 p span {
+  opacity: 0;
+}
+#index section#thx #thx_0 p span:nth-child(1) {
+  color: #3299c0;
+}
+#index section#thx #thx_0 p span.countAnim {
+  position: absolute;
+  top: 0;
+  left: 77px;
+  bottom: inherit;
+  right: inherit;
+}
+#index section#thx #thx_0 p span:nth-child(3) {
+  font-size: 26px;
+  color: #6f5152;
+  line-height: 0.5em;
+}
+#index section#thx #thx_0 p span:nth-child(4) {
+  font-size: 22px;
+  color: #368685;
+}
+#index section#thx form {
+  width: 500px;
+  height: auto;
+  margin: 30px auto 0;
+  text-align: center;
+}
+#index section#thx form input[type='text'] {
+  width: 358px;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 15px;
+  background-color: #fff;
+  border: 1px solid #a8dde7;
+  font-size: 16px;
+  font-style: italic;
+  color: #898989;
+  margin-bottom: 30px;
+}
+#index section#thx form .submit {
+  display: block;
+  font: 17px "Archive";
+  color: #fff;
+  background-color: #30cb98;
+  width: 310px;
+  height: 44px;
+  border-radius: 22px;
+  -moz-border-radius: 22px;
+  -webkit-border-radius: 22px;
+  -o-border-radius: 22px;
+  -ms-border-radius: 22px;
+  line-height: 44px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  font-size: 24px;
+  margin: 0 auto;
+  opacity: 0;
+}
+#index section#thx form .submit:hover {
+  background-color: #368685;
+}
+#index section#thx .face {
+  width: 218px;
+  height: 270px;
+  position: absolute;
+  top: 45px;
+  left: auto;
+  bottom: auto;
+  right: 10px;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  color: #6f5152;
+  padding-top: 250px;
+  background: url(../img/face.png) 0 0 no-repeat;
+}
+#index section#social {
+  width: 1000px;
+  height: 309px;
+  top: -37px;
+}
+#index section#social .deco.cloud {
+  top: -18px;
+  left: 68px;
+}
+#index section#social .mountian {
+  position: absolute;
+  background: url(../img/social-bg.png) 0 0 no-repeat;
+  opacity: 0;
+}
+#index section#social .mountian.left {
+  width: 364px;
+  height: 222px;
+  top: 67px;
+  left: -75px;
+  background-position: 0 0;
+}
+#index section#social .mountian.right {
+  width: 476px;
+  height: 253px;
+  top: 30px;
+  right: -87px;
+  background-position: 0 -300px;
+}
+#index section#social #social_0 {
+  position: absolute;
+  top: -31px;
+  left: 224px;
+  bottom: inherit;
+  right: inherit;
+  width: 438px;
+  height: 333px;
+  background: url(../img/social-bg.png) 0 -600px no-repeat;
+  opacity: 0;
+}
+#index section#social #social_0 #robot {
+  position: absolute;
+  top: 122px;
+  left: 156px;
+  bottom: inherit;
+  right: inherit;
+  width: 140px;
+  height: 176px;
+  background: url(../img/decorations.png) 10px -1990px no-repeat;
+  opacity: 0;
+  z-index: 5;
+}
+#index section#social #social_0 .social {
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+  width: 51px;
+  height: 51px;
+  background: url(../img/social.png) 0 0 no-repeat;
+  z-index: 10;
+  opacity: 0;
+}
+#index section#social #social_0 .social:hover {
+  cursor: pointer;
+}
+#index section#social #social_0 .social.fb {
+  top: 64px;
+  left: 152px;
+  background-position: 0 0;
+}
+#index section#social #social_0 .social.tw {
+  width: 41px;
+  height: 41px;
+  top: 95px;
+  left: 240px;
+  background-position: -5px -102px;
+}
+#index section#social #social_0 .social.vk {
+  top: 199px;
+  left: 117px;
+  background-position: 0 -201px;
+}

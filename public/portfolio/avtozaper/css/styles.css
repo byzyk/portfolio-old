@@ -1,0 +1,1295 @@
+/* === Variables === */
+/* === Helpers === */
+.nav {
+  list-style: none;
+  list-style-image: none;
+  display: inline-block;
+}
+.input {
+  width: auto;
+  height: 44px;
+  position: relative;
+  background: url(../img/buttons.png) 0 -150px repeat-x;
+}
+.input:after,
+.input:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 44px;
+  background: url(../img/buttons.png) 0 0 no-repeat;
+}
+.input:before {
+  left: -10px;
+  background-position: -36px 0;
+}
+.input:after {
+  right: -10px;
+  background-position: 0 -50px;
+}
+.input.error {
+  background-position: 0 -400px;
+}
+.input.error:before {
+  background-position: -36px -250px;
+}
+.input.error:after {
+  background-position: 0 -300px;
+}
+.input input {
+  width: 100%;
+}
+.fast-links {
+  margin-left: 12px;
+  overflow: hidden;
+  font-size: 18px;
+}
+.fast-links .select-options-control-wrap {
+  width: 150px;
+}
+.fast-links .select-options-control {
+  margin: 10px 0;
+  border-top: 4px solid #d2d1d1;
+  white-space: nowrap;
+}
+.fast-links .select-options-control .control {
+  display: inline-block;
+  border-top: 4px solid #d2d1d1;
+  margin-top: -4px;
+}
+.fast-links .select-options-control .control:first-child {
+  margin-right: 8px;
+}
+.fast-links .select-options-control .control.active {
+  border-top-color: #313131;
+}
+.fast-links .select-options-control .control:hover {
+  cursor: pointer;
+  color: #cf6803;
+  border-top-color: #cf6803;
+}
+.fast-links .select-option {
+  float: left;
+  clear: left;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+.fast-links .select-option span {
+  border-bottom: 1px dashed #313131;
+}
+.fast-links .select-option:hover {
+  cursor: pointer;
+  color: #000000;
+}
+.fast-links .select-option:hover span {
+  border-bottom-color: #000000;
+}
+.fast-links .select-option[data-list-item="1"] {
+  display: none;
+  clear: none;
+  margin-right: 50px;
+  width: 120px;
+  margin-bottom: 6px;
+}
+/* === STYLES === */
+html,
+body {
+  height: 100%;
+  background: url(../img/bg.jpg) 0 0 repeat;
+}
+body {
+  width: 100%!important;
+  max-width: 100%!important;
+  overflow-x: hidden;
+}
+div.main-wrapper {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+input[type='text'],
+input[type='password'] {
+  background: #fff;
+  border: 0;
+  outline: 0;
+  margin-top: 10px;
+}
+select {
+  display: none;
+}
+.social ul li {
+  list-style: none;
+  list-style-image: none;
+  display: inline-block;
+}
+.social ul li a,
+.social ul li a:active {
+  display: inline-block;
+  background: url(../img/social.png) 0 0 no-repeat;
+}
+.wrap {
+  width: 880px;
+  height: auto;
+  margin: 0 auto;
+}
+.light {
+  width: 2500px;
+  height: 802px;
+  position: absolute;
+  bottom: 98px;
+  left: 50%;
+  z-index: 0;
+  margin-left: -1250px;
+  background: url(../img/light.png) 0 0 no-repeat;
+}
+.light .car {
+  width: 1258px;
+  height: 282px;
+  position: absolute;
+  bottom: 0;
+  left: 70%;
+  z-index: 1;
+  margin-left: -629px;
+  background: url(../img/car.png) 0 0 no-repeat;
+}
+#modal-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+#modal-wrap .modal {
+  width: 420px;
+  height: 470px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -235px 0 0 -210px;
+  background-color: #c3c3c3;
+  -webkit-box-shadow: 0px 3px 10px #000000;
+  -moz-box-shadow: 0px 3px 10px #000000;
+  box-shadow: 0px 3px 10px #000000;
+  text-align: center;
+}
+#modal-wrap .modal h4 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #0a274e;
+  margin-bottom: 15px;
+}
+#modal-wrap .modal .login-form {
+  width: 260px;
+  height: auto;
+  margin: 0 auto;
+  text-align: left;
+}
+#modal-wrap .modal .login-form .input {
+  margin: 15px 0;
+}
+#modal-wrap .modal .login-form .remember {
+  font-size: 14px;
+  color: #5b5b5b;
+  cursor: pointer;
+  float: left;
+  margin-left: -10px;
+}
+#modal-wrap .modal .login-form .forgot {
+  float: right;
+  margin-right: -10px;
+  font-size: 14px;
+  color: #062249;
+  text-decoration: none;
+  border-bottom: 1px dashed #062249;
+}
+#modal-wrap .modal .login-form .submit {
+  width: 100px;
+  height: 44px;
+  line-height: 44px;
+  position: relative;
+  background: url(../img/buttons.png) 0 -750px repeat-x;
+  font-size: 18px;
+  text-align: center;
+  color: #f9f9f7;
+  cursor: pointer;
+  padding-right: 2px;
+  margin: 20px auto 0;
+}
+#modal-wrap .modal .login-form .submit:after,
+#modal-wrap .modal .login-form .submit:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 18px;
+  height: 44px;
+  background: url(../img/buttons.png) 0 0 no-repeat;
+}
+#modal-wrap .modal .login-form .submit:before {
+  left: -18px;
+  background-position: -28px -500px;
+}
+#modal-wrap .modal .login-form .submit:after {
+  right: -18px;
+  background-position: 0 -550px;
+}
+#modal-wrap .modal .login-form .submit.disabled {
+  cursor: default!important;
+  background-position: 0 -1050px;
+}
+#modal-wrap .modal .login-form .submit.disabled:before {
+  left: -18px;
+  background-position: -28px -800px;
+}
+#modal-wrap .modal .login-form .submit.disabled:after {
+  right: -18px;
+  background-position: 0 -850px;
+}
+#modal-wrap .modal .login-form .submit.arrow {
+  background-position: 0 -650px;
+}
+#modal-wrap .modal .login-form .submit.arrow:before {
+  left: -18px;
+  background-position: -16px -600px;
+}
+#modal-wrap .modal .login-form .submit.arrow:after {
+  right: -18px;
+  background-position: -12px -700px;
+}
+#modal-wrap .modal .login-form .submit.arrow.disabled {
+  cursor: default!important;
+  background-position: 0 -950px;
+}
+#modal-wrap .modal .login-form .submit.arrow.disabled:before {
+  background-position: -16px -900px;
+}
+#modal-wrap .modal .login-form .submit.arrow.disabled:after {
+  background-position: -12px -1000px;
+}
+#modal-wrap .modal .social .title {
+  font-size: 18px;
+  color: #5b5b5b;
+  margin-bottom: 5px;
+}
+#modal-wrap .modal .social li a {
+  width: 46px;
+  height: 46px;
+  margin: 0 5px;
+}
+#modal-wrap .modal .social li a.vk {
+  background-position: 0 -300px;
+}
+#modal-wrap .modal .social li a.tw {
+  background-position: 0 -350px;
+}
+#modal-wrap .modal .social li a.fb {
+  background-position: 0 -400px;
+}
+.tip {
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.42);
+  color: #fff;
+  font-size: 14px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 3px 15px;
+}
+.tip:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+}
+.tip.selectTip {
+  top: -55px;
+  width: 140px;
+}
+.tip.selectTip:after {
+  top: 100%;
+  left: 20px;
+  border-top-color: rgba(0, 0, 0, 0.42);
+}
+.tip.inputTip {
+  top: -2px;
+  width: 122px;
+  left: -181px;
+}
+.tip.inputTip:after {
+  left: 100%;
+  top: 17px;
+  border-left-color: rgba(0, 0, 0, 0.42);
+}
+header {
+  padding-top: 30px;
+  margin-bottom: 40px;
+  height: 50px;
+  overflow: hidden;
+}
+header > * {
+  display: inline-block;
+  float: left;
+  height: 50px;
+}
+header .logo {
+  position: relative;
+  top: -10px;
+  width: 190px;
+  height: auto;
+}
+header .logo a,
+header .logo a:active {
+  display: inline-block;
+  background: url(../img/logo.png) 0 0 no-repeat;
+  width: 190px;
+  height: 16px;
+}
+header .logo h1 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #001c41;
+  text-align: center;
+  margin: -1px 0 0 7px;
+  width: 175px;
+  height: auto;
+}
+header nav ul {
+  margin: 0 0 0 12px;
+}
+header nav ul li {
+  list-style: none;
+  list-style-image: none;
+  display: inline-block;
+  margin: 0 25px 0 0;
+}
+header nav ul li a,
+header nav ul li a:active {
+  font-size: 14px;
+  color: #4c4c4c;
+  text-decoration: underline;
+}
+header nav ul li a:hover,
+header nav ul li a:active:hover {
+  color: #000000;
+}
+header .login .btn {
+  color: #f9f9f7;
+  display: block;
+  padding: 3px 11px 2px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 1px 4px 0 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #385c8d;
+  background: -moz-linear-gradient(top, #385c8d, #001c41);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#385c8d), to(#001c41));
+  background: -webkit-linear-gradient(top, #385c8d, #001c41);
+  background: -o-linear-gradient(top, #385c8d, #001c41);
+  background: linear-gradient(top, #385c8d, #001c41);
+}
+header .login .btn:hover {
+  background-color: #001c41;
+  background: -moz-linear-gradient(top, #001c41, #385c8d);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#001c41), to(#385c8d));
+  background: -webkit-linear-gradient(top, #001c41, #385c8d);
+  background: -o-linear-gradient(top, #001c41, #385c8d);
+  background: linear-gradient(top, #001c41, #385c8d);
+}
+header .social li a {
+  width: 25px;
+  height: 25px;
+}
+header .social li a.vk {
+  background-position: 0 0;
+}
+header .social li a.tw {
+  background-position: 0 -50px;
+}
+header .social li a.fb {
+  background-position: 0 -100px;
+}
+footer {
+  background: #e9ecef;
+  width: 100%;
+  height: 98px;
+}
+footer.not-fixed {
+  position: relative;
+  top: 800px;
+}
+footer .wrap {
+  overflow: hidden;
+}
+footer .wrap > div {
+  float: left;
+  display: inline-block;
+}
+footer .social {
+  margin: 35px 50px 0 0;
+}
+footer .social li {
+  margin: 0 3px;
+}
+footer .social li a {
+  width: 32px;
+  height: 32px;
+}
+footer .social li a.vk {
+  background-position: 0 -150px;
+}
+footer .social li a.vk:hover {
+  background-position: 0 -450px;
+}
+footer .social li a.tw {
+  background-position: 0 -200px;
+}
+footer .social li a.tw:hover {
+  background-position: 0 -500px;
+}
+footer .social li a.fb {
+  background-position: 0 -250px;
+}
+footer .social li a.fb:hover {
+  background-position: 0 -550px;
+}
+footer .links {
+  margin: 12px 0 0 15px;
+  width: 120px;
+  height: auto;
+}
+footer .links li {
+  list-style: none;
+  list-style-image: none;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+footer .links li a,
+footer .links li a:active {
+  color: #606060;
+  font-size: 12px;
+}
+footer .links li a:hover,
+footer .links li a:active:hover {
+  color: #141414;
+}
+.sections {
+  position: relative;
+  z-index: 5;
+}
+.sections > section {
+  position: absolute;
+  width: 100%;
+}
+.sections h2,
+.sections h3 {
+  color: #313131;
+  text-shadow: 1px 1px 1px #fff;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.sections #sec1 h2 {
+  margin-top: -20px;
+}
+.sections #sec1 .sub-title-wrap {
+  margin: -10px 0 60px 290px;
+}
+.sections #sec1 .sub-title-wrap .sub-title {
+  font-size: 18px;
+  color: #313131;
+  background: url(../img/green-dot.png) 0 50% no-repeat;
+  padding-left: 20px;
+  position: relative;
+}
+.sections #sec1 .sub-title-wrap .sub-title #cityChange {
+  border-bottom: 1px dashed #313131;
+}
+.sections #sec1 .sub-title-wrap .sub-title #cityChange:hover {
+  cursor: pointer;
+}
+.sections #sec1 .sub-title-wrap .sub-title .input {
+  width: 250px;
+  display: inline-block;
+  position: absolute;
+  top: -7px;
+  margin-left: 15px;
+}
+.sections #sec1 .select-form {
+  margin-bottom: 10px;
+}
+.sections #sec1 .select-form > div {
+  float: left;
+  margin-right: 58px;
+}
+.sections #sec1 .select-form .select-wrap {
+  margin-top: 1px;
+}
+.sections #sec1 .select-form .select-wrap.brand {
+  font-size: 18px;
+}
+.sections #sec1 .select-form .select-wrap.brand .select-active {
+  color: #959494;
+  line-height: 43px;
+  padding-left: 5px;
+  width: 90px;
+  height: 44px;
+  position: relative;
+  background: url(../img/buttons.png) 0 -150px repeat-x;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sections #sec1 .select-form .select-wrap.brand .select-active:after,
+.sections #sec1 .select-form .select-wrap.brand .select-active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 46px;
+  height: 44px;
+  background: url(../img/buttons.png) 0 0 no-repeat;
+}
+.sections #sec1 .select-form .select-wrap.brand .select-active:before {
+  width: 18px;
+  left: -18px;
+  background-position: -24px -100px;
+}
+.sections #sec1 .select-form .select-wrap.brand .select-active:after {
+  right: -46px;
+  background-position: 0 -200px;
+}
+.sections #sec1 .select-form .select-wrap.brand.first .select-active {
+  margin-left: 11px;
+}
+.sections #sec1 .select-form .select-wrap.brand.first .select-active:before {
+  width: 10px;
+  left: -10px;
+  background-position: -36px 0;
+}
+.sections #sec1 .select-form .select-wrap.brand.first .select-active + .select-options {
+  margin-left: 12px;
+}
+.sections #sec1 .select-form .select-wrap.brand.error .select-active {
+  background-position: 0 -400px;
+}
+.sections #sec1 .select-form .select-wrap.brand.error .select-active:before {
+  background-position: -24px -350px;
+}
+.sections #sec1 .select-form .select-wrap.brand.error .select-active:after {
+  background-position: 0 -450px;
+}
+.sections #sec1 .select-form .select-wrap.brand.error.first .select-active:before {
+  width: 10px;
+  left: -10px;
+  background-position: -36px -250px;
+}
+.sections #sec1 .select-form .select-wrap.brand .select-options {
+  font-size: 14px;
+  color: #313131;
+  margin-top: -5px;
+  display: none;
+  position: absolute;
+  overflow-y: auto;
+  height: 391px;
+}
+.sections #sec1 .select-form .select-wrap.brand .select-options .select-option {
+  background-color: #fff;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.sections #sec1 .select-form .select-wrap.brand .select-options .select-option:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+.sections #sec1 .select-form .select-wrap.brand .select-options .select-option:first-child {
+  border-top: 1px solid #ccc;
+}
+.sections #sec1 .select-form .select-wrap.model {
+  font-size: 18px;
+}
+.sections #sec1 .select-form .select-wrap.model .select-active {
+  color: #959494;
+  line-height: 43px;
+  padding-left: 5px;
+  width: 110px;
+  height: 44px;
+  position: relative;
+  background: url(../img/buttons.png) 0 -150px repeat-x;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sections #sec1 .select-form .select-wrap.model .select-active:after,
+.sections #sec1 .select-form .select-wrap.model .select-active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 46px;
+  height: 44px;
+  background: url(../img/buttons.png) 0 0 no-repeat;
+}
+.sections #sec1 .select-form .select-wrap.model .select-active:before {
+  width: 18px;
+  left: -18px;
+  background-position: -24px -100px;
+}
+.sections #sec1 .select-form .select-wrap.model .select-active:after {
+  right: -46px;
+  background-position: 0 -200px;
+}
+.sections #sec1 .select-form .select-wrap.model.first .select-active {
+  margin-left: 11px;
+}
+.sections #sec1 .select-form .select-wrap.model.first .select-active:before {
+  width: 10px;
+  left: -10px;
+  background-position: -36px 0;
+}
+.sections #sec1 .select-form .select-wrap.model.first .select-active + .select-options {
+  margin-left: 12px;
+}
+.sections #sec1 .select-form .select-wrap.model.error .select-active {
+  background-position: 0 -400px;
+}
+.sections #sec1 .select-form .select-wrap.model.error .select-active:before {
+  background-position: -24px -350px;
+}
+.sections #sec1 .select-form .select-wrap.model.error .select-active:after {
+  background-position: 0 -450px;
+}
+.sections #sec1 .select-form .select-wrap.model.error.first .select-active:before {
+  width: 10px;
+  left: -10px;
+  background-position: -36px -250px;
+}
+.sections #sec1 .select-form .select-wrap.model .select-options {
+  font-size: 14px;
+  color: #313131;
+  margin-top: -5px;
+  display: none;
+  position: absolute;
+  overflow-y: auto;
+  height: 391px;
+}
+.sections #sec1 .select-form .select-wrap.model .select-options .select-option {
+  background-color: #fff;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.sections #sec1 .select-form .select-wrap.model .select-options .select-option:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+.sections #sec1 .select-form .select-wrap.model .select-options .select-option:first-child {
+  border-top: 1px solid #ccc;
+}
+.sections #sec1 .select-form .select-wrap.year {
+  font-size: 18px;
+}
+.sections #sec1 .select-form .select-wrap.year .select-active {
+  color: #959494;
+  line-height: 43px;
+  padding-left: 5px;
+  width: 60px;
+  height: 44px;
+  position: relative;
+  background: url(../img/buttons.png) 0 -150px repeat-x;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sections #sec1 .select-form .select-wrap.year .select-active:after,
+.sections #sec1 .select-form .select-wrap.year .select-active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 46px;
+  height: 44px;
+  background: url(../img/buttons.png) 0 0 no-repeat;
+}
+.sections #sec1 .select-form .select-wrap.year .select-active:before {
+  width: 18px;
+  left: -18px;
+  background-position: -24px -100px;
+}
+.sections #sec1 .select-form .select-wrap.year .select-active:after {
+  right: -46px;
+  background-position: 0 -200px;
+}
+.sections #sec1 .select-form .select-wrap.year.first .select-active {
+  margin-left: 11px;
+}
+.sections #sec1 .select-form .select-wrap.year.first .select-active:before {
+  width: 10px;
+  left: -10px;
+  background-position: -36px 0;
+}
+.sections #sec1 .select-form .select-wrap.year.first .select-active + .select-options {
+  margin-left: 12px;
+}
+.sections #sec1 .select-form .select-wrap.year.error .select-active {
+  background-position: 0 -400px;
+}
+.sections #sec1 .select-form .select-wrap.year.error .select-active:before {
+  background-position: -24px -350px;
+}
+.sections #sec1 .select-form .select-wrap.year.error .select-active:after {
+  background-position: 0 -450px;
+}
+.sections #sec1 .select-form .select-wrap.year.error.first .select-active:before {
+  width: 10px;
+  left: -10px;
+  background-position: -36px -250px;
+}
+.sections #sec1 .select-form .select-wrap.year .select-options {
+  font-size: 14px;
+  color: #313131;
+  margin-top: -5px;
+  display: none;
+  position: absolute;
+  overflow-y: auto;
+  height: 391px;
+}
+.sections #sec1 .select-form .select-wrap.year .select-options .select-option {
+  background-color: #fff;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.sections #sec1 .select-form .select-wrap.year .select-options .select-option:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+.sections #sec1 .select-form .select-wrap.year .select-options .select-option:first-child {
+  border-top: 1px solid #ccc;
+}
+.sections #sec1 .select-form .select-wrap.mod {
+  font-size: 18px;
+}
+.sections #sec1 .select-form .select-wrap.mod .select-active {
+  color: #959494;
+  line-height: 43px;
+  padding-left: 5px;
+  width: 150px;
+  height: 44px;
+  position: relative;
+  background: url(../img/buttons.png) 0 -150px repeat-x;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sections #sec1 .select-form .select-wrap.mod .select-active:after,
+.sections #sec1 .select-form .select-wrap.mod .select-active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 46px;
+  height: 44px;
+  background: url(../img/buttons.png) 0 0 no-repeat;
+}
+.sections #sec1 .select-form .select-wrap.mod .select-active:before {
+  width: 18px;
+  left: -18px;
+  background-position: -24px -100px;
+}
+.sections #sec1 .select-form .select-wrap.mod .select-active:after {
+  right: -46px;
+  background-position: 0 -200px;
+}
+.sections #sec1 .select-form .select-wrap.mod.first .select-active {
+  margin-left: 11px;
+}
+.sections #sec1 .select-form .select-wrap.mod.first .select-active:before {
+  width: 10px;
+  left: -10px;
+  background-position: -36px 0;
+}
+.sections #sec1 .select-form .select-wrap.mod.first .select-active + .select-options {
+  margin-left: 12px;
+}
+.sections #sec1 .select-form .select-wrap.mod.error .select-active {
+  background-position: 0 -400px;
+}
+.sections #sec1 .select-form .select-wrap.mod.error .select-active:before {
+  background-position: -24px -350px;
+}
+.sections #sec1 .select-form .select-wrap.mod.error .select-active:after {
+  background-position: 0 -450px;
+}
+.sections #sec1 .select-form .select-wrap.mod.error.first .select-active:before {
+  width: 10px;
+  left: -10px;
+  background-position: -36px -250px;
+}
+.sections #sec1 .select-form .select-wrap.mod .select-options {
+  font-size: 14px;
+  color: #313131;
+  margin-top: -5px;
+  display: none;
+  position: absolute;
+  overflow-y: auto;
+  height: 391px;
+}
+.sections #sec1 .select-form .select-wrap.mod .select-options .select-option {
+  background-color: #fff;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.sections #sec1 .select-form .select-wrap.mod .select-options .select-option:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+.sections #sec1 .select-form .select-wrap.mod .select-options .select-option:first-child {
+  border-top: 1px solid #ccc;
+}
+.sections #sec1 .select-form .submit {
+  margin: 0px 0 0 -4px;
+  width: 170px;
+  height: 44px;
+  line-height: 44px;
+  position: relative;
+  background: url(../img/buttons.png) 0 -750px repeat-x;
+  font-size: 18px;
+  text-align: center;
+  color: #f9f9f7;
+  cursor: pointer;
+  padding-right: 2px;
+}
+.sections #sec1 .select-form .submit:after,
+.sections #sec1 .select-form .submit:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 18px;
+  height: 44px;
+  background: url(../img/buttons.png) 0 0 no-repeat;
+}
+.sections #sec1 .select-form .submit:before {
+  left: -18px;
+  background-position: -28px -500px;
+}
+.sections #sec1 .select-form .submit:after {
+  right: -18px;
+  background-position: 0 -550px;
+}
+.sections #sec1 .select-form .submit.disabled {
+  cursor: default!important;
+  background-position: 0 -1050px;
+}
+.sections #sec1 .select-form .submit.disabled:before {
+  left: -18px;
+  background-position: -28px -800px;
+}
+.sections #sec1 .select-form .submit.disabled:after {
+  right: -18px;
+  background-position: 0 -850px;
+}
+.sections #sec1 .select-form .submit.arrow {
+  background-position: 0 -650px;
+}
+.sections #sec1 .select-form .submit.arrow:before {
+  left: -18px;
+  background-position: -16px -600px;
+}
+.sections #sec1 .select-form .submit.arrow:after {
+  right: -18px;
+  background-position: -12px -700px;
+}
+.sections #sec1 .select-form .submit.arrow.disabled {
+  cursor: default!important;
+  background-position: 0 -950px;
+}
+.sections #sec1 .select-form .submit.arrow.disabled:before {
+  background-position: -16px -900px;
+}
+.sections #sec1 .select-form .submit.arrow.disabled:after {
+  background-position: -12px -1000px;
+}
+.sections #sec2 {
+  margin-left: 100%;
+}
+.sections #sec2 h2,
+.sections #sec2 h3 {
+  text-align: left;
+  color: #0a274e;
+  margin: 60px 0 0;
+}
+.sections #sec2 h2 {
+  display: inline-block;
+  margin: 0 0 15px 35px;
+  font-size: 30px;
+}
+.sections #sec2 #goBack {
+  color: #001c41;
+  font-size: 12px;
+  border-bottom: 1px dashed #001c41;
+  position: relative;
+  top: -5px;
+}
+.sections #sec2 #goBack:hover {
+  cursor: pointer;
+}
+.sections #sec2 #goBack:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: -18px;
+  width: 11px;
+  height: 11px;
+  background: url(../img/blue-arrow.png) 0 0 no-repeat;
+}
+.sections #sec2 .selectedCar {
+  font-size: 30px;
+  color: #313131;
+  margin-left: 183px;
+}
+.sections #sec2 .order-form {
+  margin-left: 183px;
+}
+.sections #sec2 .order-form .input {
+  margin: 15px 0 0 8px;
+  width: 455px;
+}
+.sections #sec2 .order-form .input .add-photo {
+  font-size: 14px;
+  color: #002a64;
+  border-bottom: 1px dashed #002a64;
+  position: absolute;
+  top: 8px;
+  right: -145px;
+}
+.sections #sec2 .order-form .input .add-photo:hover {
+  cursor: pointer;
+}
+.sections #sec2 .order-form .input input[type="file"] {
+  display: none;
+}
+.sections #sec2 .order-form .input .input-tip {
+  position: absolute;
+  top: -5px;
+  right: -185px;
+  color: #2b2b2b;
+  font-size: 12px;
+  width: 150px;
+}
+.sections #sec2 .order-form .more-details {
+  font-size: 14px;
+  color: #313131;
+}
+.sections #sec2 .order-form .more-details .add-detail {
+  border-bottom: 1px dashed #313131;
+  margin-left: 3px;
+}
+.sections #sec2 .order-form .more-details .add-detail:hover {
+  cursor: pointer;
+}
+.sections #sec2 .order-form .more-details .used {
+  margin-left: 188px;
+}
+.sections #sec2 .order-form .more-details .used:hover {
+  cursor: pointer;
+}
+.sections #sec2 .order-form .submit {
+  width: 200px;
+  height: 44px;
+  line-height: 44px;
+  position: relative;
+  background: url(../img/buttons.png) 0 -750px repeat-x;
+  font-size: 18px;
+  text-align: center;
+  color: #f9f9f7;
+  cursor: pointer;
+  padding-right: 2px;
+  margin: 15px 0 0 255px;
+}
+.sections #sec2 .order-form .submit:after,
+.sections #sec2 .order-form .submit:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 18px;
+  height: 44px;
+  background: url(../img/buttons.png) 0 0 no-repeat;
+}
+.sections #sec2 .order-form .submit:before {
+  left: -18px;
+  background-position: -28px -500px;
+}
+.sections #sec2 .order-form .submit:after {
+  right: -18px;
+  background-position: 0 -550px;
+}
+.sections #sec2 .order-form .submit.disabled {
+  cursor: default!important;
+  background-position: 0 -1050px;
+}
+.sections #sec2 .order-form .submit.disabled:before {
+  left: -18px;
+  background-position: -28px -800px;
+}
+.sections #sec2 .order-form .submit.disabled:after {
+  right: -18px;
+  background-position: 0 -850px;
+}
+.sections #sec2 .order-form .submit.arrow {
+  background-position: 0 -650px;
+}
+.sections #sec2 .order-form .submit.arrow:before {
+  left: -18px;
+  background-position: -16px -600px;
+}
+.sections #sec2 .order-form .submit.arrow:after {
+  right: -18px;
+  background-position: -12px -700px;
+}
+.sections #sec2 .order-form .submit.arrow.disabled {
+  cursor: default!important;
+  background-position: 0 -950px;
+}
+.sections #sec2 .order-form .submit.arrow.disabled:before {
+  background-position: -16px -900px;
+}
+.sections #sec2 .order-form .submit.arrow.disabled:after {
+  background-position: -12px -1000px;
+}
+.sections #sec3 {
+  margin-left: 200%;
+}
+.sections #sec3 h2,
+.sections #sec3 h3 {
+  color: #313131;
+  text-shadow: none;
+  margin-bottom: 80px;
+}
+.sections #sec3 h2 {
+  margin-top: 120px;
+}
+.sections #sec3 .phone-form {
+  width: 520px;
+  margin: 0 auto;
+}
+.sections #sec3 .phone-form h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.sections #sec3 .phone-form .input {
+  width: 375px;
+  display: inline-block;
+  margin-top: -1px;
+}
+.sections #sec3 .phone-form .submit {
+  width: 100px;
+  height: 44px;
+  line-height: 44px;
+  position: relative;
+  background: url(../img/buttons.png) 0 -750px repeat-x;
+  font-size: 18px;
+  text-align: center;
+  color: #f9f9f7;
+  cursor: pointer;
+  padding-right: 2px;
+  display: inline-block;
+  margin-left: 30px;
+}
+.sections #sec3 .phone-form .submit:after,
+.sections #sec3 .phone-form .submit:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 18px;
+  height: 44px;
+  background: url(../img/buttons.png) 0 0 no-repeat;
+}
+.sections #sec3 .phone-form .submit:before {
+  left: -18px;
+  background-position: -28px -500px;
+}
+.sections #sec3 .phone-form .submit:after {
+  right: -18px;
+  background-position: 0 -550px;
+}
+.sections #sec3 .phone-form .submit.disabled {
+  cursor: default!important;
+  background-position: 0 -1050px;
+}
+.sections #sec3 .phone-form .submit.disabled:before {
+  left: -18px;
+  background-position: -28px -800px;
+}
+.sections #sec3 .phone-form .submit.disabled:after {
+  right: -18px;
+  background-position: 0 -850px;
+}
+.sections #sec3 .phone-form .submit.arrow {
+  background-position: 0 -650px;
+}
+.sections #sec3 .phone-form .submit.arrow:before {
+  left: -18px;
+  background-position: -16px -600px;
+}
+.sections #sec3 .phone-form .submit.arrow:after {
+  right: -18px;
+  background-position: -12px -700px;
+}
+.sections #sec3 .phone-form .submit.arrow.disabled {
+  cursor: default!important;
+  background-position: 0 -950px;
+}
+.sections #sec3 .phone-form .submit.arrow.disabled:before {
+  background-position: -16px -900px;
+}
+.sections #sec3 .phone-form .submit.arrow.disabled:after {
+  background-position: -12px -1000px;
+}
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+.jspPane {
+  position: absolute;
+}
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 200px;
+  background: red;
+}
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: red;
+}
+.jspVerticalBar *,
+.jspHorizontalBar * {
+  margin: 0;
+  padding: 0;
+}
+.jspCap {
+  display: none;
+}
+.jspHorizontalBar .jspCap {
+  float: left;
+}
+.jspTrack {
+  background: #dde;
+  position: relative;
+}
+.jspDrag {
+  background: green;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.jspBeforeDrag {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 0px;
+  background: #ffd700;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%;
+}
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+}
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+.jspVerticalBar .jspArrow {
+  height: 16px;
+}
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+.jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner {
+  margin: 0 -3px 0 0;
+}
+/* Scroll */
+.scroll-pane {
+  height: 510px;
+  overflow: auto;
+  outline: none;
+}
+.jspDrag {
+  background: url("../img/bus2.png") no-repeat -1px 0;
+  cursor: pointer;
+  left: 0;
+  position: relative;
+  width: 26px;
+  height: 54px;
+}
+.jspBeforeDrag {
+  background: url("../img/bg-scroll-road2.png") no-repeat 4px 0;
+  padding-top: 4px;
+  position: relative;
+  right: 0;
+  top: 0;
+  width: 26px;
+}
+.jspTrack {
+  background: url("../img/bg-scroll.png") no-repeat 5px 110%;
+  position: relative;
+  right: 24px;
+  width: 26px;
+  top: 8px;
+}
+.jspVerticalBar {
+  background: none;
+  z-index: 1;
+  height: 510px;
+}
