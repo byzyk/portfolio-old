@@ -5,7 +5,7 @@ block content
     #folioList.folio-items.wrap.clearfix
         each item in works
             .folio-item-wrap
-                a(href='/portfolio/' + item.id).folio-item.clearfix
+                a(href=item.url || '/portfolio/' + item.id).folio-item.clearfix
                     h3.folio-item-title=item.name
                     img(src='/images/preview/' + item.id + '.jpg')
                     p.folio-item-text=item.text
