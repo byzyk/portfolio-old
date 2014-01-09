@@ -2,13 +2,33 @@ extends layout
 
 block content
 
-    #folioList.folio-items.wrap.clearfix
-        each item in works
-            .folio-item-wrap
-                a(href=item.url || '/portfolio/' + item.id).folio-item.clearfix
-                    h3.folio-item-title=item.name
-                    img(src='/images/preview/' + item.id + '.jpg')
-                    p.folio-item-text=item.text
+    div.block#block1
+        nav
+            ul
+                li
+                    a(href="#") portfolio
+                li /
+                li
+                    a(href="#") contact me
+        h1.header-text.header-name Bohdan Khodakovsky
+        h2.header-text.header-job Front-end Developer
+        div.header-text.header-slide slide down to look at my portfolio
 
-    footer
-        .smile ;)
+
+    div.block#block2
+        div.portfolio-wrap
+            div.portfolio-control.control-left
+            div.portfolio-control.control-right
+            h2 Portfolio
+            div.portfolio-slide-wrap
+                div.portfolio-slide
+                    each work in works
+                        a.portfolio-item(href="/portfolio/" + work.id)
+                            .title-block
+                                .title-block-text= work.name
+                            img(src='/images/preview/' + work.id + '.jpg')
+
+
+    div.block#block3
+        div.circ
+            div.contact-email bohdan.kh@gmail.com

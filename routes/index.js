@@ -37,12 +37,10 @@ exports.portfolio = function(req, res){
   var work = req.params.work;
   if (typeof(work) === 'undefined') {
     res.redirect('/');
-  } else if (work === 'sshikom') {
-    res.redirect('/demo/sshikom');
   } else {
     var json = fs.readFileSync(worksDir + work + '.json', 'utf-8');
     work = JSON.parse(json);    
-    var path = work.url? work.url : '/p/'+work.id+'/index.html';
+    var path = (work.url !== false) ? work.url : '/p/'+work.id+'/index.html';
     console.log(path);
     res.render('portfolio', {
       contacts: contacts,
