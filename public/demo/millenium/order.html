@@ -46,69 +46,87 @@
                 <ul class="clearfix">
                     <li><a href="index.html"><i class="menu-icon menu-icon-1"></i>Заказ<br> билетов</a></li>
                     <li><a href="tours.html"><i class="menu-icon menu-icon-2"></i>Туры в<br> Бразилию</a></li>
-                    <li><a href="special.html"><i class="menu-icon menu-icon-3"></i>Специальные<br> предложения</a></li>
+                    <li><a href="special.html"><i class="menu-icon menu-icon-3"></i>Специальные<br>
+                        предложения</a></li>
                     <li><a href="about.html"><i class="menu-icon menu-icon-4"></i>О чемпионате<br> О нас</a></li>
-                    <li><a href="contact.html" class="active"><i class="menu-icon menu-icon-5"></i>Наши<br> контакты</a></li>
+                    <li><a href="contact.html"><i class="menu-icon menu-icon-5"></i>Наши<br> контакты</a></li>
                 </ul>
             </nav>
 
             <div class="layout-wrap">
 
-                <div class="contact clearfix">
-                    <div class="contact-inner contact-contacts">
-                        <div class="contact-block">
-                            <h3>Доставка</h3>
-                            <p>Мы реализуем билеты и абонементы на матчи за
-                                наличный и безналичный расчет. Все билеты
-                                доставляются по указанному вами адресу
-                                курьером (по Москве), службой доставки UPS
-                                (по России и СНГ). Также вы можете забрать
-                                билеты в нашем офисе.</p>
-                        </div>
-                        <div class="contact-block">
-                            <h3>Контакты</h3>
-                            <p>+7 (495) 640-11-81 (многоканальный)<br>
-                                +7 (495) 640-11-82 (факс автомат)<br>
-                                Москва, ул. Бауманская, д. 6,<br>
-                                БЦ «Виктория Плаза», офис 906<br>
-                                e-mail: info@mvoyage.ru
-                            </p>
-                        </div>
+                <div class="order-wrap">
+                    <h2 class="page-header normal">Заказ</h2>
+
+                    <table class="table table-order bordered">
+                        <tr>
+                            <th class="w2">Категория</th>
+                            <th class="w1">Кол-во</th>
+                            <th class="w9">Стоимость, руб</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="sector-rect sector-1-rect"></div>
+                                1-я<br> категория
+                            </td>
+                            <td>
+                                <select name="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </td>
+                            <td><span class="bold">10 000$</span>
+                                <a class="link-orange link-margin" href="#">удалить</a></td>
+                        </tr>
+                    </table>
+
+                    <h2 class="page-header normal">Контактная Информация</h2>
+
+                    <div class="hero hero-orange">
+                        Самовывоз из офиса (Москва, Кожевнический проезд, д.3, 3 этаж, офис 2).
+                        <br>
+                        Доставка курьером по Москве - 250 рублей.
+                        <br>
+                        Доставка почтой в любой город России и СНГ 600 рублей.
                     </div>
-                    <div class="contact-inner contact-subscribe" id="mc_embed_signup">
-                        <h3>Любите путешествовать?<br>
-                            Подпишитесь на нашу рассылку!</h3>
 
-                        <form
-                                action="http://mvoyage.us3.list-manage1.com/subscribe/post?u=d985df45719ea8ecde0db3dfe&amp;id=f3d0ca0dc3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate class="subscribe-form">
-                            <input type="text" value="" name="FNAME" id="mce-FNAME" placeholder="Имя (обяз)">
-                            <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="Email (обяз)">
-                            <div class="checkboxes">
-                                <label for="mce-group[4813]-4813-0">
-                                    <input type="checkbox" value="1" name="group[4813][1]"
-                                                                        id="mce-group[4813]-4813-0" checked>
-                                    еженедельно
-                                </label>
-                                <label for="mce-group[4813]-4813-1">
-                                    <input type="checkbox" value="2" name="group[4813][2]" id="mce-group[4813]-4813-1">
-                                    ежемесячно
-                                </label>
-                            </div>
-
-                            <div id="mce-responses">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>
-                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_d985df45719ea8ecde0db3dfe_f3d0ca0dc3" value=""></div>
-
-                            <input type="submit" value="подписаться" name="subscribe" id="mc-embedded-subscribe" class="button button-large">
+                    <div class="hero hero-gray">
+                        <form action="#" class="order-form">
+                            <label>
+                                <div class="form-label">Способ доставки</div>
+                                <select>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </label>
+                            <label>
+                                <div class="form-label">Имя*</div>
+                                <input type="text">
+                            </label>
+                            <label>
+                                <div class="form-label">E-mail</div>
+                                <input type="email">
+                            </label>
+                            <label>
+                                <div class="form-label">Телефон</div>
+                                <input type="tel">
+                                <div class="form-tip">например: +7 (465) 589 52 65</div>
+                            </label>
+                            <label>
+                                <div class="form-label">Комментарий</div>
+                                <textarea></textarea>
+                            </label>
                         </form>
                     </div>
 
+                    <div class="page-header normal">
+                        <a href="#" class="button button-large">оформить</a>
+                        СУММА ЗАКАЗА: 7 000 руб.
+                    </div>
                 </div>
-
-                <div class="contact-map"><script type="text/javascript" charset="utf-8"
-                                                 src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=aRdz9zp01AcaV0aroP-nmGqbdoHOX0J3&width=900&height=200"></script></div>
 
             </div>
 
