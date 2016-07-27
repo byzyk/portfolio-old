@@ -1,0 +1,102 @@
+<!DOCTYPE html><meta charset="UTF-8"><meta name="ad.size" content="width=300,height=600"><style>#Logo {
+  left: 15px;
+  top: 33px; }
+
+#Image {
+  left: 0;
+  bottom: 0; }
+
+#Text_1 {
+  left: 34.5px;
+  bottom: 44px; }
+
+#Text_2 {
+  left: 52px;
+  bottom: 63px; }
+
+#Text_3 {
+  left: 23.5px;
+  bottom: 51px; }
+
+#Text_4 {
+  left: 20.5px;
+  bottom: 39px; }
+
+#CTA {
+  left: 37px;
+  bottom: 60px; }
+
+body {
+  margin: 0;
+  line-height: 1; }
+
+#Banner {
+  width: 300px;
+  height: 600px;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  font-family: "Font Regular", sans-serif;
+  opacity: 0; }
+  #Banner:hover {
+    cursor: pointer; }
+  #Banner:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #000000;
+    z-index: 15; }
+
+#Image {
+  position: absolute;
+  width: 576px;
+  height: 454px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url(image.jpg);
+  z-index: 3; }
+
+#Logo {
+  position: absolute;
+  width: 270px;
+  height: 91px;
+  background: url(logo.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  z-index: 10; }
+
+.text {
+  position: absolute;
+  background-size: 100% 100%;
+  z-index: 10; }
+
+#Text_1 {
+  width: 231px;
+  height: 76px;
+  background: url(text-1.png) 0 0 no-repeat; }
+
+#Text_2 {
+  width: 196px;
+  height: 40px;
+  background: url(text-2.png) 0 0 no-repeat; }
+
+#Text_3 {
+  width: 253px;
+  height: 63px;
+  background: url(text-3.png) 0 0 no-repeat; }
+
+#Text_4 {
+  width: 259px;
+  height: 86px;
+  background: url(text-4.png) 0 0 no-repeat; }
+
+#CTA {
+  position: absolute;
+  width: 226px;
+  height: 36px;
+  background: url(cta.svg) 0 0 no-repeat;
+  background-size: 100% 100%;
+  z-index: 10; }</style><script>var clickTag = 'http://immigrationcanadaservices.com/';</script><div id="Banner"><div id="Image"></div><div id="Logo"></div><div class="text" id="Text_1"></div><div class="text" id="Text_2"></div><div class="text" id="Text_3"></div><div class="text" id="Text_4"></div><div id="CTA"></div></div><script src="//s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.0_499ba64a23378545748ff12d372e59e9_min.js"></script><script>function BC(){var a=this;a.createCORSRequest=function(a,b){var c=new XMLHttpRequest;return"withCredentials"in c?c.open(a,b,!0):"undefined"!=typeof XDomainRequest?(c=new XDomainRequest,c.open(a,b)):c=null,c},a.appendScript=function(a,b,c){var d,e;e=!1,d=document.createElement("script"),d.src=a,d.async="async",d.onload=d.onreadystatechange=function(){e||this.readyState&&"complete"!=this.readyState||(e=!0,c&&Banner.Libs.loaded++,"undefined"!=typeof b&&b())},d.onerror=function(){console.log("error loading this script "+a),"undefined"!=typeof b&&b(),c&&Banner.Libs.fails++},document.getElementsByTagName("head")[0].appendChild(d)},a.getBannerDimension=function(){var a=document.querySelector('[name="ad.size"]').getAttribute("content").split(",");return a[0].split("=")[1]+"x"+a[1].split("=")[1]},a.Libs={loaded:0,fails:0,host:"//s0.2mdn.net/ads/studio/cached_libs/"},a.Libs.source=[["TweenMax",a.Libs.host+"tweenmax_1.18.0_499ba64a23378545748ff12d372e59e9_min.js"]],a.Stacy=function(){a.Libs.fails>10||(a.Libs.loaded<a.Libs.source.length?window[a.Libs.source[a.Libs.loaded][0]]?(a.Libs.loaded++,a.Stacy()):a.appendScript(a.Libs.source[a.Libs.loaded][1],a.Stacy,!0):a.appendScript("engine.min.js",function(){a.init()}))},a.Data={}}var Banner,conf={};window.onload=function(){Banner=new BC,Banner.Stacy()};</script><script>var AnimationConfig=function(a){return{size:"300x600",Image:{duration:2.5,animation:{ease:Power1.easeInOut,x:-276},delay:"-=.2"},Text:{duration:.3,animation:{ease:Power2.easeOut,opacity:0,y:-20},delay:"-=.2"},Text_OUT:{duration:.25,animation:{ease:Power2.easeOut,opacity:0}},CTA:{duration:.45,animation:{ease:Back.easeOut,opacity:0,y:15}}}};</script>
